@@ -30,3 +30,26 @@ Thumbs.db
 .env.*
 !.env.example
 *.local
+
+# --- local experiments / showcases: kept on disk, NOT published to GitHub ---
+/MyWebsitePortfolio/
+/background-paths-app/
+/beautiful-websites-kit/
+/bloom/
+/circular-gallery-app/
+/container-scroll-app/
+/cs-celia-stamp-font/
+/dotted-surface-bg/
+/flip-gallery-app/
+/house-plumbing-3d/
+/neon-drive/
+/nightscape/
+/particle-text-effect-app/
+/references/
+/scroll-expansion-hero-app/
+/scrolling-story-app/
+/sudipta-portfolio/
+/video-bg-preview/
+/voltline-neon/
+/woven-house-hero/
+/woven-light-bg/
