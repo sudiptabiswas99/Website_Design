@@ -1,0 +1,8 @@
+/* Option 3 — Indigo Night (deep blue-indigo, richer) */
+:root{
+  --d-bg:#0c1024; --d-surface:#1a2142; --d-surface2:#232b54;
+  --d-text:#e8ebfa; --d-dim:#a3a9cf; --d-head:#f4f5ff; --d-accent:#6f8cff;
+  --d-border:rgba(255,255,255,.10); --d-footer:#080b1c;
+  --d-headerbg:rgba(12,16,36,.85); --d-grid:rgba(150,160,225,.20); --d-cell:rgba(111,140,255,.16);
+  --d-veil1:rgba(8,11,28,.86); --d-veil2:rgba(8,11,28,.66); --d-veil3:rgba(8,11,28,.4);
+}

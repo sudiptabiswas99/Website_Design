@@ -1,0 +1,21 @@
+{
+  "name": "hargrove-plumbing-server",
+  "version": "1.0.0",
+  "description": "Booking/lead email backend for the Hargrove & Sons Plumbing site.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "smoketest": "node scripts/smoketest.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "nodemailer": "^6.9.14",
+    "zod": "^3.23.8"
+  }
+}

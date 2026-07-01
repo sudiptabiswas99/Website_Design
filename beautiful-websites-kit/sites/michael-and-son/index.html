@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Michael & Son — Complete Home Care Under One Roof | VA · MD · NC · DC</title>
+<meta name="description" content="Michael & Son: complete home care under one roof. Cooling, heating, plumbing, electrical, restoration and remodeling across Virginia, Maryland, North Carolina & DC. Book online or call (562) 431-1960." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+<script>(function(){try{var p=new URLSearchParams(location.search).get('theme');var t=p||localStorage.getItem('ms-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root[data-theme="dark"]{
+    --bg:#141517; --bg-2:#191A1D; --card:#1F2126; --line:#2E3137;
+    --clay:#D06F44; --clay-2:#E78A5B; --ink:#F0EBE3; --muted:#9C968C; --muted-2:#65625B;
+    --on-accent:#141517; --shadow:0 30px 70px -28px rgba(0,0,0,.8);
+    --img:grayscale(.22) brightness(.82) contrast(1.06) sepia(.06);
+  }
+  :root[data-theme="light"]{
+    --bg:#F4F0EA; --bg-2:#FFFFFF; --card:#FFFFFF; --line:#E4DDD0;
+    --clay:#B5572E; --clay-2:#9C4823; --ink:#1B1916; --muted:#6B655B; --muted-2:#9D9789;
+    --on-accent:#FFFFFF; --shadow:0 30px 60px -32px rgba(40,30,20,.2);
+    --img:grayscale(.05) brightness(1.02) contrast(1.02);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+  body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .ser{font-family:'Fraunces',Georgia,serif}
+  a{color:inherit;text-decoration:none}
+  .clay{color:var(--clay)}
+
+  /* ============ FIXED LEFT SIDEBAR (the "roof") ============ */
+  .side{position:fixed;left:0;top:0;bottom:0;width:288px;z-index:100;background:var(--bg-2);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:30px 28px}
+  .side .logo{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .side .logo .mk{width:46px;height:46px;border-radius:12px;background:linear-gradient(150deg,var(--clay-2),var(--clay));display:grid;place-items:center;color:var(--on-accent);flex-shrink:0}
+  .side .logo .mk svg{width:24px;height:24px}
+  .side .logo .nm{font-weight:700;font-size:1.2rem;line-height:1.05;letter-spacing:-.02em}
+  .side .logo .nm small{display:block;font-weight:400;font-size:.72rem;color:var(--muted);margin-top:3px;letter-spacing:.01em}
+  .side .tag{font-family:'Fraunces',serif;font-style:italic;font-size:.92rem;color:var(--muted);margin:20px 0 26px;line-height:1.4}
+  .snav{display:flex;flex-direction:column;gap:2px;margin-bottom:auto}
+  .snav a{display:flex;align-items:center;gap:13px;padding:11px 13px;border-radius:10px;color:var(--muted);font-weight:500;font-size:.96rem;transition:.22s}
+  .snav a .dot{width:6px;height:6px;border-radius:50%;background:var(--muted-2);transition:.22s}
+  .snav a:hover{color:var(--ink);background:var(--card)}
+  .snav a.on{color:var(--ink);background:var(--card)}
+  .snav a.on .dot{background:var(--clay);box-shadow:0 0 0 4px rgba(208,111,68,.18)}
+  .side .sfoot{border-top:1px solid var(--line);padding-top:20px;margin-top:24px}
+  .side .scall{display:block;font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+  .side .sarea{font-size:.76rem;color:var(--muted);margin:3px 0 16px;letter-spacing:.02em}
+  .side .sbook{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;background:var(--clay);color:var(--on-accent);font-weight:600;font-size:.94rem;padding:13px;border-radius:11px;transition:.22s;font-family:inherit}
+  .side .sbook:hover{background:var(--clay-2)}
+  .side .srow{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+  .side .stheme{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;color:var(--muted);cursor:pointer;background:var(--card);border:1px solid var(--line);transition:.22s}
+  .side .stheme:hover{color:var(--clay)}.side .stheme svg{width:17px;height:17px}.stheme .ic-sun{display:none}
+  :root[data-theme="light"] .stheme .ic-moon{display:none}:root[data-theme="light"] .stheme .ic-sun{display:block}
+  .side .ssocial{display:flex;gap:8px}
+  .side .ssocial a{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;color:var(--muted);background:var(--card);border:1px solid var(--line);transition:.2s}
+  .side .ssocial a:hover{color:var(--clay)}.side .ssocial svg{width:15px;height:15px}
+
+  /* mobile topbar version */
+  .mtop{display:none;position:sticky;top:0;z-index:100;background:var(--bg-2);border-bottom:1px solid var(--line);padding:12px 18px;align-items:center;justify-content:space-between}
+  .mtop .logo{display:flex;align-items:center;gap:10px}
+  .mtop .mk{width:38px;height:38px;border-radius:10px;background:linear-gradient(150deg,var(--clay-2),var(--clay));display:grid;place-items:center;color:var(--on-accent)}
+  .mtop .mk svg{width:20px;height:20px}
+  .mtop .nm{font-weight:700;font-size:1.05rem}
+  .mtop .mcall{display:inline-flex;align-items:center;gap:7px;background:var(--clay);color:var(--on-accent);font-weight:600;font-size:.84rem;padding:9px 13px;border-radius:9px}
+  .mtop .mcall svg{width:15px;height:15px}
+
+  /* ============ MAIN ============ */
+  main{margin-left:288px}
+  .panel{padding:96px 7vw}
+  .panel.tight{padding:72px 7vw}
+  .lbl{display:inline-block;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:18px}
+  .num-lbl{font-family:'Fraunces',serif;font-style:italic;color:var(--muted-2);font-size:1.1rem;margin-bottom:10px}
+  h2.big{font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.04;letter-spacing:-.03em;font-weight:700;max-width:16em}
+  h2.big .ser{font-weight:500;font-style:italic;color:var(--clay)}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:34em;margin-top:18px}
+
+  /* HERO panel (full-bleed editorial) */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;filter:var(--img)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,21,23,.78),rgba(20,21,23,.35) 60%,transparent),linear-gradient(0deg,rgba(20,21,23,.85),transparent 55%)}
+  :root[data-theme="light"] .hero-bg::after{background:linear-gradient(90deg,rgba(244,240,234,.86),rgba(244,240,234,.4) 60%,transparent),linear-gradient(0deg,rgba(244,240,234,.9),transparent 55%)}
+  .hero-in{position:relative;z-index:1;padding:0 7vw 84px;max-width:1000px}
+  .hero h1{font-size:clamp(2.8rem,6.4vw,5.6rem);line-height:.98;letter-spacing:-.035em;font-weight:800}
+  .hero h1 .ser{font-weight:500;font-style:italic;color:var(--clay-2);letter-spacing:-.02em}
+  .hero h1 .hw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+  .hero h1 .hi{display:inline-block;will-change:transform}
+  .hero .hsub{color:var(--muted);font-size:1.15rem;margin:22px 0 26px;max-width:32em}
+  .hero-chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+  .hero-chips span{font-size:.82rem;font-weight:500;color:var(--ink);background:rgba(255,255,255,.06);border:1px solid var(--line);backdrop-filter:blur(6px);padding:8px 14px;border-radius:999px}
+  :root[data-theme="light"] .hero-chips span{background:rgba(255,255,255,.7)}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;padding:15px 25px;border-radius:11px;cursor:pointer;border:0;font-family:inherit;transition:.24s}
+  .btn-solid{background:var(--clay);color:var(--on-accent)}.btn-solid:hover{background:var(--clay-2);transform:translateY(-2px)}
+  .btn-line{border:1px solid var(--line);color:var(--ink);background:transparent}.btn-line:hover{border-color:var(--clay);transform:translateY(-2px)}
+
+  /* UNDER ONE ROOF — vertical tabs (signature) */
+  .roof{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .roof-grid{display:grid;grid-template-columns:340px 1fr;gap:0;margin-top:44px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .roof-tabs{border-right:1px solid var(--line);background:var(--bg)}
+  .rtab{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:22px 26px;background:none;border:0;border-bottom:1px solid var(--line);cursor:pointer;font-family:inherit;color:var(--muted);transition:.25s;position:relative}
+  .rtab:last-child{border-bottom:0}
+  .rtab::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--clay);transition:.25s}
+  .rtab .ri{width:42px;height:42px;border-radius:11px;background:var(--card);display:grid;place-items:center;color:var(--muted);flex-shrink:0;transition:.25s}
+  .rtab .ri svg{width:21px;height:21px}
+  .rtab .rt{font-size:1.12rem;font-weight:600;letter-spacing:-.01em}
+  .rtab:hover{color:var(--ink)}
+  .rtab.on{color:var(--ink);background:var(--card)}
+  .rtab.on::before{width:4px}
+  .rtab.on .ri{background:var(--clay);color:var(--on-accent)}
+  .roof-detail{position:relative;min-height:430px}
+  .rpane{display:none;padding:42px 44px;animation:fadeIn .4s ease}
+  .rpane.on{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .rpane .rhead{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}
+  .rpane .rdesc{color:var(--muted);font-size:1.02rem;max-width:38em;margin-bottom:24px}
+  .rpane .rlist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .rpane .rlist div{display:flex;align-items:center;gap:11px;font-size:.96rem;color:var(--ink)}
+  .rpane .rlist svg{width:18px;height:18px;color:var(--clay);flex-shrink:0}
+  .rpane .rmore{display:inline-flex;align-items:center;gap:8px;margin-top:26px;color:var(--clay);font-weight:600;font-size:.95rem}
+
+  /* MEMBERSHIP band */
+  .member{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:8px}
+  .member-l{padding:54px 52px;background:linear-gradient(160deg,var(--clay),var(--clay-2));color:#fff}
+  .member-l .mlbl{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.85}
+  .member-l h3{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1.1;margin:14px 0 16px;letter-spacing:-.01em}
+  .member-l p{opacity:.9;font-size:1.02rem;max-width:26em}
+  .member-l .mbtn{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:#fff;color:var(--clay-2);font-weight:700;padding:13px 22px;border-radius:11px;font-size:.95rem}
+  .member-r{padding:48px 46px;background:var(--card)}
+  .member-r .mb{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
+  .member-r .mb:last-child{border-bottom:0}
+  .member-r .mb svg{width:22px;height:22px;color:var(--clay);flex-shrink:0;margin-top:2px}
+  .member-r .mb b{font-weight:600}
+  .member-r .mb p{color:var(--muted);font-size:.9rem;margin-top:2px}
+
+  /* WHY — stat tiles */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
+  .why-tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 26px}
+  .why-tile .wn{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;color:var(--clay);line-height:1}
+  .why-tile .wt{font-weight:600;margin:12px 0 5px;font-size:1.04rem}
+  .why-tile p{color:var(--muted);font-size:.9rem}
+
+  /* REVIEWS — 3-up grid */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
+  .rev{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .rev .stars{color:var(--clay);letter-spacing:2px;margin-bottom:14px}
+  .rev .rq{font-family:'Fraunces',serif;font-size:1.12rem;line-height:1.45;color:var(--ink)}
+  .rev .rw{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-weight:600;font-size:.9rem}
+  .sample-pill{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay);border:1px solid var(--clay);border-radius:999px;padding:3px 9px}
+
+  /* BOOK band */
+  .book-band{position:relative;border-radius:22px;overflow:hidden;margin:8px 0 0;padding:72px 56px;text-align:center}
+  .book-band::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,21,23,.82),rgba(20,21,23,.9)),url('assets/_img/4aabb881066d.jpg');background-size:cover;background-position:center;z-index:-1}
+  .book-band h2{font-size:clamp(2rem,4vw,3.1rem);color:#fff;letter-spacing:-.02em;line-height:1.08}
+  .book-band h2 .ser{font-style:italic;color:var(--clay-2)}
+  .book-band p{color:rgba(255,255,255,.78);max-width:34em;margin:14px auto 28px;font-size:1.06rem}
+  .book-band .bb-cta{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+  /* CONTACT mini */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .crow{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .crow .ic{width:46px;height:46px;border-radius:12px;background:rgba(208,111,68,.12);display:grid;place-items:center;color:var(--clay);margin-bottom:16px}
+  .crow .ic svg{width:22px;height:22px}
+  .crow .lbl2{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);font-weight:700}
+  .crow a,.crow .v{display:block;font-size:1.1rem;font-weight:600;margin-top:5px;color:var(--ink)}
+  .crow small{color:var(--muted);font-size:.86rem;display:block;margin-top:3px}
+
+  footer{border-top:1px solid var(--line);padding:42px 7vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.84rem;color:var(--muted-2)}
+  footer a:hover{color:var(--clay)}
+
+  .sticky-call{position:fixed;left:14px;right:14px;bottom:14px;z-index:120;display:none;background:var(--clay);color:var(--on-accent);font-weight:700;padding:15px;border-radius:12px;align-items:center;justify-content:center;gap:10px;box-shadow:0 16px 36px -12px rgba(0,0,0,.55)}
+  [data-rise]{opacity:0;transform:translateY(26px)}
+
+  @media(max-width:1040px){
+    .roof-grid{grid-template-columns:1fr}.roof-tabs{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}
+    .rtab{border-bottom:0;border-right:1px solid var(--line);white-space:nowrap}.rtab::before{top:auto;bottom:0;left:0;right:0;width:100%!important;height:0}.rtab.on::before{height:4px}
+    .member{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.rev-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:920px){
+    .side{display:none}.mtop{display:flex}main{margin-left:0}
+    .panel{padding:64px 24px}.hero-in{padding:0 24px 60px}
+    .sticky-call{display:flex}body{padding-bottom:80px}
+    .roof-grid .rpane{padding:32px 26px}
+  }
+  @media(max-width:560px){.why-grid{grid-template-columns:1fr}.rpane .rlist{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- MOBILE TOP -->
+<div class="mtop">
+  <div class="logo"><span class="mk"><i data-lucide="home"></i></span><span class="nm">Michael &amp; Son</span></div>
+  <a class="mcall" href="tel:+15624311960"><i data-lucide="phone"></i> (562) 431-1960</a>
+</div>
+
+<!-- SIDEBAR -->
+<aside class="side">
+  <div class="logo">
+    <span class="mk"><i data-lucide="home"></i></span>
+    <span class="nm">Michael &amp; Son<small>Complete Home Care</small></span>
+  </div>
+  <p class="tag">“Under one roof” — six trades, one trusted call across VA, MD, NC &amp; DC.</p>
+  <nav class="snav" id="snav">
+    <a href="#top" class="on"><span class="dot"></span> Home</a>
+    <a href="#roof"><span class="dot"></span> Services</a>
+    <a href="#membership"><span class="dot"></span> Membership</a>
+    <a href="#why"><span class="dot"></span> Why Us</a>
+    <a href="#reviews"><span class="dot"></span> Reviews</a>
+    <a href="#contact"><span class="dot"></span> Contact</a>
+  </nav>
+  <div class="sfoot">
+    <a class="scall" href="tel:+15624311960">(562) 431-1960</a>
+    <div class="sarea">Serving VA · MD · NC · DC</div>
+    <a class="sbook" href="#contact"><i data-lucide="calendar-check"></i> Book Online</a>
+    <div class="srow">
+      <button class="stheme" id="themeBtn" aria-label="Toggle theme">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <div class="ssocial">
+        <a href="#contact" aria-label="Membership"><i data-lucide="badge-check"></i></a>
+        <a href="#contact" aria-label="Financing"><i data-lucide="credit-card"></i></a>
+        <a href="tel:+15624311960" aria-label="Call"><i data-lucide="phone"></i></a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<main>
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-bg"><img src="assets/_img/a7d10d4d4434.jpg" alt="Home service technician at work" loading="eager" /></div>
+    <div class="hero-in">
+      <h1>Complete home care, <span class="ser">under one roof.</span></h1>
+      <p class="hsub">Cooling, heating, plumbing, electrical, restoration and remodeling — one trusted team for the whole home, across Virginia, Maryland, North Carolina &amp; DC.</p>
+      <div class="hero-chips">
+        <span>Cooling</span><span>Heating</span><span>Plumbing</span><span>Electrical</span><span>Restoration</span><span>Remodeling</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#contact"><i data-lucide="calendar-check"></i> Book Online</a>
+        <a class="btn btn-line" href="tel:+15624311960"><i data-lucide="phone-call"></i> (562) 431-1960</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- UNDER ONE ROOF -->
+  <section class="panel roof" id="roof">
+    <span class="lbl">What we do</span>
+    <h2 class="big">Six trades. <span class="ser">One</span> phone number.</h2>
+    <p class="lead">Most homes juggle a different company for every problem. Michael &amp; Son keeps it all under one roof — pick a trade to see how we help.</p>
+    <div class="roof-grid">
+      <div class="roof-tabs" id="rtabs">
+        <button class="rtab on" data-t="cooling"><span class="ri"><i data-lucide="snowflake"></i></span><span class="rt">Cooling</span></button>
+        <button class="rtab" data-t="heating"><span class="ri"><i data-lucide="flame"></i></span><span class="rt">Heating</span></button>
+        <button class="rtab" data-t="plumbing"><span class="ri"><i data-lucide="wrench"></i></span><span class="rt">Plumbing</span></button>
+        <button class="rtab" data-t="electrical"><span class="ri"><i data-lucide="zap"></i></span><span class="rt">Electrical</span></button>
+        <button class="rtab" data-t="restoration"><span class="ri"><i data-lucide="shield"></i></span><span class="rt">Restoration</span></button>
+        <button class="rtab" data-t="remodeling"><span class="ri"><i data-lucide="hammer"></i></span><span class="rt">Remodeling</span></button>
+      </div>
+      <div class="roof-detail">
+        <div class="rpane on" data-t="cooling">
+          <div class="rhead">Cooling</div>
+          <p class="rdesc">From an AC that quit on the hottest day to a high-efficiency replacement, we keep your home cool and your bills sensible.</p>
+          <div class="rlist"><div><i data-lucide="check"></i> Central AC repair</div><div><i data-lucide="check"></i> AC installation</div><div><i data-lucide="check"></i> Heat pumps</div><div><i data-lucide="check"></i> Seasonal tune-ups</div></div>
+          <a class="rmore" href="#contact">Book cooling service <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="rpane" data-t="heating">
+          <div class="rhead">Heating</div>
+          <p class="rdesc">Furnaces, heat pumps and boilers serviced and installed so your home stays warm all winter, with no surprise breakdowns.</p>
+          <div class="rlist"><div><i data-lucide="check"></i> Furnace repair</div><div><i data-lucide="check"></i> Furnace installation</div><div><i data-lucide="check"></i> Boiler service</div><div><i data-lucide="check"></i> Maintenance plans</div></div>
+          <a class="rmore" href="#contact">Book heating service <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="rpane" data-t="plumbing">
+          <div class="rhead">Plumbing</div>
+          <p class="rdesc">Leaks, water heaters, drains and fixtures — diagnosed fast and fixed right, with upfront pricing before we start.</p>
+          <div class="rlist"><div><i data-lucide="check"></i> Water heaters</div><div><i data-lucide="check"></i> Leak &amp; drain repair</div><div><i data-lucide="check"></i> Fixtures &amp; faucets</div><div><i data-lucide="check"></i> Repipes</div></div>
+          <a class="rmore" href="#contact">Book plumbing service <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="rpane" data-t="electrical">
+          <div class="rhead">Electrical</div>
+          <p class="rdesc">Licensed electricians for panels, wiring, lighting and safety work — code-correct and done right the first time.</p>
+          <div class="rlist"><div><i data-lucide="check"></i> Panel upgrades</div><div><i data-lucide="check"></i> Outlets &amp; switches</div><div><i data-lucide="check"></i> Lighting</div><div><i data-lucide="check"></i> Safety inspections</div></div>
+          <a class="rmore" href="#contact">Book electrical service <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="rpane" data-t="restoration">
+          <div class="rhead">Restoration</div>
+          <p class="rdesc">When water or storm damage hits, we help put your home back together quickly and thoroughly.</p>
+          <div class="rlist"><div><i data-lucide="check"></i> Water damage</div><div><i data-lucide="check"></i> Cleanup &amp; dry-out</div><div><i data-lucide="check"></i> Repairs</div><div><i data-lucide="check"></i> Insurance support</div></div>
+          <a class="rmore" href="#contact">Book restoration <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="rpane" data-t="remodeling">
+          <div class="rhead">Remodeling</div>
+          <p class="rdesc">Kitchens, baths and more — handled by the same trusted team that already knows your home's systems.</p>
+          <div class="rlist"><div><i data-lucide="check"></i> Bathroom remodels</div><div><i data-lucide="check"></i> Kitchen updates</div><div><i data-lucide="check"></i> Fixture upgrades</div><div><i data-lucide="check"></i> Whole-home projects</div></div>
+          <a class="rmore" href="#contact">Start a project <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="panel tight" id="membership">
+    <div class="member" data-rise>
+      <div class="member-l">
+        <span class="mlbl">The membership plan</span>
+        <h3>A maintenance plan for people who love saving money and hate surprises.</h3>
+        <p>Priority scheduling, seasonal tune-ups and member-only savings across every trade — so small problems get caught before they become big ones.</p>
+        <a class="mbtn" href="#contact">Join the plan <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="member-r">
+        <div class="mb"><i data-lucide="calendar-clock"></i><div><b>Priority scheduling</b><p>Members get to the front of the line.</p></div></div>
+        <div class="mb"><i data-lucide="wrench"></i><div><b>Seasonal tune-ups</b><p>Heating and cooling checked before each season.</p></div></div>
+        <div class="mb"><i data-lucide="badge-percent"></i><div><b>Member-only savings</b><p>Discounts across all six trades.</p></div></div>
+        <div class="mb"><i data-lucide="credit-card"></i><div><b>Flexible financing</b><p>Comfortable options on bigger work.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="panel roof" id="why">
+    <span class="lbl">Why choose us</span>
+    <h2 class="big">One team that already <span class="ser">knows your home.</span></h2>
+    <div class="why-grid">
+      <div class="why-tile" data-rise><div class="wn">6</div><div class="wt">Trades, one roof</div><p>No more juggling separate companies.</p></div>
+      <div class="why-tile" data-rise><div class="wn">4</div><div class="wt">States served</div><p>Virginia, Maryland, North Carolina &amp; DC.</p></div>
+      <div class="why-tile" data-rise><div class="wn">24/7</div><div class="wt">When you need us</div><p>Fast service when it can't wait.</p></div>
+      <div class="why-tile" data-rise><div class="wn">100%</div><div class="wt">Upfront pricing</div><p>Approve the price before we start.</p></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="panel tight" id="reviews">
+    <span class="lbl">What customers say</span>
+    <h2 class="big">Trusted in <span class="ser">thousands</span> of homes.</h2>
+    <p class="lead">(Quotes below are sample placeholders; real customer reviews drop in here.)</p>
+    <div class="rev-grid">
+      <div class="rev" data-rise><div class="stars">★★★★★</div><p class="rq">“Booked online, got a fast window, and one team handled both our AC and a plumbing leak. So much easier.”</p><div class="rw"><span>Dana R. · Fairfax, VA</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rev" data-rise><div class="stars">★★★★★</div><p class="rq">“The membership plan paid for itself the first year. Honest techs, upfront pricing, no surprises.”</p><div class="rw"><span>Marcus T. · Raleigh, NC</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rev" data-rise><div class="stars">★★★★★</div><p class="rq">“Showed up fast after a storm and handled the restoration and the repairs. Truly one call for everything.”</p><div class="rw"><span>Priya S. · Bethesda, MD</span><span class="sample-pill">Sample</span></div></div>
+    </div>
+  </section>
+
+  <!-- BOOK BAND -->
+  <section class="panel tight" id="contact">
+    <div class="book-band" data-rise>
+      <h2>One call for the <span class="ser">whole home.</span></h2>
+      <p>Book online in under a minute, or talk to a real person now. Complete home care across Virginia, Maryland, North Carolina &amp; DC.</p>
+      <div class="bb-cta">
+        <a class="btn btn-solid" href="tel:+15624311960"><i data-lucide="phone-call"></i> Call (562) 431-1960</a>
+        <a class="btn btn-line" style="color:#fff;border-color:rgba(255,255,255,.3)" href="tel:+15624311960"><i data-lucide="calendar-check"></i> Book Online</a>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="crow"><div class="ic"><i data-lucide="phone"></i></div><div class="lbl2">Call or book</div><a href="tel:+15624311960">(562) 431-1960</a><small>Fast service, scheduled fast</small></div>
+      <div class="crow"><div class="ic"><i data-lucide="map"></i></div><div class="lbl2">Service area</div><span class="v">VA · MD · NC · DC</span><small>Multiple local teams</small></div>
+      <div class="crow"><div class="ic"><i data-lucide="badge-check"></i></div><div class="lbl2">Membership &amp; financing</div><span class="v">Plans available</span><small>Save money, skip surprises</small></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="yr"></span> Michael &amp; Son · Complete Home Care Under One Roof</span>
+    <span>Cooling · Heating · Plumbing · Electrical · Restoration · Remodeling</span>
+  </footer>
+</main>
+
+<a class="sticky-call" href="tel:+15624311960"><i data-lucide="phone-call"></i> Call (562) 431-1960</a>
+
+<script>
+  try{ lucide.createIcons(); }catch(e){}
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  (function(){ var btn=document.getElementById('themeBtn'); if(!btn) return;
+    btn.addEventListener('click',function(){ var cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark'; var next=cur==='light'?'dark':'light'; document.documentElement.setAttribute('data-theme',next); try{localStorage.setItem('ms-theme',next);}catch(e){} });
+  })();
+
+  // HERO mask-rise (one-time)
+  (function(){ var h1=document.querySelector('.hero h1'); if(!h1) return;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches; var hasGSAP=false; try{hasGSAP=!!window.gsap;}catch(e){}
+    var segs=[]; h1.childNodes.forEach(function(n){segs.push({text:n.textContent, cls:n.nodeType===3?null:(n.className||null)});});
+    h1.textContent=''; var inners=[];
+    segs.forEach(function(seg){ seg.text.split(/(\s+)/).forEach(function(tok){ if(tok==='') return; if(/^\s+$/.test(tok)){ h1.appendChild(document.createTextNode(' ')); return; }
+      var w=document.createElement('span'); w.className='hw'; var i=document.createElement('span'); i.className='hi'+(seg.cls?' '+seg.cls:''); i.textContent=tok; w.appendChild(i); h1.appendChild(w); inners.push(i); });});
+    if(reduce||!hasGSAP) return;
+    ((document.fonts&&document.fonts.ready)||Promise.resolve()).then(function(){ gsap.set(inners,{yPercent:118}); gsap.to(inners,{yPercent:0,duration:.62,ease:'power3.out',stagger:0.05,delay:.15}); });
+  })();
+
+  // SCROLL REVEAL + safety net
+  try{ gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('[data-rise]').forEach(function(el,i){ gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',toggleActions:'play none none none',once:true}}); });
+    addEventListener('load',function(){ScrollTrigger.refresh();});
+    setTimeout(function(){document.querySelectorAll('[data-rise]').forEach(function(el){ if(getComputedStyle(el).opacity==='0'){el.style.transition='opacity .5s,transform .5s';el.style.opacity=1;el.style.transform='none';} });},1400);
+  }catch(e){ document.querySelectorAll('[data-rise]').forEach(function(el){el.style.opacity=1;el.style.transform='none';}); }
+
+  // UNDER ONE ROOF vertical tabs
+  (function(){ var tabs=document.getElementById('rtabs'); if(!tabs) return;
+    var btns=[].slice.call(tabs.querySelectorAll('.rtab')), panes=[].slice.call(document.querySelectorAll('.rpane'));
+    btns.forEach(function(b){ b.addEventListener('click',function(){ btns.forEach(function(x){x.classList.remove('on');}); b.classList.add('on'); var t=b.dataset.t; panes.forEach(function(p){ p.classList.toggle('on', p.dataset.t===t); }); }); });
+  })();
+
+  // SIDEBAR scroll-spy
+  (function(){ var links=[].slice.call(document.querySelectorAll('#snav a')); if(!links.length) return;
+    var secs=links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+    function onScroll(){ var y=scrollY+window.innerHeight*0.32; var idx=0;
+      secs.forEach(function(s,i){ if(s && s.offsetTop<=y) idx=i; });
+      links.forEach(function(a,i){ a.classList.toggle('on',i===idx); });
+    }
+    addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  })();
+</script>
+
+<!-- pf-chatbot:start -->
+<script>window.CHATBOT_KB={"name": "Michael & Son", "accent": "#d06f44", "mode": "business", "intro": "Hi! I'm the Michael & Son assistant. Ask about our services, area, pricing, hours or booking — or about this site's design (colors, buttons, fonts).", "suggestions": ["Services", "Service area", "Pricing", "Contact", "Design & buttons"], "qa": [{"k": ["design", "style", "aesthetic", "look", "feel", "vibe", "theme"], "a": "Michael & Son — Home services · redesign. Style: Hero → Services (six trades) → Membership → Why Us → Reviews → Contact (Call/Book) → Footer. Palette: accent #FFFFFF, ink #1B1916, bg #F4F0EA, muted #6B655B, line #E4DDD0. Typography: Bricolage Grotesque, Fraunces."}, {"k": ["color", "colour", "palette", "hex", "accent", "brand color"], "a": "Palette — accent #FFFFFF, ink #1B1916, bg #F4F0EA, muted #6B655B, line #E4DDD0. The primary accent is #d06f44."}, {"k": ["button", "btn", "cta", "call to action"], "a": "Buttons are rounded (11px), padding 15px 25px."}, {"k": ["font", "type", "typography", "typeface", "headline font"], "a": "Typefaces: Bricolage Grotesque, Fraunces."}, {"k": ["layout", "section", "structure", "flow", "page", "wireframe"], "a": "Page flow: Hero → Services (six trades) → Membership → Why Us → Reviews → Contact (Call/Book) → Footer."}, {"k": ["tech", "stack", "built", "build", "framework", "made", "code", "recreate", "rebuild", "library", "how do i build", "how to build", "how should i build"], "a": "Built with hand-written HTML/CSS/JS. To recreate it: type in Bricolage Grotesque, Fraunces, accent #d06f44 over your background, rounded (11px) buttons, and structure it as — Hero → Services (six trades) → Membership → Why Us → Reviews → Contact (Call/Book) → Footer."}, {"k": ["service", "services", "offer", "do you", "what do you do", "help with", "fix", "repair", "install"], "a": "What we cover: Six trades. One phone number.; One team that already knows your home.; Trusted in thousands of homes.; One call for the whole home.."}, {"k": ["area", "location", "where", "serve", "service area", "near me", "city", "local", "cover"], "a": "We serve the local metro — tell us your address and we'll confirm we cover you."}, {"k": ["contact", "phone", "call", "reach", "email", "number", "get in touch"], "a": "You can call +15624311960."}, {"k": ["book", "appointment", "schedule", "quote", "estimate", "booking", "get started", "request"], "a": "Book by calling +15624311960 — tell us the issue and your address and we'll lock a time."}, {"k": ["hour", "open", "emergency", "24", "available", "when"], "a": "We offer 24/7 / emergency response — call any time."}, {"k": ["price", "pricing", "cost", "how much", "rate", "fee", "afford", "financing"], "a": "Pricing depends on the job. We give upfront quotes before any work — request an estimate and we'll price it honestly."}, {"k": ["about", "who", "story", "experience", "trust", "why you", "reviews", "rating"], "a": "Michael & Son: complete home care under one roof. Cooling, heating, plumbing, electrical, restoration and remodeling across Virginia, Maryland, North Carolina & DC. Book online or call (562) 431-1960."}], "fallback": "I can talk about this site's design (colors, buttons, fonts, layout, tech) and the brand (services, area, pricing, hours, booking). Try a chip below."};</script>
+
+<style>
+#pfbot-root{--pfa:#d06f44;position:fixed;right:20px;bottom:20px;z-index:2147483000;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+#pfbot-launch{width:58px;height:58px;border:0;border-radius:50%;background:var(--pfa);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);display:grid;place-items:center;transition:transform .15s}
+#pfbot-launch:hover{transform:scale(1.06)}
+#pfbot-launch svg{width:26px;height:26px}
+#pfbot-panel{position:absolute;right:0;bottom:72px;width:350px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 110px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#pfbot-root[data-open="true"] #pfbot-panel{display:flex}
+#pfbot-head{background:var(--pfa);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+#pfbot-head .t{font-weight:700;font-size:15px;line-height:1.1}
+#pfbot-head .s{font-size:11px;opacity:.85}
+#pfbot-head .av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:17px}
+#pfbot-x{margin-left:auto;background:0;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.85;line-height:1}
+#pfbot-log{flex:1;overflow-y:auto;padding:14px;background:#f6f7f9;display:flex;flex-direction:column;gap:10px}
+.pfb{max-width:84%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.pfb.bot{background:#fff;color:#1d2430;border:1px solid #e7e9ee;border-bottom-left-radius:4px;align-self:flex-start}
+.pfb.me{background:var(--pfa);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.pfb.typing{color:#8a93a3;font-style:italic}
+#pfbot-chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;background:#fff;border-top:1px solid #eef0f3}
+.pfchip{border:1px solid var(--pfa);color:var(--pfa);background:#fff;border-radius:999px;padding:6px 11px;font-size:12px;cursor:pointer;transition:.12s}
+.pfchip:hover{background:var(--pfa);color:#fff}
+#pfbot-form{display:flex;gap:8px;padding:11px;border-top:1px solid #eef0f3;background:#fff}
+#pfbot-input{flex:1;border:1px solid #d8dce3;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:0}
+#pfbot-input:focus{border-color:var(--pfa)}
+#pfbot-send{border:0;background:var(--pfa);color:#fff;border-radius:10px;padding:0 15px;cursor:pointer;font-size:14px}
+@media(max-width:430px){#pfbot-panel{width:calc(100vw - 24px);right:-2px}}
+</style>
+<script>
+(function(){
+ var KB=window.CHATBOT_KB; if(!KB||document.getElementById('pfbot-root'))return;
+ var root=document.createElement('div'); root.id='pfbot-root';
+ root.innerHTML=
+  '<button id="pfbot-launch" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l2-5.3A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg></button>'+
+  '<div id="pfbot-panel" role="dialog" aria-label="Site assistant">'+
+   '<div id="pfbot-head"><div class="av">✨</div><div><div class="t"></div><div class="s">AI assistant · ask me anything</div></div><button id="pfbot-x" aria-label="Close">×</button></div>'+
+   '<div id="pfbot-log"></div><div id="pfbot-chips"></div>'+
+   '<form id="pfbot-form"><input id="pfbot-input" autocomplete="off" placeholder="Type your question…"/><button id="pfbot-send">➤</button></form>'+
+  '</div>';
+ document.body.appendChild(root);
+ root.style.setProperty('--pfa', KB.accent||'#1a9fcf');
+ root.querySelector('#pfbot-head .t').textContent=KB.name||'Assistant';
+ var log=root.querySelector('#pfbot-log'), chips=root.querySelector('#pfbot-chips'),
+     form=root.querySelector('#pfbot-form'), input=root.querySelector('#pfbot-input'),
+     launch=root.querySelector('#pfbot-launch'), greeted=false;
+ function bubble(role,txt){var d=document.createElement('div');d.className='pfb '+role;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+ function botSay(txt){var tp=bubble('bot typing','typing…');setTimeout(function(){tp.remove();bubble('bot',txt);},380+Math.min(900,txt.length*7));}
+ function renderChips(){chips.innerHTML='';(KB.suggestions||[]).forEach(function(s){var b=document.createElement('button');b.className='pfchip';b.type='button';b.textContent=s;b.onclick=function(){send(s);};chips.appendChild(b);});}
+ function answer(q){
+   q=(q||'').toLowerCase().trim();
+   if(/^(hi|hey|hello|yo|sup|good (morning|evening|afternoon))\b/.test(q))return KB.intro;
+   if(/(thank|thanks|thx|cheers|appreciate)/.test(q))return "Anytime! Anything else you want to know?";
+   if(/(bye|goodbye|see ya|that's all|done)/.test(q))return "Take care — come back if you need anything.";
+   var best=null,bs=0;
+   (KB.qa||[]).forEach(function(it){var s=0;it.k.forEach(function(k){if(q.indexOf(k)>=0)s+=k.length;});if(s>bs){bs=s;best=it;}});
+   return best?best.a:KB.fallback;
+ }
+ function send(txt){txt=(txt||'').trim();if(!txt)return;bubble('me',txt);input.value='';botSay(answer(txt));}
+ form.addEventListener('submit',function(e){e.preventDefault();send(input.value);});
+ launch.addEventListener('click',function(){var o=root.getAttribute('data-open')==='true';root.setAttribute('data-open',o?'false':'true');if(!o&&!greeted){greeted=true;renderChips();botSay(KB.intro);input.focus();}});
+ root.querySelector('#pfbot-x').addEventListener('click',function(){root.setAttribute('data-open','false');});
+})();
+</script>
+
+<!-- pf-chatbot:end -->
+</body>
+</html>

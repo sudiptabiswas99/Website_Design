@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hargrove &amp; Sons — Dark theme previews</title>
+<style>
+  :root{ font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#0a1626; color:#e8eef6; min-height:100vh; padding:clamp(1.5rem,5vw,4rem); }
+  h1{ font-size:clamp(1.6rem,1rem+2vw,2.6rem); margin:0 0 .4rem; }
+  p.sub{ color:#9fb4c9; margin:0 0 2rem; max-width:60ch; line-height:1.5; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(16rem,1fr)); gap:1.2rem; max-width:1100px; }
+  .opt{ display:block; text-decoration:none; color:inherit; border:1px solid rgba(255,255,255,.12);
+    border-radius:14px; overflow:hidden; background:#101f33; transition:transform .2s, border-color .2s, box-shadow .2s; }
+  .opt:hover{ transform:translateY(-4px); border-color:rgba(255,255,255,.3); box-shadow:0 24px 50px -28px rgba(0,0,0,.8); }
+  .swatch{ height:120px; display:flex; }
+  .swatch span{ flex:1; }
+  .body{ padding:1rem 1.2rem 1.2rem; }
+  .opt h2{ margin:.2rem 0 .3rem; font-size:1.15rem; }
+  .opt small{ color:#9fb4c9; display:block; line-height:1.45; }
+  .chips{ display:flex; gap:.4rem; margin-top:.8rem; }
+  .chips i{ width:20px; height:20px; border-radius:5px; border:1px solid rgba(255,255,255,.18); }
+  .cta{ display:inline-block; margin-top:.9rem; font-size:.85rem; font-weight:600; color:#45b6e0; }
+  footer{ margin-top:2.5rem; color:#6f8298; font-size:.82rem; }
+  a.back{ color:#9fb4c9; }
+</style>
+</head>
+<body>
+  <h1>Dark theme previews</h1>
+  <p class="sub">Three throwaway dark options for the Hargrove &amp; Sons site. Same layout, animations and styling as your live site — only the colors change. Open each, compare, and tell me the number you want. Nothing here touches your real pages.</p>
+
+  <div class="grid">
+    <a class="opt" href="dark-1.html">
+      <div class="swatch"><span style="background:#0a1626"></span><span style="background:#122a44"></span><span style="background:#45b6e0"></span></div>
+      <div class="body">
+        <h2>Option 1 · Deep Ocean</h2>
+        <small>Brand navy-teal. Warmest, most on-brand with your blue. Soft cyan accents.</small>
+        <div class="chips"><i style="background:#0a1626"></i><i style="background:#122a44"></i><i style="background:#16314e"></i><i style="background:#45b6e0"></i></div>
+        <span class="cta">Open Option 1 →</span>
+      </div>
+    </a>
+
+    <a class="opt" href="dark-2.html">
+      <div class="swatch"><span style="background:#0b0f14"></span><span style="background:#161d26"></span><span style="background:#5cc2e8"></span></div>
+      <div class="body">
+        <h2>Option 2 · Midnight</h2>
+        <small>Near-black, cool and high-contrast. The most "true dark" / least blue-tinted.</small>
+        <div class="chips"><i style="background:#0b0f14"></i><i style="background:#161d26"></i><i style="background:#1d2632"></i><i style="background:#5cc2e8"></i></div>
+        <span class="cta">Open Option 2 →</span>
+      </div>
+    </a>
+
+    <a class="opt" href="dark-3.html">
+      <div class="swatch"><span style="background:#0c1024"></span><span style="background:#1a2142"></span><span style="background:#6f8cff"></span></div>
+      <div class="body">
+        <h2>Option 3 · Indigo Night</h2>
+        <small>Deep blue-indigo, richer and more "techy". Brighter periwinkle accent.</small>
+        <div class="chips"><i style="background:#0c1024"></i><i style="background:#1a2142"></i><i style="background:#232b54"></i><i style="background:#6f8cff"></i></div>
+        <span class="cta">Open Option 3 →</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    Previews only — your live site is still at <a class="back" href="index.html">index.html</a> (unchanged, bright mode).
+  </footer>
+</body>
+</html>

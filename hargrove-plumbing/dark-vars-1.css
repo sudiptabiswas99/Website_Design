@@ -1,0 +1,8 @@
+/* Option 1 — Deep Ocean (brand navy/teal) */
+:root{
+  --d-bg:#0a1626; --d-surface:#122a44; --d-surface2:#16314e;
+  --d-text:#e8eef6; --d-dim:#9fb4c9; --d-head:#f3f8fd; --d-accent:#45b6e0;
+  --d-border:rgba(255,255,255,.10); --d-footer:#081625;
+  --d-headerbg:rgba(10,22,38,.85); --d-grid:rgba(125,180,215,.20); --d-cell:rgba(69,182,224,.13);
+  --d-veil1:rgba(8,18,32,.85); --d-veil2:rgba(8,18,32,.65); --d-veil3:rgba(8,18,32,.35);
+}

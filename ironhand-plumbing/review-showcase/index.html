@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IRONHAND — Review Section Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0D0D0F; --ink-2:#141417; --ink-3:#1C1C21; --cream:#F4EFE7; --muted:#9A958C;
+    --copper:#F2752B; --brass:#E8B04B; --line:rgba(244,239,231,.12); --line-2:rgba(244,239,231,.07);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:var(--ink); color:var(--cream); font-family:"Inter",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  a{color:inherit;text-decoration:none}
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+  .stars{ color:var(--brass); letter-spacing:2px; }
+  .av{ border-radius:50%; object-fit:cover; flex:none; background:var(--ink-3); }
+  .kick{ display:inline-flex; align-items:center; gap:10px; font-family:"Syne"; font-weight:700; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--copper); }
+  .kick::before{ content:""; width:24px; height:1.5px; background:var(--copper); }
+  h2.sec{ font-family:"Syne"; font-weight:800; font-size:clamp(28px,3.4vw,44px); letter-spacing:-.02em; margin:12px 0 0; }
+
+  /* ---- showcase chrome ---- */
+  .top{ position:sticky; top:0; z-index:50; background:rgba(13,13,15,.86); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-2); }
+  .top .wrap{ display:flex; align-items:center; gap:20px; height:64px; flex-wrap:wrap; }
+  .top .brand{ font-family:"Syne"; font-weight:800; font-size:16px; letter-spacing:-.01em; }
+  .top .brand em{ color:var(--copper); font-style:normal; }
+  .top nav{ display:flex; gap:7px; flex-wrap:wrap; margin-left:auto; }
+  .top nav a{ font-size:12.5px; font-weight:600; color:var(--muted); padding:7px 13px; border:1px solid var(--line-2); border-radius:999px; transition:.2s; }
+  .top nav a:hover{ color:var(--cream); border-color:var(--line); }
+
+  .intro{ padding:56px 0 10px; text-align:center; }
+  .intro h1{ font-family:"Syne"; font-weight:800; font-size:clamp(30px,4.4vw,50px); letter-spacing:-.02em; }
+  .intro h1 em{ font-style:normal; color:var(--copper); }
+  .intro p{ color:var(--muted); max-width:64ch; margin:14px auto 0; font-size:16px; line-height:1.6; }
+
+  .pat{ padding:64px 0; border-top:1px solid var(--line-2); }
+  .pat-head{ margin-bottom:34px; }
+  .pat-head .num{ font-family:"Syne"; font-weight:800; color:var(--copper); font-size:13px; letter-spacing:.1em; }
+  .pat-head h3{ font-family:"Syne"; font-weight:800; font-size:26px; margin:6px 0 8px; }
+  .pat-head p{ color:var(--muted); font-size:14.5px; max-width:74ch; line-height:1.55; }
+  .pat-head .used{ color:var(--cream); }
+  .pick{ display:inline-block; margin-top:14px; font-family:"Syne"; font-weight:700; font-size:13px; color:var(--copper); border:1px solid rgba(242,117,43,.4); padding:8px 16px; border-radius:999px; }
+
+  /* ============ P1 — Google trust strip ============ */
+  .g-agg{ display:flex; align-items:center; gap:26px; flex-wrap:wrap; padding:24px 28px; background:var(--ink-2); border:1px solid var(--line); border-radius:16px; margin-bottom:22px; }
+  .g-agg .big{ font-family:"Syne"; font-weight:800; font-size:54px; line-height:1; }
+  .g-agg .gstars{ font-size:22px; }
+  .g-agg .sub{ color:var(--muted); font-size:13.5px; margin-top:4px; }
+  .g-agg .src{ margin-left:auto; display:flex; align-items:center; gap:9px; font-size:13px; color:var(--muted); }
+  .g-agg .glogo{ font-family:"Syne"; font-weight:800; font-size:18px; letter-spacing:-.02em; }
+  .g-agg .glogo .b{color:#4285F4}.glogo .r{color:#EA4335}.glogo .y{color:#FBBC05}.glogo .g{color:#34A853}
+  .g-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .g-card{ background:var(--ink-2); border:1px solid var(--line); border-radius:16px; padding:22px; }
+  .g-card .top-row{ display:flex; align-items:center; gap:12px; }
+  .g-card .av{ width:44px; height:44px; }
+  .g-card .nm{ font-weight:700; font-size:15px; }
+  .g-card .dt{ font-size:12.5px; color:var(--muted); }
+  .g-card .stars{ font-size:15px; margin:13px 0 8px; }
+  .g-card p{ font-size:14.5px; line-height:1.6; color:rgba(244,239,231,.86); }
+
+  /* ============ P2 — verified card grid ============ */
+  .v-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .v-card{ background:linear-gradient(180deg,var(--ink-2),var(--ink-3)); border:1px solid var(--line); border-radius:16px; padding:26px; display:flex; flex-direction:column; }
+  .v-card .stars{ font-size:16px; }
+  .v-card .vq{ font-size:15.5px; line-height:1.62; margin:14px 0 20px; color:var(--cream); }
+  .v-card .vf{ display:flex; align-items:center; gap:12px; margin-top:auto; }
+  .v-card .av{ width:46px; height:46px; }
+  .v-card .nm{ font-weight:700; font-size:14.5px; }
+  .v-card .mt{ font-size:12.5px; color:var(--muted); }
+  .badge{ display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; color:#7ee0a8; background:rgba(40,180,110,.12); border:1px solid rgba(40,180,110,.3); padding:4px 9px; border-radius:999px; margin-top:8px; width:max-content; }
+
+  /* ============ P3 — masonry wall ============ */
+  .wall{ columns:3; column-gap:18px; }
+  @media(max-width:880px){ .wall{columns:2} }
+  .w-card{ break-inside:avoid; margin-bottom:18px; background:var(--ink-2); border:1px solid var(--line); border-radius:16px; padding:22px; }
+  .w-card .stars{ font-size:14px; }
+  .w-card p{ font-size:15px; line-height:1.6; margin:11px 0 16px; color:rgba(244,239,231,.9); }
+  .w-card .wf{ display:flex; align-items:center; gap:11px; }
+  .w-card .av{ width:40px; height:40px; }
+  .w-card .nm{ font-weight:700; font-size:14px; }
+  .w-card .mt{ font-size:12px; color:var(--muted); }
+
+  /* ============ P4 — spotlight carousel ============ */
+  .spot{ text-align:center; max-width:840px; margin:0 auto; min-height:330px; }
+  .spot .qmark{ font-family:"Syne"; font-size:80px; line-height:.4; color:var(--copper); opacity:.5; }
+  .spot .sq{ font-family:"Syne"; font-weight:700; font-size:clamp(22px,2.7vw,32px); line-height:1.4; margin:18px 0 26px; }
+  .spot .who{ display:flex; align-items:center; justify-content:center; gap:14px; }
+  .spot .av{ width:58px; height:58px; }
+  .spot .nm{ font-family:"Syne"; font-weight:700; font-size:17px; text-align:left; }
+  .spot .mt{ font-size:13px; color:var(--muted); text-align:left; }
+  .spot .stars{ font-size:18px; margin-top:18px; display:block; }
+  .spot-ctrl{ display:flex; align-items:center; justify-content:center; gap:18px; margin-top:30px; }
+  .nav{ width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:transparent;color:var(--cream);cursor:pointer;display:grid;place-items:center;transition:.25s var(--ease); }
+  .nav:hover{ background:var(--copper);border-color:var(--copper);color:#160c03; }
+  .nav svg{width:20px;height:20px}
+  .dots{display:flex;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:rgba(244,239,231,.22);cursor:pointer;transition:.3s}
+  .dot.on{background:var(--copper);width:24px;border-radius:6px}
+
+  /* ============ P5 — stats + featured split ============ */
+  .split{ display:grid; grid-template-columns:.85fr 1.15fr; gap:40px; align-items:center; }
+  @media(max-width:880px){ .split{grid-template-columns:1fr} }
+  .stat .row{ display:flex; gap:30px; flex-wrap:wrap; }
+  .stat .n{ font-family:"Syne"; font-weight:800; font-size:48px; line-height:1; }
+  .stat .n em{ color:var(--copper); font-style:normal; }
+  .stat .l{ font-size:13px; color:var(--muted); margin-top:6px; }
+  .stat .bars{ margin-top:26px; display:flex; flex-direction:column; gap:8px; max-width:320px; }
+  .stat .bar{ display:flex; align-items:center; gap:10px; font-size:12px; color:var(--muted); }
+  .stat .bar .track{ flex:1; height:6px; background:var(--ink-3); border-radius:3px; overflow:hidden; }
+  .stat .bar .fill{ height:100%; background:var(--copper); }
+  .feat{ background:linear-gradient(180deg,var(--ink-2),var(--ink-3)); border:1px solid var(--line); border-radius:20px; padding:38px; min-height:280px; }
+  .feat .stars{ font-size:18px; }
+  .feat .fq{ font-family:"Syne"; font-weight:700; font-size:clamp(19px,2.1vw,25px); line-height:1.4; margin:16px 0 22px; }
+  .feat .who{ display:flex; align-items:center; gap:13px; }
+  .feat .av{ width:52px; height:52px; }
+  .feat .nm{ font-weight:700; font-size:15px; }
+  .feat .mt{ font-size:12.5px; color:var(--muted); }
+  .feat .fctrl{ display:flex; gap:8px; margin-top:26px; }
+
+  /* ============ P6 — marquee rows ============ */
+  .mq{ display:flex; flex-direction:column; gap:18px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .mq-row{ display:flex; overflow:hidden; }
+  .mq-track{ display:flex; gap:18px; flex:none; animation:mqs 44s linear infinite; }
+  .mq-row.r2 .mq-track{ animation-duration:52s; animation-direction:reverse; }
+  .mq-row:hover .mq-track{ animation-play-state:paused; }
+  @keyframes mqs{ to{ transform:translateX(-50%); } }
+  .m-card{ flex:0 0 360px; background:var(--ink-2); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .m-card .stars{ font-size:13px; }
+  .m-card p{ font-size:14.5px; line-height:1.55; margin:10px 0 16px; color:rgba(244,239,231,.88); }
+  .m-card .mf{ display:flex; align-items:center; gap:11px; }
+  .m-card .av{ width:40px; height:40px; }
+  .m-card .nm{ font-weight:700; font-size:14px; }
+  .m-card .mt{ font-size:12px; color:var(--muted); }
+
+  footer.f{ padding:50px 0; border-top:1px solid var(--line-2); text-align:center; color:var(--muted); font-size:14px; }
+  @media(max-width:760px){ .g-grid,.v-grid{grid-template-columns:1fr} .wall{columns:1} }
+</style>
+</head>
+<body>
+  <div class="top"><div class="wrap">
+    <span class="brand">IRON<em>HAND</em> · Review Showcase</span>
+    <nav>
+      <a href="#p1">1 · Google strip</a>
+      <a href="#p2">2 · Verified grid</a>
+      <a href="#p3">3 · Wall of love</a>
+      <a href="#p4">4 · Spotlight</a>
+      <a href="#p5">5 · Stats + featured</a>
+      <a href="#p6">6 · Marquee</a>
+    </nav>
+  </div></div>
+
+  <div class="wrap intro">
+    <h1>Six ways to show <em>reviews</em>.</h1>
+    <p>Six reproducible review-section layouts, each built from the element set primary sources (Trustpilot, W3C) confirm real review sections use: photo avatar, name, star rating, review text, location, date, and a verified badge. Scroll, then tell me the number you want in the real site.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:10px;opacity:.85">Note — the <b>layout patterns and element sets are research-verified</b>; the brand names under each are <b>illustrative</b> of where that pattern type appears, not verified brand citations.</p>
+  </div>
+
+  <!-- ============ P1 ============ -->
+  <section class="pat" id="p1"><div class="wrap">
+    <div class="pat-head">
+      <div class="num">PATTERN 01</div>
+      <h3>Google / Trust Strip</h3>
+      <p><span class="used">Common on:</span> local & home-services businesses, Trustpilot, Yelp embeds. Leads with the aggregate rating + source logo for instant credibility, then real-photo cards with star row and date. Best for <b>local trust & conversion</b>.</p>
+      <span class="pick">Best for a plumber</span>
+    </div>
+    <div class="g-agg">
+      <div>
+        <div class="big">4.9</div>
+        <div class="gstars stars">★★★★★</div>
+      </div>
+      <div>
+        <div style="font-family:Syne;font-weight:700;font-size:18px">Rated excellent</div>
+        <div class="sub">Based on <b style="color:var(--cream)">612 verified reviews</b></div>
+      </div>
+      <div class="src"><span>Reviews from</span><span class="glogo"><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span></span></div>
+    </div>
+    <div class="g-grid" id="gGrid"></div>
+  </div></section>
+
+  <!-- ============ P2 ============ -->
+  <section class="pat" id="p2"><div class="wrap">
+    <div class="pat-head">
+      <div class="num">PATTERN 02</div>
+      <h3>Verified Card Grid</h3>
+      <p><span class="used">Common on:</span> Amazon, G2, Capterra, Booking.com. Star rating up top, the review, then a footer with photo + name + location and a green <b>“Verified job”</b> badge. Best for <b>credibility at scale</b>.</p>
+      <span class="pick">High trust</span>
+    </div>
+    <div class="v-grid" id="vGrid"></div>
+  </div></section>
+
+  <!-- ============ P3 ============ -->
+  <section class="pat" id="p3"><div class="wrap">
+    <div class="pat-head">
+      <div class="num">PATTERN 03</div>
+      <h3>Wall of Love (Masonry)</h3>
+      <p><span class="used">Common on:</span> Stripe, Notion, Linear, Tailwind, Testimonial.to / Senja. Dense multi-column masonry of varied-height cards — feels like an overflowing pile of praise. Best for <b>volume & momentum</b>.</p>
+      <span class="pick">Modern SaaS look</span>
+    </div>
+    <div class="wall" id="wall"></div>
+  </div></section>
+
+  <!-- ============ P4 ============ -->
+  <section class="pat" id="p4"><div class="wrap">
+    <div class="pat-head">
+      <div class="num">PATTERN 04</div>
+      <h3>Spotlight Carousel</h3>
+      <p><span class="used">Common on:</span> Apple, Webflow, Slack, Intercom. One big editorial quote at a time with a large avatar and arrows/dots. Best for <b>premium, focused storytelling</b>.</p>
+      <span class="pick">Editorial / premium</span>
+    </div>
+    <div class="spot" id="spot"></div>
+    <div class="spot-ctrl">
+      <button class="nav" id="spotPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="dots" id="spotDots"></div>
+      <button class="nav" id="spotNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div></section>
+
+  <!-- ============ P5 ============ -->
+  <section class="pat" id="p5"><div class="wrap">
+    <div class="pat-head">
+      <div class="num">PATTERN 05</div>
+      <h3>Stats + Featured</h3>
+      <p><span class="used">Common on:</span> Shopify, HubSpot, Zendesk. Aggregate metrics and a rating breakdown on one side, a single rotating featured testimonial on the other. Best for <b>data-backed proof</b>.</p>
+      <span class="pick">Proof + numbers</span>
+    </div>
+    <div class="split">
+      <div class="stat">
+        <div class="row">
+          <div><div class="n"><em>4.9</em></div><div class="l">Average rating</div></div>
+          <div><div class="n">612</div><div class="l">Verified reviews</div></div>
+          <div><div class="n">98<small style="font-size:24px">%</small></div><div class="l">Would refer us</div></div>
+        </div>
+        <div class="bars">
+          <div class="bar">5★<div class="track"><div class="fill" style="width:94%"></div></div>94%</div>
+          <div class="bar">4★<div class="track"><div class="fill" style="width:5%"></div></div>5%</div>
+          <div class="bar">3★<div class="track"><div class="fill" style="width:1%"></div></div>1%</div>
+        </div>
+      </div>
+      <div class="feat" id="feat"></div>
+    </div>
+  </div></section>
+
+  <!-- ============ P6 ============ -->
+  <section class="pat" id="p6"><div class="wrap">
+    <div class="pat-head">
+      <div class="num">PATTERN 06</div>
+      <h3>Auto-scroll Marquee</h3>
+      <p><span class="used">Common on:</span> Vercel, Raycast, countless modern landing pages. Two infinite rows drifting opposite directions, pausing on hover. Best for <b>continuous motion & density</b> (this is close to your current section).</p>
+      <span class="pick">Your current style, refined</span>
+    </div>
+    <div class="mq">
+      <div class="mq-row"><div class="mq-track" id="mq1"></div></div>
+      <div class="mq-row r2"><div class="mq-track" id="mq2"></div></div>
+    </div>
+  </div></section>
+
+  <footer class="f">Standalone demo · not wired into the live site yet. Tell me the pattern number to apply.</footer>
+
+<script>
+  const A = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=120&h=120&q=80`;
+  const R = [
+    { n:"Marcus G.", l:"Wash Park, Denver", av:"photo-1500648767791-00dcc994a43e", d:"2 weeks ago", q:"Sewer backed up at 11pm. IRONHAND had a crew here in 45 minutes, jetted the line, and the price matched the quote exactly. Lifesavers." },
+    { n:"Lena P.", l:"Aurora", av:"photo-1494790108377-be9c29b29330", d:"1 month ago", q:"Whole-house repipe in one day. The crew taped off everything, wore boot covers, and you'd never know they were here. Best trades experience I've had." },
+    { n:"Derek R.", l:"Lakewood", av:"photo-1507003211169-0a1dd7228f2d", d:"3 weeks ago", q:"Two other companies missed a slab leak. IRONHAND found it in 20 minutes and fixed it without jackhammering my whole kitchen. Honest people." },
+    { n:"Sofia C.", l:"Arvada", av:"photo-1438761681033-6461ffad8d80", d:"2 months ago", q:"Tankless install done clean and on time. They walked me through the warranty and even reset my breaker panel labels. Pros." },
+    { n:"Tom N.", l:"Centennial", av:"photo-1472099645785-5658abf4ff4e", d:"1 week ago", q:"Upfront pricing is real. No hourly meter creeping up while the guy 'thinks about it.' One price, fixed right." },
+    { n:"Amara K.", l:"Boulder", av:"photo-1544005313-94ddf0286df2", d:"5 days ago", q:"Frozen pipe burst over the holidays. They answered on the second ring and had water back on the same morning. Can't recommend enough." },
+    { n:"James B.", l:"Denver", av:"photo-1506794778202-cad84cf45f1d", d:"3 months ago", q:"Replaced my water heater and caught a venting issue the last installer left dangerous. These folks actually know code." },
+    { n:"Rosa V.", l:"Aurora", av:"photo-1534528741775-53994a69daeb", d:"6 weeks ago", q:"Polite, on time, texted before arrival, and cleaned up better than my last housekeeper. IRONHAND is my plumber for life." },
+  ];
+  const star = '★★★★★';
+
+  // P1 google
+  document.getElementById('gGrid').innerHTML = R.slice(0,6).map(r=>`
+    <div class="g-card">
+      <div class="top-row"><img class="av" src="${A(r.av)}" alt="${r.n}"><div><div class="nm">${r.n}</div><div class="dt">${r.d}</div></div></div>
+      <div class="stars">${star}</div><p>${r.q}</p>
+    </div>`).join('');
+
+  // P2 verified grid
+  document.getElementById('vGrid').innerHTML = R.slice(0,6).map(r=>`
+    <div class="v-card">
+      <div class="stars">${star}</div>
+      <p class="vq">“${r.q}”</p>
+      <div class="vf"><img class="av" src="${A(r.av)}" alt="${r.n}"><div><div class="nm">${r.n}</div><div class="mt">${r.l}</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:10px"><span class="badge">✓ Verified job</span><span style="font-size:12px;color:var(--muted)">${r.d}</span></div>
+    </div>`).join('');
+
+  // P3 wall
+  document.getElementById('wall').innerHTML = R.concat(R.slice(0,4)).map(r=>`
+    <div class="w-card">
+      <div class="stars">${star}</div>
+      <p>${r.q}</p>
+      <div class="wf"><img class="av" src="${A(r.av)}" alt="${r.n}"><div><div class="nm">${r.n}</div><div class="mt">${r.l}</div></div></div>
+    </div>`).join('');
+
+  // P4 spotlight
+  let si = 0;
+  const spot = document.getElementById('spot'), sdots = document.getElementById('spotDots');
+  sdots.innerHTML = R.map((_,i)=>`<span class="dot"></span>`).join('');
+  const sdEls = [...sdots.children];
+  sdEls.forEach((d,i)=> d.addEventListener('click',()=>{si=i;renderSpot();}));
+  function renderSpot(){
+    const r = R[si];
+    spot.innerHTML = `<div class="qmark">”</div>
+      <p class="sq">${r.q}</p>
+      <div class="who"><img class="av" src="${A(r.av)}" alt="${r.n}"><div><div class="nm">${r.n}</div><div class="mt">${r.l}</div></div></div>
+      <span class="stars">${star}</span>`;
+    sdEls.forEach((d,i)=> d.classList.toggle('on', i===si));
+  }
+  document.getElementById('spotPrev').onclick = ()=>{ si=(si-1+R.length)%R.length; renderSpot(); };
+  document.getElementById('spotNext').onclick = ()=>{ si=(si+1)%R.length; renderSpot(); };
+  renderSpot();
+
+  // P5 featured
+  let fi = 0;
+  const feat = document.getElementById('feat');
+  function renderFeat(){
+    const r = R[fi];
+    feat.innerHTML = `<div class="stars">${star}</div>
+      <p class="fq">“${r.q}”</p>
+      <div class="who"><img class="av" src="${A(r.av)}" alt="${r.n}"><div><div class="nm">${r.n}</div><div class="mt">${r.l}</div></div></div>
+      <div class="fctrl">
+        <button class="nav" onclick="window.__featStep(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="nav" onclick="window.__featStep(1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>`;
+  }
+  window.__featStep = d => { fi=(fi+d+R.length)%R.length; renderFeat(); };
+  renderFeat();
+
+  // P6 marquee (duplicate set for seamless loop)
+  const mcard = r=>`<div class="m-card"><div class="stars">${star}</div><p>${r.q}</p><div class="mf"><img class="av" src="${A(r.av)}" alt="${r.n}"><div><div class="nm">${r.n}</div><div class="mt">${r.l}</div></div></div></div>`;
+  const row1 = R.slice(0,4), row2 = R.slice(4).concat(R.slice(0,2));
+  document.getElementById('mq1').innerHTML = (row1.map(mcard).join('')).repeat(2);
+  document.getElementById('mq2').innerHTML = (row2.map(mcard).join('')).repeat(2);
+</script>
+
+<!-- pf-chatbot:start -->
+<script>window.CHATBOT_KB={"name": "IRONHAND — Review Section Showcase", "accent": "#f2752b", "mode": "design", "intro": "Hi! I can describe this piece — IRONHAND — Review Section Showcase (6 review-section layouts). Ask what design, colors, buttons, fonts, layout or tech it uses, or how to build one like it.", "suggestions": ["What design?", "Colors", "Buttons", "Fonts", "How to build one"], "qa": [{"k": ["design", "style", "aesthetic", "look", "feel", "vibe", "theme"], "a": "IRONHAND — Review Section Showcase — 6 review-section layouts. Style: Six ways to show reviews → Google/Trust Strip → Verified Card Grid → Wall of Love (Masonry) → Spotlight Carousel → Stats + Featured → Auto-scroll Marquee. Palette: brass #E8B04B, ink #0D0D0F, muted #9A958C. Typography: Inter, Syne."}, {"k": ["color", "colour", "palette", "hex", "accent", "brand color"], "a": "Palette — brass #E8B04B, ink #0D0D0F, muted #9A958C. The primary accent is #f2752b."}, {"k": ["button", "btn", "cta", "call to action"], "a": "Buttons are rounded (14px)."}, {"k": ["font", "type", "typography", "typeface", "headline font"], "a": "Typefaces: Inter, Syne."}, {"k": ["layout", "section", "structure", "flow", "page", "wireframe"], "a": "Page flow: Six ways to show reviews → Google/Trust Strip → Verified Card Grid → Wall of Love (Masonry) → Spotlight Carousel → Stats + Featured → Auto-scroll Marquee."}, {"k": ["tech", "stack", "built", "build", "framework", "made", "code", "recreate", "rebuild", "library", "how do i build", "how to build", "how should i build"], "a": "Built with hand-written HTML/CSS/JS. To recreate it: type in Inter, Syne, accent #f2752b over your background, rounded (14px) buttons, and structure it as — Six ways to show reviews → Google/Trust Strip → Verified Card Grid → Wall of Love (Masonry) → Spotlight Carousel → Stats + Featured → Auto-scroll Marquee."}], "fallback": "I can talk about this site's design (colors, buttons, fonts, layout, tech) and how to rebuild it. Try a chip below."};</script>
+
+<style>
+#pfbot-root{--pfa:#f2752b;position:fixed;right:20px;bottom:20px;z-index:2147483000;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+#pfbot-launch{width:58px;height:58px;border:0;border-radius:50%;background:var(--pfa);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);display:grid;place-items:center;transition:transform .15s}
+#pfbot-launch:hover{transform:scale(1.06)}
+#pfbot-launch svg{width:26px;height:26px}
+#pfbot-panel{position:absolute;right:0;bottom:72px;width:350px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 110px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#pfbot-root[data-open="true"] #pfbot-panel{display:flex}
+#pfbot-head{background:var(--pfa);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+#pfbot-head .t{font-weight:700;font-size:15px;line-height:1.1}
+#pfbot-head .s{font-size:11px;opacity:.85}
+#pfbot-head .av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:17px}
+#pfbot-x{margin-left:auto;background:0;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.85;line-height:1}
+#pfbot-log{flex:1;overflow-y:auto;padding:14px;background:#f6f7f9;display:flex;flex-direction:column;gap:10px}
+.pfb{max-width:84%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.pfb.bot{background:#fff;color:#1d2430;border:1px solid #e7e9ee;border-bottom-left-radius:4px;align-self:flex-start}
+.pfb.me{background:var(--pfa);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.pfb.typing{color:#8a93a3;font-style:italic}
+#pfbot-chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;background:#fff;border-top:1px solid #eef0f3}
+.pfchip{border:1px solid var(--pfa);color:var(--pfa);background:#fff;border-radius:999px;padding:6px 11px;font-size:12px;cursor:pointer;transition:.12s}
+.pfchip:hover{background:var(--pfa);color:#fff}
+#pfbot-form{display:flex;gap:8px;padding:11px;border-top:1px solid #eef0f3;background:#fff}
+#pfbot-input{flex:1;border:1px solid #d8dce3;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:0}
+#pfbot-input:focus{border-color:var(--pfa)}
+#pfbot-send{border:0;background:var(--pfa);color:#fff;border-radius:10px;padding:0 15px;cursor:pointer;font-size:14px}
+@media(max-width:430px){#pfbot-panel{width:calc(100vw - 24px);right:-2px}}
+</style>
+<script>
+(function(){
+ var KB=window.CHATBOT_KB; if(!KB||document.getElementById('pfbot-root'))return;
+ var root=document.createElement('div'); root.id='pfbot-root';
+ root.innerHTML=
+  '<button id="pfbot-launch" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l2-5.3A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg></button>'+
+  '<div id="pfbot-panel" role="dialog" aria-label="Site assistant">'+
+   '<div id="pfbot-head"><div class="av">✨</div><div><div class="t"></div><div class="s">AI assistant · ask me anything</div></div><button id="pfbot-x" aria-label="Close">×</button></div>'+
+   '<div id="pfbot-log"></div><div id="pfbot-chips"></div>'+
+   '<form id="pfbot-form"><input id="pfbot-input" autocomplete="off" placeholder="Type your question…"/><button id="pfbot-send">➤</button></form>'+
+  '</div>';
+ document.body.appendChild(root);
+ root.style.setProperty('--pfa', KB.accent||'#1a9fcf');
+ root.querySelector('#pfbot-head .t').textContent=KB.name||'Assistant';
+ var log=root.querySelector('#pfbot-log'), chips=root.querySelector('#pfbot-chips'),
+     form=root.querySelector('#pfbot-form'), input=root.querySelector('#pfbot-input'),
+     launch=root.querySelector('#pfbot-launch'), greeted=false;
+ function bubble(role,txt){var d=document.createElement('div');d.className='pfb '+role;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+ function botSay(txt){var tp=bubble('bot typing','typing…');setTimeout(function(){tp.remove();bubble('bot',txt);},380+Math.min(900,txt.length*7));}
+ function renderChips(){chips.innerHTML='';(KB.suggestions||[]).forEach(function(s){var b=document.createElement('button');b.className='pfchip';b.type='button';b.textContent=s;b.onclick=function(){send(s);};chips.appendChild(b);});}
+ function answer(q){
+   q=(q||'').toLowerCase().trim();
+   if(/^(hi|hey|hello|yo|sup|good (morning|evening|afternoon))\b/.test(q))return KB.intro;
+   if(/(thank|thanks|thx|cheers|appreciate)/.test(q))return "Anytime! Anything else you want to know?";
+   if(/(bye|goodbye|see ya|that's all|done)/.test(q))return "Take care — come back if you need anything.";
+   var best=null,bs=0;
+   (KB.qa||[]).forEach(function(it){var s=0;it.k.forEach(function(k){if(q.indexOf(k)>=0)s+=k.length;});if(s>bs){bs=s;best=it;}});
+   return best?best.a:KB.fallback;
+ }
+ function send(txt){txt=(txt||'').trim();if(!txt)return;bubble('me',txt);input.value='';botSay(answer(txt));}
+ form.addEventListener('submit',function(e){e.preventDefault();send(input.value);});
+ launch.addEventListener('click',function(){var o=root.getAttribute('data-open')==='true';root.setAttribute('data-open',o?'false':'true');if(!o&&!greeted){greeted=true;renderChips();botSay(KB.intro);input.focus();}});
+ root.querySelector('#pfbot-x').addEventListener('click',function(){root.setAttribute('data-open','false');});
+})();
+</script>
+
+<!-- pf-chatbot:end -->
+</body>
+</html>

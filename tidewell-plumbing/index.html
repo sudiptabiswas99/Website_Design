@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TIDEWELL Plumbing Co. - San Diego's Family Plumbers Since 1994 | 24/7 Emergency</title>
+<meta name="description" content="TIDEWELL Plumbing Co. Licensed C-36 master plumbers in San Diego. Drain & sewer, water heaters, repipes, slab-leak detection. Upfront flat pricing, 2-year warranty, 24/7 emergency crews." />
+<meta name="theme-color" content="#000000" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TIDEWELL Plumbing Co. - San Diego's Family Plumbers" />
+<meta property="og:description" content="Upfront pricing. Real warranty. A real person answers, 24/7 across San Diego." />
+<meta property="og:image" content="assets/_img/b9a86c4f05ea.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet" />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B38B6D'/%3E%3Cpath d='M16 6c-3.6 4.2-6 7.4-6 10.4a6 6 0 1 0 12 0C22 13.4 19.6 10.2 16 6z' fill='%23ffffff'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" onerror="this.onerror=null;this.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "TIDEWELL Plumbing Co.",
+  "image": "assets/_img/b9a86c4f05ea.jpg",
+  "url": "https://tidewellplumbing.example/",
+  "telephone": "+1-562-431-1960",
+  "priceRange": "$$",
+  "address": { "@type": "PostalAddress", "streetAddress": "2480 Kettner Blvd", "addressLocality": "San Diego", "addressRegion": "CA", "postalCode": "92101", "addressCountry": "US" },
+  "areaServed": ["San Diego", "La Jolla", "Chula Vista", "Coronado", "El Cajon", "Encinitas", "Carlsbad", "Oceanside"],
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2317" }
+}
+</script>
+
+<style>
+/* ============================================================
+   TIDEWELL Plumbing Co. - editorial rebuild
+   Palette (Swiss seeds): black · white · warm paper · gray · clay
+   Anti-AI signals: full-bleed photo hero · hard offset shadows ·
+   near-black borders · slight rotations · joined cells · note-deck reviews
+   ============================================================ */
+:root{
+  --ink:#0c0b0a;
+  --ink-soft:#46423b;
+  --muted:#7c766c;
+  --paper:#ffffff;
+  --paper-2:#f5f1e8;
+  --paper-3:#ece6da;
+  --line:#e1dacb;
+  --line-2:#cdc4b2;
+  --clay:#b38b6d;
+  --clay-light:#c4a085;
+  --clay-mid:#9c7458;
+  --clay-deep:#85664a;
+  --black:#000000;
+  --cream:#f5f1e8;
+  --cream-soft:#b6b0a6;
+
+  --maxw:1200px;
+  --ease:cubic-bezier(.4,0,.15,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Satoshi",system-ui,-apple-system,sans-serif;font-size:16.5px;line-height:1.62;font-weight:500;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.05;margin:0;letter-spacing:-.02em}
+em{font-style:italic}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul{margin:0;padding:0;list-style:none}
+button{font-family:inherit}
+::selection{background:var(--clay);color:#fff}
+.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.section{padding:104px 0;position:relative}
+@media(max-width:760px){.section{padding:72px 0}}
+
+/* eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Satoshi";font-weight:700;font-size:11.5px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--clay-mid)}
+.eyebrow__tick{width:22px;height:2px;background:var(--clay);display:inline-block}
+.eyebrow--center::before,.eyebrow--center::after{content:"";width:22px;height:2px;background:var(--clay);display:inline-block}
+.eyebrow--light{color:var(--cream-soft)}
+.eyebrow--light .eyebrow__tick,.eyebrow--light.eyebrow--center::before,.eyebrow--light.eyebrow--center::after{background:var(--clay-light)}
+
+/* section head */
+.shead{text-align:center;max-width:680px;margin:0 auto 60px}
+.shead .eyebrow{justify-content:center;margin-bottom:18px}
+.shead h2{font-size:clamp(32px,4.6vw,58px)}
+.shead h2 em{color:var(--clay)}
+.shead p{margin-top:18px;color:var(--muted);font-size:clamp(16px,1.25vw,18px);line-height:1.65;max-width:54ch;margin-left:auto;margin-right:auto}
+.shead--left{text-align:left;margin:0 0 56px;max-width:none;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:end}
+.shead--left .eyebrow{justify-content:flex-start}
+.shead--left p{margin:0;max-width:46ch}
+@media(max-width:760px){.shead--left{grid-template-columns:1fr;gap:14px;text-align:left}}
+
+.lead{color:var(--muted);font-size:clamp(16px,1.25vw,18px);line-height:1.68;max-width:52ch}
+
+/* buttons - crisp, slight weight */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:"Satoshi";font-weight:700;
+  font-size:14.5px;padding:14px 26px;border-radius:4px;cursor:pointer;border:1.5px solid transparent;
+  transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;white-space:nowrap}
+.btn svg{width:17px;height:17px;flex:none;transition:transform .25s var(--ease)}
+.btn--cta{background:var(--clay);color:#fff;border-color:var(--clay)}
+.btn--cta:hover{background:var(--clay-mid);border-color:var(--clay-mid);transform:translateY(-2px)}
+.btn--cta:hover svg{transform:translateX(3px)}
+.btn--ink{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn--ink:hover{background:#000;transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.btn--light{background:#fff;color:var(--ink);border-color:#fff}
+.btn--light:hover{transform:translateY(-2px)}
+.btn--ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn--ghost-light:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
+.btn--lg{padding:16px 30px;font-size:15.5px}
+
+/* ============================================================ UTILITY */
+.utility{background:var(--black);color:var(--cream);font-size:13px;font-weight:600}
+.utility__row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:42px}
+.utility__left{display:flex;align-items:center;gap:20px}
+.utility__item{display:inline-flex;align-items:center;gap:9px;color:var(--cream-soft)}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;background:#5bd6a0;box-shadow:0 0 0 3px rgba(91,214,160,.18)}
+.utility__hours{opacity:.7}
+.utility__phone{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700}
+.utility__phone svg{width:14px;height:14px}
+@media(max-width:680px){.utility__hours,.utility__left .utility__item:last-child{display:none}}
+
+/* ============================================================ HEADER */
+.header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.header.is-stuck{border-color:var(--line)}
+.header__row{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-family:"Fraunces";font-weight:600;font-size:22px;color:var(--ink)}
+.brand__mark{width:36px;height:36px;border-radius:7px;background:var(--clay);display:grid;place-items:center;flex:none}
+.brand__mark svg{width:19px;height:19px}
+.brand small{font-family:"Satoshi";font-weight:700;font-size:9px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase;display:block;margin-top:2px}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{font-size:14.5px;font-weight:600;color:var(--ink-soft);position:relative;transition:color .2s}
+.nav a::after{content:"";position:absolute;left:0;bottom:-7px;height:2px;width:0;background:var(--clay);transition:width .3s var(--ease)}
+.nav a:hover{color:var(--ink)}.nav a:hover::after{width:100%}
+.header__cta{display:flex;align-items:center;gap:16px}
+.header__phone{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:var(--ink)}
+.header__phone svg{width:16px;height:16px;color:var(--clay)}
+.menu-toggle{display:none;width:46px;height:46px;border:1.5px solid var(--ink);background:#fff;border-radius:6px;cursor:pointer;align-items:center;justify-content:center}
+.menu-toggle svg{width:20px;height:20px}
+@media(max-width:980px){.nav,.header__phone{display:none}.menu-toggle{display:inline-flex}}
+.drawer{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .3s}
+.drawer.is-open{opacity:1;visibility:visible}
+.drawer__panel{position:absolute;top:0;right:0;height:100%;width:min(86vw,360px);background:var(--paper);padding:26px;
+  transform:translateX(100%);transition:transform .42s var(--ease);display:flex;flex-direction:column;gap:6px;border-left:1.5px solid var(--ink)}
+.drawer.is-open .drawer__panel{transform:none}
+.drawer__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.drawer__close{width:44px;height:44px;border:1.5px solid var(--ink);background:#fff;border-radius:6px;cursor:pointer;font-size:20px;color:var(--ink)}
+.drawer a.drawer__link{padding:16px 6px;font-family:"Fraunces";font-size:22px;font-weight:500;border-bottom:1px solid var(--line)}
+.drawer__foot{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+
+/* ============================================================ HERO (full-bleed) */
+.hero{position:relative;min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  overflow:hidden;padding:120px 0 140px;color:#fff}
+.hero__media{position:absolute;inset:0;z-index:0}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:center 32%}
+.hero__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,5,4,.66),rgba(6,5,4,.46) 42%,rgba(6,5,4,.82))}
+.hero__grain{position:absolute;inset:0;z-index:2;opacity:.32;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero__inner{position:relative;z-index:3;max-width:1000px;margin:0 auto;padding:0 26px}
+.hero .eyebrow{color:#fff}
+.hero .eyebrow--center::before,.hero .eyebrow--center::after{background:var(--clay-light)}
+.hero__title{font-size:clamp(42px,7vw,90px);letter-spacing:-.035em;margin-top:22px;color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.35)}
+.hero__title em{color:var(--clay-light)}
+.hero__lead{max-width:50ch;margin:24px auto 0;font-size:clamp(16.5px,1.5vw,20px);color:rgba(255,255,255,.86);line-height:1.6}
+.hero__cta{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-top:32px}
+.hero__trust{display:inline-flex;flex-wrap:wrap;align-items:center;gap:0;margin-top:36px;color:rgba(255,255,255,.8);font-size:13.5px}
+.hero__trust li{display:flex;align-items:center;gap:8px;padding:0 22px}
+.hero__trust li+li{border-left:1px solid rgba(255,255,255,.22)}
+.hero__trust strong{color:#fff;font-weight:700}
+.hero__trust .stars{color:var(--clay-light);letter-spacing:1px}
+@media(max-width:600px){.hero__trust li{padding:4px 14px}.hero__trust li+li{border-left:none}}
+
+/* docked service strip (joined cells, hard border + offset shadow) */
+.svcdock{position:relative;z-index:20;max-width:var(--maxw);margin:-60px auto 0;padding:0 26px}
+.svcdock__inner{display:grid;grid-template-columns:repeat(3,1fr);background:var(--paper);border:1.5px solid var(--ink);box-shadow:9px 9px 0 var(--ink)}
+.svcdock__item{display:flex;align-items:center;gap:15px;padding:24px 26px;border-right:1.5px solid var(--ink);transition:background .25s}
+.svcdock__item:last-child{border-right:none}
+.svcdock__item:hover{background:var(--paper-2)}
+.svcdock__ic{width:46px;height:46px;flex:none;border:1.5px solid var(--ink);border-radius:8px;display:grid;place-items:center;background:var(--paper-2)}
+.svcdock__ic svg{width:23px;height:23px;color:var(--ink)}
+.svcdock__t{font-family:"Fraunces";font-weight:600;font-size:18px;color:var(--ink);line-height:1.1}
+.svcdock__s{font-size:12.5px;color:var(--muted);margin-top:2px}
+.svcdock__item .arrow{margin-left:auto;color:var(--clay);font-size:18px;transition:transform .25s var(--ease)}
+.svcdock__item:hover .arrow{transform:translateX(4px)}
+@media(max-width:780px){.svcdock__inner{grid-template-columns:1fr}.svcdock__item{border-right:none;border-bottom:1.5px solid var(--ink)}.svcdock__item:last-child{border-bottom:none}.svcdock{margin-top:-40px}}
+
+/* ============================================================ ZIP (warm paper, editorial) */
+.zipband{background:var(--paper-2);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);margin-top:96px}
+.zipband__inner{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;padding:84px 0}
+@media(max-width:860px){.zipband__inner{grid-template-columns:1fr;gap:28px;padding:64px 0}}
+.zipband h2{font-size:clamp(28px,3.6vw,46px)}.zipband h2 em{font-style:italic;color:var(--clay)}
+.zipform{display:flex;gap:0;margin-top:24px;max-width:460px;border:1.5px solid var(--ink);background:#fff;box-shadow:6px 6px 0 var(--ink)}
+.zipform input{flex:1;height:58px;border:none;background:transparent;color:var(--ink);padding:0 20px;font-family:"Satoshi";font-weight:600;font-size:16px;outline:none}
+.zipform input::placeholder{color:var(--muted)}
+.zipform button{border:none;border-left:1.5px solid var(--ink);background:var(--ink);color:#fff;padding:0 26px;font-weight:700;cursor:pointer;font-size:14.5px;transition:background .2s}
+.zipform button:hover{background:var(--clay)}
+.zip-result{margin-top:16px;font-weight:600;min-height:24px;font-size:15px}
+.zip-result.ok{color:var(--clay-deep)}.zip-result.no{color:var(--ink-soft)}
+.ziparea{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ziparea span{font-size:13px;font-weight:600;color:var(--ink-soft);background:#fff;border:1.5px solid var(--line-2);padding:7px 13px;border-radius:3px}
+
+/* ============================================================ SERVICES feature-showcase */
+.svcfeat{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center}
+@media(max-width:900px){.svcfeat{grid-template-columns:1fr;gap:32px}}
+.svcfeat__list{display:flex;flex-direction:column}
+.svcfeat__item{border-bottom:1.5px solid var(--line);cursor:pointer;padding:20px 4px 20px 0}
+.svcfeat__item:first-child{border-top:1.5px solid var(--line)}
+.svcfeat__row{display:flex;align-items:baseline;gap:18px}
+.svcfeat__num{font-family:"Fraunces";font-size:14px;font-weight:600;color:var(--muted);width:30px;flex:none}
+.svcfeat__name{font-family:"Fraunces";font-size:clamp(23px,2.5vw,32px);font-weight:500;color:var(--muted);transition:color .25s,transform .25s var(--ease)}
+.svcfeat__item:hover .svcfeat__name{color:var(--ink-soft)}
+.svcfeat__item.is-active .svcfeat__name{color:var(--ink)}
+.svcfeat__item.is-active .svcfeat__num{color:var(--clay)}
+.svcfeat__desc{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),opacity .3s;opacity:0;padding-left:48px}
+.svcfeat__item.is-active .svcfeat__desc{max-height:120px;opacity:1;margin-top:10px}
+.svcfeat__desc p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.svcfeat__desc .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--clay-mid)}
+.svcfeat__desc .tags span{position:relative;padding-right:8px}
+.svcfeat__desc .tags span:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;width:3px;height:3px;border-radius:50%;background:var(--line-2);transform:translateY(-50%)}
+.svcfeat__media{position:relative;border:1.5px solid var(--ink);box-shadow:12px 12px 0 var(--ink);background:var(--paper-2)}
+.svcfeat__frame{position:relative;aspect-ratio:4/3;overflow:hidden}
+.svcfeat__frame img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:opacity .5s var(--ease)}
+.svcfeat__frame img.is-show{opacity:1}
+.svcfeat__cap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-top:1.5px solid var(--ink);background:#fff}
+.svcfeat__cap b{font-family:"Fraunces";font-size:17px;font-weight:600}
+.svcfeat__cap .price{font-size:12.5px;color:var(--muted);font-weight:600}
+.svcfeat__cap .price strong{color:var(--clay-deep);font-family:"Fraunces";font-size:18px}
+.svcfeat__badge{position:absolute;top:0;left:0;z-index:2;background:var(--ink);color:#fff;font-family:"Fraunces";font-size:13px;font-weight:600;padding:7px 14px;letter-spacing:.04em}
+
+/* ============================================================ PRICING - joined strip, itemized */
+.pricing{background:var(--paper-2);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.pricestrip{border:1.5px solid var(--ink);background:var(--paper);box-shadow:10px 10px 0 var(--ink);display:grid;grid-template-columns:repeat(3,1fr)}
+@media(max-width:820px){.pricestrip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pricestrip{grid-template-columns:1fr;box-shadow:6px 6px 0 var(--ink)}}
+.pcell{padding:26px 24px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.pricestrip > .pcell:nth-child(3n){border-right:none}
+.pricestrip > .pcell:nth-last-child(-n+3){border-bottom:none}
+@media(max-width:820px){
+  .pricestrip > .pcell{border-right:1.5px solid var(--ink) !important;border-bottom:1.5px solid var(--ink) !important}
+  .pricestrip > .pcell:nth-child(2n){border-right:none !important}
+  .pricestrip > .pcell:nth-last-child(-n+2){border-bottom:none !important}
+}
+@media(max-width:520px){
+  .pricestrip > .pcell{border-right:none !important}
+  .pricestrip > .pcell:last-child{border-bottom:none !important}
+  .pricestrip > .pcell:nth-last-child(-n+2){border-bottom:1.5px solid var(--ink) !important}
+}
+.pcell__top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px dashed var(--line-2)}
+.pcell__name{font-family:"Fraunces";font-size:19px;font-weight:600;line-height:1.15}
+.pcell__num{font-family:"Fraunces";font-size:13px;color:var(--clay);font-weight:600}
+.pcell__list li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13.5px;color:var(--ink-soft);padding:5px 0}
+.pcell__list li b{color:var(--ink);font-weight:600;white-space:nowrap}
+.pcell__from{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:7px}
+.pcell__from span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pcell__from strong{font-family:"Fraunces";font-size:26px;font-weight:600;color:var(--clay-deep);line-height:1}
+.price__note{margin-top:28px;text-align:center;color:var(--muted);font-size:14.5px}
+.price__note b{color:var(--ink)}
+
+/* ============================================================ STORY + STATS */
+.story__inner{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+@media(max-width:920px){.story__inner{grid-template-columns:1fr;gap:34px}}
+.story__photo{position:relative;border:1.5px solid var(--ink);box-shadow:12px 12px 0 var(--clay);transform:rotate(-1.4deg)}
+.story__photo img{width:100%;aspect-ratio:5/4;object-fit:cover;display:block}
+.story__tape{position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(2deg);background:rgba(179,139,109,.55);width:120px;height:26px;border:1px solid rgba(12,11,10,.2)}
+.story h2{font-size:clamp(30px,4.2vw,52px)}.story h2 em{color:var(--clay)}
+.story__sig{margin-top:26px;font-family:"Fraunces";font-style:italic;font-size:21px;color:var(--ink)}
+.story__sig span{display:block;font-family:"Satoshi";font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;background:var(--black);border:1.5px solid var(--ink);box-shadow:8px 8px 0 var(--clay)}
+@media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:30px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.13)}
+.stat:last-child{border-right:none}
+@media(max-width:680px){.stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(255,255,255,.13)}}
+.stat__num{font-family:"Fraunces";font-size:clamp(32px,3.6vw,44px);font-weight:600;color:var(--clay-light);line-height:1}
+.stat__stars{color:var(--clay);font-size:13px;letter-spacing:2px;margin-top:8px}
+.stat__label{font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--cream-soft);margin-top:9px;text-transform:uppercase}
+
+/* ============================================================ PROCESS (black) */
+.process{background:var(--black);color:var(--cream)}
+.process .shead h2{color:#fff}.process .shead h2 em{color:var(--clay-light)}
+.process .shead p{color:var(--cream-soft)}
+.proc__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px;border:1.5px solid rgba(255,255,255,.16)}
+@media(max-width:900px){.proc__grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.proc__grid{grid-template-columns:1fr}}
+.pstep{padding:32px 26px;border-right:1.5px solid rgba(255,255,255,.16)}
+.pstep:last-child{border-right:none}
+@media(max-width:900px){.pstep:nth-child(2){border-right:none}.pstep:nth-child(1),.pstep:nth-child(2){border-bottom:1.5px solid rgba(255,255,255,.16)}}
+@media(max-width:520px){.pstep{border-right:none;border-bottom:1.5px solid rgba(255,255,255,.16)}.pstep:last-child{border-bottom:none}}
+.pstep__num{font-family:"Fraunces";font-size:34px;font-weight:600;color:var(--clay);line-height:1}
+.pstep h3{font-size:20px;margin:16px 0 9px;color:#fff;font-weight:600}
+.pstep p{color:var(--cream-soft);font-size:14.5px;line-height:1.6}
+
+/* ============================================================ WORK gallery + metadata */
+.work__grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px;margin-top:8px}
+@media(max-width:900px){.work__grid{grid-template-columns:repeat(2,1fr)}}
+.wtile{position:relative;overflow:hidden;border:1.5px solid var(--ink)}
+.wtile img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.wtile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(6,5,4,.8))}
+.wtile:hover img{transform:scale(1.05)}
+.wtile__tag{position:absolute;top:0;left:0;z-index:2;background:var(--clay);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 11px}
+.wtile__cap{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;display:flex;flex-direction:column}
+.wtile__cap b{font-family:"Fraunces";font-weight:600;font-size:16px}
+.wtile__cap small{font-size:12px;color:var(--cream-soft);letter-spacing:.02em;margin-top:2px}
+.wtile--big{grid-column:span 2;grid-row:span 2}
+@media(max-width:900px){.wtile--big{grid-column:span 2;grid-row:span 1}}
+
+/* ============================================================ REVIEWS - note wall */
+.reviews{background:var(--paper-2);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.reviews .shead h2 em{color:var(--clay)}
+.notewall{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+@media(max-width:900px){.notewall{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}}
+.note{position:relative;background:#fff;border:1.5px solid var(--ink);box-shadow:7px 7px 0 var(--ink);padding:28px 26px;transition:transform .3s var(--ease),box-shadow .3s}
+.note:nth-child(1){transform:rotate(-1.5deg)}
+.note:nth-child(2){transform:rotate(1deg);margin-top:24px}
+.note:nth-child(3){transform:rotate(-.6deg)}
+.note:hover{transform:rotate(0) translateY(-4px);box-shadow:10px 10px 0 var(--clay)}
+.note__tape{position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:90px;height:22px;background:rgba(179,139,109,.5);border:1px solid rgba(12,11,10,.18)}
+.note__stars{color:var(--clay);font-size:14px;letter-spacing:2px;margin-bottom:14px}
+.note__quote{font-family:"Fraunces";font-size:18px;line-height:1.45;color:var(--ink);font-weight:500}
+.note__who{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.note__av{width:42px;height:42px;border-radius:50%;background:var(--ink);display:grid;place-items:center;font-family:"Fraunces";font-weight:600;color:#fff;flex:none}
+.note__name{font-weight:700;font-size:14.5px;color:var(--ink)}
+.note__loc{font-size:12.5px;color:var(--muted)}
+
+/* ============================================================ FINANCING */
+.fin__inner{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+@media(max-width:860px){.fin__inner{grid-template-columns:1fr;gap:34px}}
+.fin h2{font-size:clamp(30px,4.2vw,52px)}.fin h2 em{color:var(--clay)}
+.fin__card{background:var(--ink);border:1.5px solid var(--ink);box-shadow:12px 12px 0 var(--clay);padding:44px 40px;color:#fff;position:relative}
+.fin__apr{font-family:"Fraunces";font-size:70px;font-weight:600;line-height:1;color:var(--clay-light)}
+.fin__apr small{font-size:.26em;vertical-align:super;color:var(--clay);margin-left:4px}
+.fin__terms{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.fin__terms li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--cream)}
+.fin__terms svg{width:19px;height:19px;color:var(--clay-light);flex:none;margin-top:1px}
+
+/* ============================================================ FAQ */
+.faq{background:var(--paper-2);border-top:1.5px solid var(--ink)}
+.faq__inner{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;align-items:start}
+@media(max-width:860px){.faq__inner{grid-template-columns:1fr;gap:28px}}
+.faq h2{font-size:clamp(28px,3.6vw,46px)}.faq h2 em{color:var(--clay)}
+.faq__list{display:flex;flex-direction:column;border-top:1.5px solid var(--ink)}
+.faq__item{border-bottom:1.5px solid var(--ink)}
+.faq__q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 4px;display:flex;
+  justify-content:space-between;align-items:center;gap:18px;font-family:"Fraunces";font-size:19px;font-weight:600;color:var(--ink)}
+.faq__icon{width:26px;height:26px;flex:none;position:relative}
+.faq__icon::before,.faq__icon::after{content:"";position:absolute;background:var(--ink);left:50%;top:50%;transition:transform .3s var(--ease)}
+.faq__icon::before{width:13px;height:2px;transform:translate(-50%,-50%)}
+.faq__icon::after{width:2px;height:13px;transform:translate(-50%,-50%)}
+.faq__item.is-open .faq__icon::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq__a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.faq__a p{color:var(--ink-soft);font-size:15px;line-height:1.66;padding:0 4px 24px}
+
+/* ============================================================ BOOKING (black) */
+.book{background:var(--black);color:var(--cream)}
+.book__inner{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+@media(max-width:880px){.book__inner{grid-template-columns:1fr;gap:36px}}
+.book h2{font-size:clamp(32px,4.4vw,54px);color:#fff}.book h2 em{color:var(--clay-light)}
+.book__phone{display:inline-flex;align-items:center;gap:14px;margin-top:26px;font-family:"Fraunces";font-size:33px;font-weight:600;color:#fff}
+.book__phone svg{width:30px;height:30px;color:var(--clay)}
+.book__list{margin-top:26px;display:flex;flex-direction:column;gap:13px}
+.book__list li{display:flex;gap:12px;align-items:center;color:var(--cream-soft);font-size:15px}
+.book__list svg{width:19px;height:19px;color:var(--clay-light);flex:none}
+.form{background:#fff;border:1.5px solid #fff;box-shadow:12px 12px 0 var(--clay);padding:34px;color:var(--ink)}
+.form h3{font-size:25px;margin-bottom:6px;font-weight:600}
+.form p.sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.field input,.field select{width:100%;height:50px;border-radius:4px;border:1.5px solid var(--line-2);background:var(--paper-2);
+  padding:0 15px;font-family:"Satoshi";font-weight:600;font-size:15px;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.field input:focus,.field select:focus{border-color:var(--ink);background:#fff}
+.field--row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form__msg{margin-top:8px;font-weight:600;font-size:14px;color:var(--clay-deep);min-height:20px}
+.field textarea{width:100%;min-height:118px;border-radius:4px;border:1.5px solid var(--line-2);background:var(--paper-2);padding:13px 15px;font-family:"Satoshi";font-weight:500;font-size:15px;color:var(--ink);outline:none;resize:vertical;line-height:1.5;transition:border-color .2s,background .2s}
+.field textarea:focus{border-color:var(--ink);background:#fff}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.addr-row{display:flex;gap:10px;align-items:stretch}
+.addr-row input{flex:1;min-width:0}
+.addr-row .btn{flex:none;height:50px;padding:0 18px;white-space:nowrap}
+.addr-row .btn svg{width:16px;height:16px}
+.field-hint{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.5}
+.field-hint b{color:var(--clay-deep)}
+/* map picker modal */
+.mapmodal{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(6,5,4,.62)}
+.mapmodal.is-open{display:flex}
+.mapmodal__panel{width:min(640px,100%);max-height:92vh;background:#fff;border:1.5px solid var(--ink);box-shadow:14px 14px 0 var(--clay);display:flex;flex-direction:column;overflow:hidden}
+.mapmodal__head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;border-bottom:1.5px solid var(--ink)}
+.mapmodal__head h4{font-family:"Fraunces";font-size:20px;font-weight:600;color:var(--ink)}
+.mapmodal__close{width:38px;height:38px;flex:none;border:1.5px solid var(--ink);background:#fff;border-radius:4px;cursor:pointer;font-size:18px;color:var(--ink);line-height:1}
+#bookMap{width:100%;height:336px;background:var(--paper-2)}
+.mapmodal__foot{padding:16px 22px;border-top:1.5px solid var(--ink);display:flex;flex-direction:column;gap:12px}
+.mapmodal__addr{font-size:14px;color:var(--ink-soft);min-height:20px;line-height:1.5}
+.mapmodal__addr b{color:var(--ink);font-weight:600}
+.mapmodal__btns{display:flex;gap:10px;flex-wrap:wrap}
+.mapmodal__btns .btn{flex:1;min-width:150px}
+.leaflet-container{font-family:"Satoshi",sans-serif}
+
+/* ============================================================ FOOTER */
+.footer{background:var(--black);color:var(--cream-soft);padding:74px 0 30px}
+.footer__top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,.12)}
+@media(max-width:860px){.footer__top{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer__top{grid-template-columns:1fr}}
+.footer__brand{font-family:"Fraunces";font-size:24px;font-weight:600;color:#fff;display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.footer__brand .brand__mark{width:32px;height:32px}
+.footer p.fdesc{font-size:14px;line-height:1.68;max-width:34ch}
+.footer h4{font-family:"Satoshi";font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);margin-bottom:16px}
+.footer ul li{margin-bottom:10px}
+.footer ul a{font-size:14px;color:var(--cream-soft);transition:color .2s}
+.footer ul a:hover{color:#fff}
+.footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;padding-top:24px;font-size:13px}
+.footer__bottom .lic b{color:var(--cream)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}
+  .story__photo,.note:nth-child(n){transform:none}}
+</style>
+</head>
+<body>
+
+<!-- UTILITY -->
+<div class="utility">
+  <div class="wrap utility__row">
+    <div class="utility__left">
+      <span class="utility__item"><span class="dot"></span> <span id="bizState">Open now &middot; 24/7 emergency</span> <span class="utility__hours mono">Office 7:00 AM - 6:00 PM</span></span>
+      <span class="utility__item">Licensed C-36 #784512 · Insured &amp; Bonded</span>
+    </div>
+    <a class="utility__phone" href="tel:+15624311960">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      (562) 431-1960
+    </a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="wrap header__row">
+    <a class="brand" href="#top"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3c-2.7 3.2-4.6 5.7-4.6 8A4.6 4.6 0 1 0 16.6 11C16.6 8.7 14.7 6.2 12 3z"/></svg></span><span>TIDEWELL <small>Plumbing Co.</small></span></a>
+    <nav class="nav">
+      <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#story">Our Story</a>
+      <a href="#work">Work</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="header__cta">
+      <a class="header__phone" href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (562) 431-1960</a>
+      <a class="btn btn--cta" href="#book">Book a visit</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel">
+    <div class="drawer__head"><span class="brand"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3c-2.7 3.2-4.6 5.7-4.6 8A4.6 4.6 0 1 0 16.6 11C16.6 8.7 14.7 6.2 12 3z"/></svg></span> TIDEWELL</span><button class="drawer__close" id="drawerClose" aria-label="Close">×</button></div>
+    <a class="drawer__link" href="#services">Services</a><a class="drawer__link" href="#pricing">Pricing</a>
+    <a class="drawer__link" href="#story">Our Story</a><a class="drawer__link" href="#work">Work</a>
+    <a class="drawer__link" href="#reviews">Reviews</a><a class="drawer__link" href="#faq">FAQ</a>
+    <div class="drawer__foot"><a class="btn btn--ghost" href="tel:+15624311960">Call (562) 431-1960</a><a class="btn btn--cta" href="#book">Book a visit</a></div>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO (full-bleed photo) -->
+<section class="hero" id="hero">
+  <div class="hero__media"><img src="assets/_img/68b26e5421ea.jpg" alt="TIDEWELL plumber on the job in San Diego" loading="eager" /></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__grain"></div>
+  <div class="hero__inner">
+    <p class="eyebrow eyebrow--center reveal">Family-owned · Licensed C-36 · San Diego since 1994</p>
+    <h1 class="hero__title reveal" style="transition-delay:.08s">When the water won't wait,<br/>you want <em>family</em> on the line.</h1>
+    <p class="hero__lead reveal" style="transition-delay:.16s">Burst pipe at midnight or a slow drain on a Sunday, a real master plumber answers, hands you a flat price before any work starts, and backs it with a 2-year warranty in writing.</p>
+    <div class="hero__cta reveal" style="transition-delay:.24s">
+      <a class="btn btn--cta btn--lg" href="#book">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--ghost-light btn--lg" href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call 24/7</a>
+    </div>
+    <ul class="hero__trust reveal" style="transition-delay:.3s">
+      <li><span class="stars">★★★★★</span> <strong>4.9</strong>&nbsp;/ 2,317 reviews</li>
+      <li><strong>30 yrs</strong>&nbsp;in San Diego</li>
+      <li><strong>~60 min</strong>&nbsp;emergency arrival</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DOCKED SERVICE STRIP -->
+<div class="svcdock reveal">
+  <div class="svcdock__inner">
+    <a class="svcdock__item" href="#services">
+      <span class="svcdock__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h6l2 3h10"/><path d="M3 7v10a2 2 0 0 0 2 2h14"/><circle cx="17" cy="13" r="2.5"/></svg></span>
+      <span><span class="svcdock__t">Drain &amp; Sewer</span><span class="svcdock__s">Hydro-jet · camera · roots</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="svcdock__item" href="#services">
+      <span class="svcdock__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M9 8h6M12 12v5"/></svg></span>
+      <span><span class="svcdock__t">Water Heaters</span><span class="svcdock__s">Tank &amp; tankless · same-day</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="svcdock__item" href="#book">
+      <span class="svcdock__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg></span>
+      <span><span class="svcdock__t">24/7 Emergency</span><span class="svcdock__s">Burst pipe · backups · no-heat</span></span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- ZIP -->
+<section class="zipband" id="area">
+  <div class="wrap zipband__inner">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow__tick"></span> Do we cover your block?</p>
+      <h2 style="margin-top:16px">Type your ZIP. We'll tell<br/>you <em>straight</em>.</h2>
+      <form class="zipform" id="zipForm" novalidate>
+        <input id="zip" name="zip" inputmode="numeric" maxlength="5" placeholder="Enter your ZIP code" aria-label="ZIP code" />
+        <button type="submit">Check coverage</button>
+      </form>
+      <p class="zip-result" id="zipResult" role="status" aria-live="polite"></p>
+    </div>
+    <div class="reveal" style="transition-delay:.1s">
+      <p class="lead">Same-day across the county. Crews based in Midtown, North Park &amp; Chula Vista, no &ldquo;we'll get to you next week.&rdquo;</p>
+      <div class="ziparea"><span>San Diego</span><span>La Jolla</span><span>Chula Vista</span><span>Coronado</span><span>El Cajon</span><span>Encinitas</span><span>Carlsbad</span><span>Oceanside</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES feature-showcase -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="shead--left reveal">
+      <div><p class="eyebrow"><span class="eyebrow__tick"></span> What we fix</p><h2 style="margin-top:16px;font-size:clamp(32px,4.6vw,58px)">From a drip to a <em style="color:var(--clay)">disaster</em>.</h2></div>
+      <p>Six specialties, one crew. Whatever's wrong, the plumber who shows up has done it a thousand times, and tells you the price before the wrench comes out.</p>
+    </div>
+    <div class="svcfeat reveal">
+      <ul class="svcfeat__list" id="svcList">
+        <li class="svcfeat__item is-active" data-i="0"><div class="svcfeat__row"><span class="svcfeat__num">01</span><span class="svcfeat__name">Drain &amp; Sewer</span></div><div class="svcfeat__desc"><p>Hydro-jetting, camera inspection and root removal that actually clears the line, not a snake that buys you a week.</p><div class="tags"><span>Hydro-jet</span><span>Camera scope</span><span>Root cutting</span></div></div></li>
+        <li class="svcfeat__item" data-i="1"><div class="svcfeat__row"><span class="svcfeat__num">02</span><span class="svcfeat__name">Water Heaters</span></div><div class="svcfeat__desc"><p>Same-day tank swaps and tankless installs. Sized right, vented right, and code-stamped so it passes the first time.</p><div class="tags"><span>Tankless</span><span>Same-day</span><span>Code-stamped</span></div></div></li>
+        <li class="svcfeat__item" data-i="2"><div class="svcfeat__row"><span class="svcfeat__num">03</span><span class="svcfeat__name">Whole-Home Repipe</span></div><div class="svcfeat__desc"><p>PEX &amp; copper repipes routed through walls and attics, minimal demo, dust contained, water back on the same day.</p><div class="tags"><span>PEX</span><span>Copper</span><span>Low-demo</span></div></div></li>
+        <li class="svcfeat__item" data-i="3"><div class="svcfeat__row"><span class="svcfeat__num">04</span><span class="svcfeat__name">Leak &amp; Slab Detection</span></div><div class="svcfeat__desc"><p>Acoustic and thermal location finds the leak to the inch, so we open one tile, not your whole floor.</p><div class="tags"><span>Acoustic</span><span>Thermal</span><span>No guess-cut</span></div></div></li>
+        <li class="svcfeat__item" data-i="4"><div class="svcfeat__row"><span class="svcfeat__num">05</span><span class="svcfeat__name">Faucets &amp; Fixtures</span></div><div class="svcfeat__desc"><p>Sinks, toilets, garbage disposals, hose bibs and pressure-balance valves, clean installs, no drips left behind.</p><div class="tags"><span>Fixtures</span><span>Disposals</span><span>Valves</span></div></div></li>
+        <li class="svcfeat__item" data-i="5"><div class="svcfeat__row"><span class="svcfeat__num">06</span><span class="svcfeat__name">24/7 Emergency</span></div><div class="svcfeat__desc"><p>Burst pipe, no hot water, sewage backup, crews rolling around the clock, on-site within 60-90 minutes.</p><div class="tags"><span>Burst pipe</span><span>Backups</span><span>No-heat</span></div></div></li>
+      </ul>
+      <div class="svcfeat__media">
+        <div class="svcfeat__frame" id="svcFrame">
+          <span class="svcfeat__badge" id="svcBadge">01 &middot; Drain &amp; Sewer</span>
+          <img class="is-show" src="assets/_img/8c3c7d1394aa.jpg" alt="Drain & sewer" />
+          <img src="assets/_img/6a681a41a4c0.jpg" alt="Water heaters" />
+          <img src="assets/_img/75c40d2bb640.jpg" alt="Whole-home repipe" />
+          <img src="assets/_img/f2748317e2bd.jpg" alt="Leak detection" />
+          <img src="assets/_img/cd372db01f38.jpg" alt="Faucets & fixtures" />
+          <img src="assets/_img/ebe28a7d1114.jpg" alt="24/7 emergency" />
+        </div>
+        <div class="svcfeat__cap">
+          <b id="svcCapName">Drain &amp; Sewer</b>
+          <a class="btn btn--ink" href="#book" style="padding:10px 18px;font-size:13.5px">Book this →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="shead reveal">
+      <p class="eyebrow eyebrow--center">Up-front pricing</p>
+      <h2>What the common jobs <em>start at</em>.</h2>
+      <p>Flat-rate quotes, given before we start. The number we say is the number you pay, no &ldquo;came up while we were in there&rdquo; surprises.</p>
+    </div>
+    <div class="pricestrip reveal">
+      <div class="pcell">
+        <div class="pcell__top"><span class="pcell__name">Drain Clearing</span><span class="pcell__num">01</span></div>
+        <ul class="pcell__list"><li>Main line cleared <b>$89</b></li><li>Kitchen / lateral <b>$119</b></li><li>Hydro-jet + camera <b>$349</b></li></ul>
+        <div class="pcell__from"><span>from</span><strong>$89</strong></div>
+      </div>
+      <div class="pcell">
+        <div class="pcell__top"><span class="pcell__name">Slab Leak Detection</span><span class="pcell__num">02</span></div>
+        <ul class="pcell__list"><li>Acoustic locate <b>$325</b></li><li>+ Thermal imaging <b>$95</b></li><li>Written report <b>incl.</b></li></ul>
+        <div class="pcell__from"><span>from</span><strong>$325</strong></div>
+      </div>
+      <div class="pcell">
+        <div class="pcell__top"><span class="pcell__name">Water Heater · Tank</span><span class="pcell__num">03</span></div>
+        <ul class="pcell__list"><li>40-50 gal install <b>$1,450</b></li><li>Haul-away + permit <b>incl.</b></li><li>Code venting <b>incl.</b></li></ul>
+        <div class="pcell__from"><span>from</span><strong>$1,450</strong></div>
+      </div>
+      <div class="pcell">
+        <div class="pcell__top"><span class="pcell__name">Tankless Install</span><span class="pcell__num">04</span></div>
+        <ul class="pcell__list"><li>Unit + install <b>$3,200</b></li><li>Gas-line sizing <b>incl.</b></li><li>Warranty reg. <b>incl.</b></li></ul>
+        <div class="pcell__from"><span>from</span><strong>$3,200</strong></div>
+      </div>
+      <div class="pcell">
+        <div class="pcell__top"><span class="pcell__name">Whole-Home Repipe</span><span class="pcell__num">05</span></div>
+        <ul class="pcell__list"><li>PEX repipe <b>$4,900</b></li><li>Pressure-tested <b>incl.</b></li><li>Patch-ready <b>incl.</b></li></ul>
+        <div class="pcell__from"><span>from</span><strong>$4,900</strong></div>
+      </div>
+      <div class="pcell">
+        <div class="pcell__top"><span class="pcell__name">Faucet / Fixture</span><span class="pcell__num">06</span></div>
+        <ul class="pcell__list"><li>Faucet swap <b>$149</b></li><li>Toilet install <b>$189</b></li><li>Disposal <b>$219</b></li></ul>
+        <div class="pcell__from"><span>from</span><strong>$149</strong></div>
+      </div>
+    </div>
+    <p class="price__note reveal">Emergency diagnostics from <b>$49</b>, credited to the job when you book the repair. <b>Financing available</b> · 0% APR for 12 months OAC.</p>
+  </div>
+</section>
+
+<!-- STORY + STATS -->
+<section class="section story" id="story">
+  <div class="wrap story__inner">
+    <div class="reveal">
+      <div class="story__photo"><span class="story__tape"></span><img src="assets/_img/1f7d3ef4f3e6.jpg" alt="The Tidewell crew" loading="lazy" /></div>
+      <p class="story__sig">Ray &amp; Nora Tidwell, founders<span>Second-generation family plumbers</span></p>
+    </div>
+    <div class="reveal" style="transition-delay:.08s">
+      <p class="eyebrow"><span class="eyebrow__tick"></span> Why neighbors call us first</p>
+      <h2 style="margin-top:16px">Ray started it in '94.<br/>The family still <em>answers</em>.</h2>
+      <p class="lead" style="margin-top:22px">Two trucks and a promise: tell people the price first, do the job right, and treat their home like it's our mother's. Thirty years later we run eight crews across San Diego County, and that promise hasn't moved an inch.</p>
+      <p class="lead" style="margin-top:16px">No call centers, no commission-chasing upsells, no &ldquo;the tech will quote you on arrival.&rdquo; Just licensed master plumbers who've seen your problem before.</p>
+      <div class="stats">
+        <div class="stat reveal"><span class="stat__num"><span class="count" data-to="30">0</span></span><div class="stat__label">Years serving SD</div></div>
+        <div class="stat reveal" style="transition-delay:.06s"><span class="stat__num"><span class="count" data-to="41200">0</span></span><div class="stat__label">Jobs completed</div></div>
+        <div class="stat reveal" style="transition-delay:.12s"><span class="stat__num"><span class="count" data-to="4.9" data-dec="1">0</span></span><div class="stat__stars">★★★★★</div><div class="stat__label">Average rating</div></div>
+        <div class="stat reveal" style="transition-delay:.18s"><span class="stat__num"><span class="count" data-to="2317">0</span></span><div class="stat__label">Verified reviews</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process">
+  <div class="wrap">
+    <div class="shead reveal"><p class="eyebrow eyebrow--center eyebrow--light">How a visit works</p><h2>No mystery. No <em>meter running</em>.</h2></div>
+    <div class="proc__grid reveal">
+      <div class="pstep"><span class="pstep__num">01</span><h3>Call or book</h3><p>A real person answers, day, night, weekend. Tell us what's wrong; we'll tell you when we can be there.</p></div>
+      <div class="pstep"><span class="pstep__num">02</span><h3>Upfront quote</h3><p>We diagnose, then hand you a flat price in writing. You approve before a single tool comes out of the truck.</p></div>
+      <div class="pstep"><span class="pstep__num">03</span><h3>We fix it right</h3><p>A licensed master plumber does the work, shoe covers on, mats down, your home cleaner than we found it.</p></div>
+      <div class="pstep"><span class="pstep__num">04</span><h3>Warranty in writing</h3><p>2-year labor warranty plus full manufacturer coverage on parts. One number to call if anything's off.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="shead--left reveal">
+      <div><p class="eyebrow"><span class="eyebrow__tick"></span> Our work</p><h2 style="margin-top:16px;font-size:clamp(32px,4.6vw,58px)">Real jobs, real homes.<br/>No <em style="color:var(--clay)">stock photos</em>.</h2></div>
+      <p>A few from the last month around the county, repipes, heater swaps, and the kind of clean copper work we're happy to put our name on.</p>
+    </div>
+    <div class="work__grid reveal">
+      <figure class="wtile wtile--big"><span class="wtile__tag">Repipe</span><img src="assets/_img/186e1f1c2470.jpg" alt="Copper repipe" loading="lazy" /><figcaption class="wtile__cap"><b>Whole-home repipe</b><small>La Jolla · PEX + copper</small></figcaption></figure>
+      <figure class="wtile"><span class="wtile__tag">Heater</span><img src="assets/_img/f7d2de958fcd.jpg" alt="Tankless install" loading="lazy" /><figcaption class="wtile__cap"><b>Tankless install</b><small>Encinitas</small></figcaption></figure>
+      <figure class="wtile"><span class="wtile__tag">Fixture</span><img src="assets/_img/bb12d03e50f3.jpg" alt="Fixture upgrade" loading="lazy" /><figcaption class="wtile__cap"><b>Fixture upgrade</b><small>Coronado</small></figcaption></figure>
+      <figure class="wtile"><span class="wtile__tag">Valves</span><img src="assets/_img/69593a5d6c63.jpg" alt="Main shut-off" loading="lazy" /><figcaption class="wtile__cap"><b>Main shut-off rebuild</b><small>Chula Vista</small></figcaption></figure>
+      <figure class="wtile"><span class="wtile__tag">Slab leak</span><img src="assets/_img/6469472ffad8.jpg" alt="Slab leak repair" loading="lazy" /><figcaption class="wtile__cap"><b>Slab leak repair</b><small>Carlsbad</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS note wall -->
+<section class="section reviews" id="reviews">
+  <div class="wrap">
+    <div class="shead reveal"><p class="eyebrow eyebrow--center">Straight from the neighborhood</p><h2>2,317 neighbors. <em>4.9 stars</em>.</h2><p>Verified Google &amp; Yelp reviews, zero call centers, zero scripts.</p></div>
+    <div class="notewall reveal">
+      <article class="note"><span class="note__tape"></span><div class="note__stars">★★★★★</div><p class="note__quote">&ldquo;Burst pipe at 11pm and a real plumber actually answered. He was at my La Jolla place in 40 minutes and quoted me before he touched anything.&rdquo;</p><div class="note__who"><div class="note__av">M</div><div><div class="note__name">Marisa O.</div><div class="note__loc">La Jolla · Verified</div></div></div></article>
+      <article class="note"><span class="note__tape"></span><div class="note__stars">★★★★★</div><p class="note__quote">&ldquo;They found a slab leak two other companies completely missed, and didn't jackhammer the whole floor to do it. Just the one spot. Unreal.&rdquo;</p><div class="note__who"><div class="note__av">D</div><div><div class="note__name">Devin R.</div><div class="note__loc">Chula Vista · Verified</div></div></div></article>
+      <article class="note"><span class="note__tape"></span><div class="note__stars">★★★★★</div><p class="note__quote">&ldquo;Tankless install came in exactly at the quote. Crew laid down mats, cleaned up after themselves, and walked me through the warranty paperwork.&rdquo;</p><div class="note__who"><div class="note__av">P</div><div><div class="note__name">Priya N.</div><div class="note__loc">Encinitas · Verified</div></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="section fin" id="financing">
+  <div class="wrap fin__inner">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow__tick"></span> Financing</p>
+      <h2 style="margin-top:16px">A broken main shouldn't<br/>wait for <em>payday</em>.</h2>
+      <p class="lead" style="margin-top:22px">Big repair, bad timing. It happens. Spread it over time with a plan that won't bite you, approved in minutes right at the kitchen table. No prepayment penalty, ever.</p>
+      <a class="btn btn--cta btn--lg" href="#book" style="margin-top:28px">Check if you qualify <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="fin__card reveal" style="transition-delay:.1s">
+      <div class="fin__apr">0%<small>APR</small></div>
+      <div style="font-weight:700;font-size:18px;margin-top:8px;color:#fff">for 12 months on approved credit</div>
+      <ul class="fin__terms">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Decision in minutes, on-site</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> No prepayment penalty</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Longer terms for repipes &amp; heaters</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="wrap faq__inner">
+    <div class="reveal">
+      <p class="eyebrow"><span class="eyebrow__tick"></span> Good questions</p>
+      <h2 style="margin-top:16px">Answers before you<br/><em>pick up the phone</em>.</h2>
+      <p class="lead" style="margin-top:18px">Still wondering something? Call <a href="tel:+15624311960" style="color:var(--clay-deep);font-weight:700;border-bottom:2px solid var(--clay)">(562) 431-1960</a>, a real person answers.</p>
+    </div>
+    <div class="faq__list reveal" style="transition-delay:.08s">
+      <div class="faq__item"><button class="faq__q" aria-expanded="false">Are you licensed and insured?<span class="faq__icon"></span></button><div class="faq__a"><p>Yes. California C-36 plumbing contractor license #784512, fully insured and bonded. We'll show you the paperwork before any work starts, and every plumber on our trucks is a licensed journeyman or master.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false">Do you charge for estimates?<span class="faq__icon"></span></button><div class="faq__a"><p>Scheduled, non-emergency quotes are free. Emergency diagnostics run from $49, credited straight back to the job the moment you approve the repair. You'll always see a flat price in writing before we begin.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false">How fast can you get here in an emergency?<span class="faq__icon"></span></button><div class="faq__a"><p>We run 24/7 crews across San Diego County and are typically on-site within 60-90 minutes, often faster in the city core. Call (562) 431-1960 and a dispatcher gives you a real arrival window.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false">Do you offer financing?<span class="faq__icon"></span></button><div class="faq__a"><p>Yes. 0% APR for 12 months on approved credit, with longer terms available for repipes and water-heater installs. Applications take a few minutes and are decided on-site, no prepayment penalty.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false">What's covered by your warranty?<span class="faq__icon"></span></button><div class="faq__a"><p>Every job carries a 2-year labor warranty from us, plus the full manufacturer warranty on parts and equipment. One number to call, and we make it right, no fine-print runaround.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false">Do you work weekends and holidays?<span class="faq__icon"></span></button><div class="faq__a"><p>We do, at the same rates. No weekend surcharge, no holiday markup. Plumbing emergencies don't keep business hours, so neither do we.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section book" id="book">
+  <div class="wrap book__inner">
+    <div class="reveal">
+      <p class="eyebrow eyebrow--light"><span class="eyebrow__tick"></span> Book your visit</p>
+      <h2 style="margin-top:16px">Tell us what's <em>leaking</em>.<br/>We'll handle the rest.</h2>
+      <a class="book__phone" href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (562) 431-1960</a>
+      <ul class="book__list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Flat price in writing before we start</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Licensed master plumber on every job</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 2-year warranty &amp; same-day emergency</li>
+      </ul>
+    </div>
+    <form class="form reveal" id="bookForm" style="transition-delay:.1s" novalidate>
+      <h3>Request your visit</h3>
+      <p class="sub">We'll call within 15 minutes during office hours.</p>
+      <div class="field field--row">
+        <div><label for="bname">Name</label><input id="bname" name="name" placeholder="Jordan Avery" required /></div>
+        <div><label for="bphone">Phone</label><input id="bphone" name="phone" inputmode="tel" placeholder="(XXX) XXX-XXXX" required /></div>
+      </div>
+      <div class="field field--row">
+        <div><label for="bzip">ZIP</label><input id="bzip" name="zip" inputmode="numeric" maxlength="5" placeholder="92101" required /></div>
+        <div><label for="bservice">Service needed</label><select id="bservice" name="service"><option value="">Choose one...</option><option>Emergency, need someone now</option><option>Drain &amp; sewer</option><option>Water heater</option><option>Whole-home repipe</option><option>Leak / slab detection</option><option>Faucet / fixture</option><option>Something else</option></select></div>
+      </div>
+      <div class="field">
+        <label for="baddr">Service address</label>
+        <div class="addr-row">
+          <input id="baddr" name="address" placeholder="Street, city" />
+          <button type="button" class="btn btn--cta" id="useMapBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Use map</button>
+        </div>
+        <p class="field-hint">Tap <b>Use map</b> to drop a pin on your exact spot, we'll fill the address for you.</p>
+      </div>
+      <div class="field"><label for="bmsg">What's happening?</label><textarea id="bmsg" name="message" placeholder="Kitchen sink backing up since this morning..."></textarea></div>
+      <button class="btn btn--cta btn--lg" type="submit" style="width:100%">Request my visit</button>
+      <p class="form__msg" id="formMsg"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__brand"><span class="brand__mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3c-2.7 3.2-4.6 5.7-4.6 8A4.6 4.6 0 1 0 16.6 11C16.6 8.7 14.7 6.2 12 3z"/></svg></span> TIDEWELL</div>
+        <p class="fdesc">Family-owned master plumbers serving San Diego County since 1994. Upfront pricing, real warranties, and a real person on the phone, around the clock.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Drain &amp; Sewer</a></li><li><a href="#services">Water Heaters</a></li><li><a href="#services">Whole-Home Repipe</a></li><li><a href="#services">Leak Detection</a></li><li><a href="#services">24/7 Emergency</a></li></ul></div>
+      <div><h4>Areas Served</h4><ul><li><a href="#area">San Diego</a></li><li><a href="#area">La Jolla</a></li><li><a href="#area">Chula Vista</a></li><li><a href="#area">Coronado</a></li><li><a href="#area">Encinitas &amp; North County</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#story">Our Story</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#book">Book a Visit</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span class="lic">© <span id="year">2026</span> TIDEWELL Plumbing Co. · CA License <b>C-36 #784512</b> · Insured &amp; Bonded</span>
+      <span class="lic">2480 Kettner Blvd, San Diego, CA 92101 · <a href="tel:+15624311960" style="color:#fff;font-weight:700">(562) 431-1960</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- MAP PICKER MODAL -->
+<div class="mapmodal" id="mapModal" aria-hidden="true" role="dialog" aria-label="Drop a pin on your address">
+  <div class="mapmodal__panel">
+    <div class="mapmodal__head">
+      <h4>Drop a pin on your spot</h4>
+      <button class="mapmodal__close" id="mapClose" aria-label="Close map">×</button>
+    </div>
+    <div id="bookMap"></div>
+    <div class="mapmodal__foot">
+      <p class="mapmodal__addr" id="mapAddr">Drag the pin or tap the map to set your service address.</p>
+      <div class="mapmodal__btns">
+        <button type="button" class="btn btn--ghost" id="mapLocate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg> My current location</button>
+        <button type="button" class="btn btn--cta" id="mapConfirm">Use this address</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" onerror="var s=document.createElement('script');s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';document.head.appendChild(s);"></script>
+<script>
+(function(){
+  "use strict";
+  var header=document.getElementById('header');
+  var onScroll=function(){header.classList.toggle('is-stuck',window.scrollY>8);};onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var drawer=document.getElementById('drawer');
+  var open=function(){drawer.classList.add('is-open');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';};
+  var close=function(){drawer.classList.remove('is-open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+  document.getElementById('menuToggle').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  drawer.addEventListener('click',function(e){if(e.target===drawer)close();});
+  Array.prototype.forEach.call(drawer.querySelectorAll('a'),function(a){a.addEventListener('click',close);});
+
+  var revealEls=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -7% 0px'});
+    revealEls.forEach(function(el){io.observe(el);});
+  } else { revealEls.forEach(function(el){el.classList.add('in');}); }
+
+  var counted=false;
+  var runCounts=function(){if(counted)return;counted=true;
+    document.querySelectorAll('.count').forEach(function(el){
+      var to=parseFloat(el.getAttribute('data-to')),dec=parseInt(el.getAttribute('data-dec')||'0',10),dur=1500,start=null;
+      var step=function(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1),eased=1-Math.pow(1-p,3),val=to*eased;
+        el.textContent=dec?val.toFixed(dec):Math.floor(val).toLocaleString('en-US');
+        if(p<1)requestAnimationFrame(step);else el.textContent=dec?to.toFixed(dec):to.toLocaleString('en-US');};
+      requestAnimationFrame(step);});};
+  var statsBand=document.querySelector('.stats');
+  if(statsBand&&'IntersectionObserver' in window){var sio=new IntersectionObserver(function(e){if(e[0].isIntersecting){runCounts();sio.disconnect();}},{threshold:0.4});sio.observe(statsBand);}else{runCounts();}
+
+  /* services feature showcase */
+  var svcItems=[].slice.call(document.querySelectorAll('.svcfeat__item'));
+  var svcImgs=[].slice.call(document.querySelectorAll('#svcFrame img'));
+  var svcBadge=document.getElementById('svcBadge');
+  var svcCapName=document.getElementById('svcCapName');
+  var svcNums=['01','02','03','04','05','06'];
+  var setSvc=function(i){
+    svcItems.forEach(function(it,k){it.classList.toggle('is-active',k===i);});
+    svcImgs.forEach(function(im,k){im.classList.toggle('is-show',k===i);});
+    var name=svcItems[i].querySelector('.svcfeat__name').textContent;
+    if(svcBadge)svcBadge.innerHTML=svcNums[i]+' \u00b7 '+name;
+    if(svcCapName)svcCapName.textContent=name;
+  };
+  svcItems.forEach(function(it,i){
+    it.addEventListener('click',function(){setSvc(i);});
+    it.addEventListener('mouseenter',function(){setSvc(i);});
+  });
+
+  /* ZIP */
+  var covered={'92101':'San Diego','92103':'Mission Hills','92104':'North Park','92106':'Point Loma','92107':'Ocean Beach','92108':'Mission Valley','92109':'Pacific Beach','92110':'Old Town','92111':'Linda Vista','92116':'Normal Heights','92117':'Clairemont','92118':'Coronado','92121':'Sorrento Valley','92122':'University City','92123':'Serra Mesa','92024':'Encinitas','92008':'Carlsbad','92054':'Oceanside','92019':'El Cajon','92037':'La Jolla','91910':'Chula Vista','91911':'Chula Vista','91913':'Chula Vista','91950':'National City'};
+  var zForm=document.getElementById('zipForm'),zRes=document.getElementById('zipResult');
+  if(zForm){zForm.addEventListener('submit',function(e){e.preventDefault();
+    var z=(document.getElementById('zip').value||'').trim();zRes.className='zip-result';
+    if(!/^\d{5}$/.test(z)){zRes.classList.add('no');zRes.textContent='Enter a 5-digit ZIP and we\'ll check it.';return;}
+    if(covered[z]){zRes.classList.add('ok');zRes.textContent='✓ Yes, we cover '+covered[z]+' ('+z+'). Same-day slots usually open.';}
+    else{zRes.classList.add('no');zRes.textContent='We\'re mostly San Diego County, call (562) 431-1960 and we\'ll tell you straight if we can reach '+z+'.';}});}
+
+  /* FAQ */
+  document.querySelectorAll('.faq__item').forEach(function(item){
+    var q=item.querySelector('.faq__q'),a=item.querySelector('.faq__a');
+    q.addEventListener('click',function(){
+      var isOpen=item.classList.contains('is-open');
+      document.querySelectorAll('.faq__item.is-open').forEach(function(o){if(o!==item){o.classList.remove('is-open');o.querySelector('.faq__a').style.maxHeight=null;o.querySelector('.faq__q').setAttribute('aria-expanded','false');}});
+      if(isOpen){item.classList.remove('is-open');a.style.maxHeight=null;q.setAttribute('aria-expanded','false');}
+      else{item.classList.add('is-open');a.style.maxHeight=a.scrollHeight+'px';q.setAttribute('aria-expanded','true');}});});
+
+  /* booking */
+  var bForm=document.getElementById('bookForm'),msg=document.getElementById('formMsg');
+  if(bForm){bForm.addEventListener('submit',function(e){e.preventDefault();
+    var name=document.getElementById('bname').value.trim(),phone=document.getElementById('bphone').value.trim(),addr=document.getElementById('baddr').value.trim();
+    if(!name||!phone){msg.style.color='#85664a';msg.textContent='Add your name and phone and we\'ll call you right back.';return;}
+    window.location.href='mailto:hello@tidewellplumbing.com?subject='+encodeURIComponent('Booking request — TIDEWELL Plumbing')+'&body='+encodeURIComponent('Name: '+name+'\nPhone: '+phone+'\nAddress: '+addr);
+    msg.style.color='var(--clay-deep)';msg.textContent='Got it, '+name.split(' ')[0]+'. A dispatcher will call '+phone+' shortly'+(addr?(' about '+addr.split(',')[0]):'')+'. For an emergency, call (562) 431-1960 now.';bForm.reset();});}
+
+  /* map address picker (Leaflet + OpenStreetMap + Nominatim, all free, no API key) */
+  var mapModal=document.getElementById('mapModal'),useMapBtn=document.getElementById('useMapBtn'),addrInput=document.getElementById('baddr');
+  var mapAddrEl=document.getElementById('mapAddr'),lmap=null,lmarker=null,picked=null;
+  var SD=[32.7157,-117.1611];
+  var defAddrText='Drag the pin or tap the map to set your service address.';
+  var setPicked=function(text,lat,lng){picked={text:text,lat:lat,lng:lng};mapAddrEl.innerHTML=text?('<b>'+text+'</b>'):defAddrText;};
+  var reverse=function(lat,lng){
+    mapAddrEl.textContent='Finding address…';
+    fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=18&addressdetails=1&lat='+lat+'&lon='+lng,{headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json();})
+      .then(function(d){setPicked((d&&d.display_name)?d.display_name:(lat.toFixed(5)+', '+lng.toFixed(5)),lat,lng);})
+      .catch(function(){setPicked(lat.toFixed(5)+', '+lng.toFixed(5),lat,lng);});
+  };
+  var placeMarker=function(lat,lng){
+    if(!lmarker){lmarker=L.marker([lat,lng],{draggable:true}).addTo(lmap);
+      lmarker.on('dragend',function(ev){var p=ev.target.getLatLng();reverse(p.lat,p.lng);});
+    } else { lmarker.setLatLng([lat,lng]); }
+  };
+  var initMap=function(){
+    if(lmap||typeof L==='undefined')return;
+    lmap=L.map('bookMap',{scrollWheelZoom:true}).setView(SD,12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(lmap);
+    lmap.on('click',function(ev){placeMarker(ev.latlng.lat,ev.latlng.lng);reverse(ev.latlng.lat,ev.latlng.lng);});
+  };
+  var openMap=function(){
+    if(typeof L==='undefined'){addrInput.focus();return;}
+    mapModal.classList.add('is-open');mapModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    setTimeout(function(){initMap();if(lmap)lmap.invalidateSize();},90);
+    setTimeout(function(){if(lmap)lmap.invalidateSize();},360);
+  };
+  var closeMap=function(){mapModal.classList.remove('is-open');mapModal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+  if(useMapBtn)useMapBtn.addEventListener('click',openMap);
+  var mClose=document.getElementById('mapClose');if(mClose)mClose.addEventListener('click',closeMap);
+  if(mapModal)mapModal.addEventListener('click',function(e){if(e.target===mapModal)closeMap();});
+  var mLoc=document.getElementById('mapLocate');
+  if(mLoc)mLoc.addEventListener('click',function(){
+    if(!navigator.geolocation){mapAddrEl.textContent='Location not available. Tap the map to drop a pin.';return;}
+    mapAddrEl.textContent='Locating you…';
+    navigator.geolocation.getCurrentPosition(function(pos){var la=pos.coords.latitude,lo=pos.coords.longitude;if(lmap)lmap.setView([la,lo],17);placeMarker(la,lo);reverse(la,lo);},
+      function(){mapAddrEl.textContent='Could not get your location. Tap the map to drop a pin.';},{enableHighAccuracy:true,timeout:8000});
+  });
+  var mConf=document.getElementById('mapConfirm');
+  if(mConf)mConf.addEventListener('click',function(){if(picked&&picked.text){addrInput.value=picked.text;addrInput.focus();}closeMap();});
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+
+<!-- pf-chatbot:start -->
+<script>window.CHATBOT_KB={"name": "TIDEWELL Plumbing Co.", "accent": "#784512", "mode": "business", "intro": "Hi! I'm the TIDEWELL Plumbing Co. assistant. Ask about our services, area, pricing, hours or booking — or about this site's design (colors, buttons, fonts).", "suggestions": ["Services", "Service area", "Pricing", "Contact", "Design & buttons"], "qa": [{"k": ["design", "style", "aesthetic", "look", "feel", "vibe", "theme"], "a": "TIDEWELL Plumbing Co. — Plumbing · San Diego. Style: Hero (ZIP) → Service range → Common-job pricing → Story (since '94) → Transparent pricing → Real-jobs gallery → Reviews (4.9★) → Emergency CTA → Booking form ⎇ → Footer. Palette: muted #7c766c, line #e1dacb. Typography: Satoshi, Fraunces."}, {"k": ["color", "colour", "palette", "hex", "accent", "brand color"], "a": "Palette — muted #7c766c, line #e1dacb. The primary accent is #784512."}, {"k": ["button", "btn", "cta", "call to action"], "a": "Buttons are sharp, near-square, padding 14px 26px."}, {"k": ["font", "type", "typography", "typeface", "headline font"], "a": "Typefaces: Satoshi, Fraunces."}, {"k": ["layout", "section", "structure", "flow", "page", "wireframe"], "a": "Page flow: Hero (ZIP) → Service range → Common-job pricing → Story (since '94) → Transparent pricing → Real-jobs gallery → Reviews (4.9★) → Emergency CTA → Booking form ⎇ → Footer."}, {"k": ["tech", "stack", "built", "build", "framework", "made", "code", "recreate", "rebuild", "library", "how do i build", "how to build", "how should i build"], "a": "Built with hand-written HTML/CSS/JS. To recreate it: type in Satoshi, Fraunces, accent #784512 over your background, sharp, near-square buttons, and structure it as — Hero (ZIP) → Service range → Common-job pricing → Story (since '94) → Transparent pricing → Real-jobs gallery → Reviews (4.9★) → Emergency CTA → Booking form ⎇ → Footer."}, {"k": ["service", "services", "offer", "do you", "what do you do", "help with", "fix", "repair", "install"], "a": "What we cover: Type your ZIP. We'll tellyou straight.; From a drip to a disaster.; What the common jobs start at.; Ray started it in '94.The family still answers.; No mystery. No meter running.; Real jobs, real homes.No stock photos.."}, {"k": ["area", "location", "where", "serve", "service area", "near me", "city", "local", "cover"], "a": "We serve San Diego County, and we're based at 2480 Kettner Blvd."}, {"k": ["contact", "phone", "call", "reach", "email", "number", "get in touch"], "a": "You can call +15624311960."}, {"k": ["book", "appointment", "schedule", "quote", "estimate", "booking", "get started", "request"], "a": "Book by calling +15624311960 — tell us the issue and your address and we'll lock a time."}, {"k": ["hour", "open", "emergency", "24", "available", "when"], "a": "We offer 24/7 / emergency response — call any time."}, {"k": ["price", "pricing", "cost", "how much", "rate", "fee", "afford", "financing"], "a": "Pricing depends on the job. We give upfront quotes before any work — request an estimate and we'll price it honestly."}, {"k": ["about", "who", "story", "experience", "trust", "why you", "reviews", "rating"], "a": "TIDEWELL Plumbing Co. Licensed C-36 master plumbers in San Diego. Drain & sewer, water heaters, repipes, slab-leak detection. Upfront flat pricing, 2-year warranty, 24/7 emergency crews."}], "fallback": "I can talk about this site's design (colors, buttons, fonts, layout, tech) and the brand (services, area, pricing, hours, booking). Try a chip below."};</script>
+
+<style>
+#pfbot-root{--pfa:#784512;position:fixed;right:20px;bottom:20px;z-index:2147483000;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+#pfbot-launch{width:58px;height:58px;border:0;border-radius:50%;background:var(--pfa);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);display:grid;place-items:center;transition:transform .15s}
+#pfbot-launch:hover{transform:scale(1.06)}
+#pfbot-launch svg{width:26px;height:26px}
+#pfbot-panel{position:absolute;right:0;bottom:72px;width:350px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 110px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#pfbot-root[data-open="true"] #pfbot-panel{display:flex}
+#pfbot-head{background:var(--pfa);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+#pfbot-head .t{font-weight:700;font-size:15px;line-height:1.1}
+#pfbot-head .s{font-size:11px;opacity:.85}
+#pfbot-head .av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:17px}
+#pfbot-x{margin-left:auto;background:0;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.85;line-height:1}
+#pfbot-log{flex:1;overflow-y:auto;padding:14px;background:#f6f7f9;display:flex;flex-direction:column;gap:10px}
+.pfb{max-width:84%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.pfb.bot{background:#fff;color:#1d2430;border:1px solid #e7e9ee;border-bottom-left-radius:4px;align-self:flex-start}
+.pfb.me{background:var(--pfa);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.pfb.typing{color:#8a93a3;font-style:italic}
+#pfbot-chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;background:#fff;border-top:1px solid #eef0f3}
+.pfchip{border:1px solid var(--pfa);color:var(--pfa);background:#fff;border-radius:999px;padding:6px 11px;font-size:12px;cursor:pointer;transition:.12s}
+.pfchip:hover{background:var(--pfa);color:#fff}
+#pfbot-form{display:flex;gap:8px;padding:11px;border-top:1px solid #eef0f3;background:#fff}
+#pfbot-input{flex:1;border:1px solid #d8dce3;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:0}
+#pfbot-input:focus{border-color:var(--pfa)}
+#pfbot-send{border:0;background:var(--pfa);color:#fff;border-radius:10px;padding:0 15px;cursor:pointer;font-size:14px}
+@media(max-width:430px){#pfbot-panel{width:calc(100vw - 24px);right:-2px}}
+</style>
+<script>
+(function(){
+ var KB=window.CHATBOT_KB; if(!KB||document.getElementById('pfbot-root'))return;
+ var root=document.createElement('div'); root.id='pfbot-root';
+ root.innerHTML=
+  '<button id="pfbot-launch" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l2-5.3A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg></button>'+
+  '<div id="pfbot-panel" role="dialog" aria-label="Site assistant">'+
+   '<div id="pfbot-head"><div class="av">✨</div><div><div class="t"></div><div class="s">AI assistant · ask me anything</div></div><button id="pfbot-x" aria-label="Close">×</button></div>'+
+   '<div id="pfbot-log"></div><div id="pfbot-chips"></div>'+
+   '<form id="pfbot-form"><input id="pfbot-input" autocomplete="off" placeholder="Type your question…"/><button id="pfbot-send">➤</button></form>'+
+  '</div>';
+ document.body.appendChild(root);
+ root.style.setProperty('--pfa', KB.accent||'#1a9fcf');
+ root.querySelector('#pfbot-head .t').textContent=KB.name||'Assistant';
+ var log=root.querySelector('#pfbot-log'), chips=root.querySelector('#pfbot-chips'),
+     form=root.querySelector('#pfbot-form'), input=root.querySelector('#pfbot-input'),
+     launch=root.querySelector('#pfbot-launch'), greeted=false;
+ function bubble(role,txt){var d=document.createElement('div');d.className='pfb '+role;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+ function botSay(txt){var tp=bubble('bot typing','typing…');setTimeout(function(){tp.remove();bubble('bot',txt);},380+Math.min(900,txt.length*7));}
+ function renderChips(){chips.innerHTML='';(KB.suggestions||[]).forEach(function(s){var b=document.createElement('button');b.className='pfchip';b.type='button';b.textContent=s;b.onclick=function(){send(s);};chips.appendChild(b);});}
+ function answer(q){
+   q=(q||'').toLowerCase().trim();
+   if(/^(hi|hey|hello|yo|sup|good (morning|evening|afternoon))\b/.test(q))return KB.intro;
+   if(/(thank|thanks|thx|cheers|appreciate)/.test(q))return "Anytime! Anything else you want to know?";
+   if(/(bye|goodbye|see ya|that's all|done)/.test(q))return "Take care — come back if you need anything.";
+   var best=null,bs=0;
+   (KB.qa||[]).forEach(function(it){var s=0;it.k.forEach(function(k){if(q.indexOf(k)>=0)s+=k.length;});if(s>bs){bs=s;best=it;}});
+   return best?best.a:KB.fallback;
+ }
+ function send(txt){txt=(txt||'').trim();if(!txt)return;bubble('me',txt);input.value='';botSay(answer(txt));}
+ form.addEventListener('submit',function(e){e.preventDefault();send(input.value);});
+ launch.addEventListener('click',function(){var o=root.getAttribute('data-open')==='true';root.setAttribute('data-open',o?'false':'true');if(!o&&!greeted){greeted=true;renderChips();botSay(KB.intro);input.focus();}});
+ root.querySelector('#pfbot-x').addEventListener('click',function(){root.setAttribute('data-open','false');});
+})();
+</script>
+
+<!-- pf-chatbot:end -->
+</body>
+</html>

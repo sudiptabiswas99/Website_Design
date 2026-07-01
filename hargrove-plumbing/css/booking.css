@@ -1,0 +1,108 @@
+/* ============================================================
+   BOOKING — address field, map picker modal, success state
+   Matches the site language: square corners, ocean-blue accent
+   (var --copper = #0e7ea8), paper surfaces, mono uppercase labels.
+   ============================================================ */
+
+/* --- column wrapper so the banner / form / success stack in one grid cell --- */
+.book__formcol { display: flex; flex-direction: column; }
+
+/* --- address field: textarea + "Use map" button --- */
+.addr { display: flex; gap: .6rem; align-items: stretch; }
+.addr textarea { flex: 1; }
+.addr__map {
+  flex: 0 0 auto; align-self: stretch; display: inline-flex; align-items: center; gap: .4rem;
+  padding: 0 .9rem; white-space: nowrap; cursor: pointer;
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  color: #fff; background: var(--copper); border: 1.5px solid var(--copper);
+  transition: background .18s, transform .05s;
+}
+.addr__map:hover { background: var(--copper-d); border-color: var(--copper-d); }
+.addr__map:active { transform: translateY(1px); }
+.addr__map svg { flex: 0 0 auto; }
+.field__hint { margin: .5rem 0 0; font-size: .74rem; color: var(--steel); line-height: 1.4; }
+.field__hint strong { color: var(--copper-d); }
+.field--address.has-pin textarea { border-color: var(--copper); }
+
+/* --- returning-customer banner --- */
+.bookreturn {
+  display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+  margin-bottom: .8rem; padding: .7rem 1rem;
+  background: #0e7ea814; border: 1.5px solid var(--copper); color: var(--copper-d);
+  font-size: .86rem; font-weight: 600;
+}
+.bookreturn__clear {
+  flex: 0 0 auto; cursor: pointer; background: none; border: none;
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--copper-d); text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* --- success panel (replaces the form on submit) --- */
+.booksuccess { text-align: center; padding: clamp(1.8rem, 4vw, 2.6rem); }
+.booksuccess__check {
+  width: 60px; height: 60px; margin: 0 auto 1rem; display: grid; place-items: center;
+  color: #fff; background: var(--good, #2e9e6b); border-radius: 50%;
+}
+.booksuccess__title { font-family: var(--font-display); font-size: clamp(1.5rem, 1rem + 2vw, 2rem); margin: 0 0 .2rem; }
+.booksuccess__ref { margin: 0 0 1rem; font-family: var(--font-mono); font-size: .8rem; letter-spacing: .08em; color: var(--steel); }
+.booksuccess__ref strong { color: var(--copper-d); }
+.booksuccess__lead { margin: 0 auto 1.4rem; max-width: 42ch; line-height: 1.5; color: #473b2e; }
+.booksuccess__meta {
+  display: grid; gap: 0; margin: 0 0 1.4rem; text-align: left;
+  border: 1.5px solid var(--line); background: var(--paper);
+}
+.booksuccess__meta > div { display: grid; grid-template-columns: 9rem 1fr; gap: .5rem; padding: .7rem 1rem; }
+.booksuccess__meta > div + div { border-top: 1px solid var(--line); }
+.booksuccess__meta dt { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); }
+.booksuccess__meta dd { margin: 0; font-weight: 600; }
+.booksuccess__fine { margin: 0 0 1.4rem; font-size: .76rem; color: var(--steel); line-height: 1.45; }
+
+/* ============================================================
+   MAP PICKER MODAL
+   ============================================================ */
+.mapmodal { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; padding: clamp(.8rem, 3vw, 2rem); }
+.mapmodal[hidden] { display: none; }
+.mapmodal__backdrop { position: absolute; inset: 0; background: rgba(8, 22, 30, .55); backdrop-filter: blur(2px); }
+.mapmodal__panel {
+  position: relative; width: min(620px, 100%); max-height: 92vh; overflow: auto;
+  background: var(--paper, #fff); border: 1.5px solid var(--ink);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .6); padding: clamp(1rem, 3vw, 1.5rem);
+}
+.mapmodal__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: .9rem; }
+.mapmodal__head h3 { margin: 0; font-family: var(--font-display); font-size: 1.25rem; }
+.mapmodal__close { cursor: pointer; background: none; border: none; font-size: 1.2rem; line-height: 1; color: var(--steel); padding: .2rem .4rem; }
+.mapmodal__close:hover { color: var(--ink); }
+.mapmodal__search { display: flex; gap: .5rem; margin-bottom: .8rem; }
+.mapmodal__search input {
+  flex: 1; background: var(--paper); border: 1.5px solid var(--line); padding: .7rem .8rem; font-size: 1rem;
+}
+.mapmodal__search input:focus { outline: none; border-color: var(--copper); box-shadow: 0 0 0 3px #0e7ea822; }
+.mapmodal__search button {
+  cursor: pointer; padding: 0 1.1rem; color: #fff; background: var(--copper); border: 1.5px solid var(--copper);
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+}
+.mapmodal__search button:hover { background: var(--copper-d); border-color: var(--copper-d); }
+.mapmodal__locate {
+  display: inline-flex; align-items: center; gap: .5rem; margin: 0 0 .8rem; cursor: pointer;
+  padding: .6rem .9rem; background: var(--paper); color: var(--copper-d);
+  border: 1.5px solid var(--copper);
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+  transition: background .18s, color .18s;
+}
+.mapmodal__locate:hover { background: var(--copper); color: #fff; }
+.mapmodal__locate:disabled { opacity: .55; cursor: progress; }
+.mapmodal__locate svg { flex: 0 0 auto; }
+.mapmodal__canvas { height: clamp(260px, 42vh, 420px); width: 100%; border: 1.5px solid var(--line); background: #e9eef0; }
+.mapmodal__picked { margin: .7rem 0 1rem; font-size: .82rem; color: var(--steel); min-height: 1.2em; }
+.mapmodal__picked.set { color: var(--copper-d); font-weight: 600; }
+.mapmodal__actions { display: flex; gap: .7rem; justify-content: flex-end; }
+.mapmodal__actions .btn { min-width: 7rem; }
+/* keep Leaflet controls/pin below the modal chrome but above tiles */
+.leaflet-container { font: inherit; }
+
+/* --- responsive: stack the address button under the textarea on narrow screens --- */
+@media (max-width: 560px) {
+  .addr { flex-direction: column; }
+  .addr__map { align-self: flex-start; padding: .6rem .9rem; }
+  .booksuccess__meta > div { grid-template-columns: 1fr; gap: .15rem; }
+}

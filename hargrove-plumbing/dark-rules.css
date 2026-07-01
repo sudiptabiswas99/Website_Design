@@ -1,0 +1,89 @@
+/* =================================================================
+   THROWAWAY dark-mode preview — COLOR ONLY. Loaded AFTER css/styles.css
+   so it overrides the flat-white block. Pairs with a dark-vars-N.css
+   palette file. Changes nothing but colors: no layout, no animation,
+   no spacing. Delete dark-*.css + dark-*.html to remove all previews.
+   ================================================================= */
+html, body{ background:var(--d-bg) !important; color:var(--d-text) !important; }
+
+/* fixed grid-pattern background → dark, with visible light lines + glowing cells */
+.gridbg{ background:var(--d-bg) !important; }
+.gridbg__line{ stroke:var(--d-grid) !important; }
+.gridbg__cell{ fill:var(--d-cell) !important; }
+
+/* utility bar + sticky header + drawer */
+.utility{ background:var(--d-footer) !important; color:var(--d-dim) !important; }
+.site-header{ background:var(--d-headerbg) !important; border-bottom-color:var(--d-border) !important; }
+.nav a, .brand__name{ color:var(--d-text) !important; }
+.brand__sub, .phone-link__label, .utility .mono{ color:var(--d-dim) !important; }
+.phone-link strong{ color:#fff !important; }
+.drawer{ background:var(--d-surface) !important; border-color:var(--d-border) !important; }
+.drawer a{ color:var(--d-text) !important; }
+
+/* shared text */
+.section-title, .band-check__title, .fin-head .section-title, .reviews__head .section-title{ color:var(--d-head) !important; }
+.section-sub, .section-sub--light{ color:var(--d-dim) !important; }
+.eyebrow, .eyebrow--light, .hero__svc-label, .financing .eyebrow--light{ color:var(--d-accent) !important; }
+
+/* hero (override the hero--light white wash) */
+.hero, .hero--bleed.hero--light{ background:var(--d-bg) !important; color:var(--d-text) !important; }
+.hero--bleed.hero--light .hero__bg img{ filter:saturate(.7) brightness(.5) !important; }
+.hero--bleed.hero--light .hero__veil{ background:
+  linear-gradient(100deg, var(--d-veil1) 0%, var(--d-veil2) 45%, var(--d-veil1) 100%),
+  linear-gradient(180deg, var(--d-veil2) 0%, var(--d-veil3) 42%, var(--d-veil1) 100%) !important; }
+.hero__title, .hero--bleed.hero--light .hero__title{ color:var(--d-head) !important; text-shadow:0 2px 30px rgba(0,0,0,.5) !important; }
+.hero__title em, .hero--bleed.hero--light .hero__title em{ color:var(--d-accent) !important; }
+.hero__lead, .hero--bleed.hero--light .hero__lead{ color:var(--d-dim) !important; }
+
+/* hero service-category cards */
+.hsvc, .hero--bleed.hero--light .hsvc{ background:var(--d-surface) !important; border-color:var(--d-border) !important; }
+.hsvc__lbl, .hero--bleed.hero--light .hsvc__lbl{ color:var(--d-head) !important; }
+.hsvc__desc, .hero--bleed.hero--light .hsvc__desc{ color:var(--d-dim) !important; }
+
+/* zip / credentials band */
+.band-check{ background:var(--d-bg) !important; color:var(--d-text) !important; }
+.ziptool input{ background:var(--d-surface2) !important; color:var(--d-text) !important; border-color:var(--d-border) !important; }
+.ziptool input::placeholder{ color:var(--d-dim) !important; }
+
+/* story + service rows */
+.story{ background:var(--d-bg) !important; }
+.story p, .story__copy-text p{ color:var(--d-dim) !important; }
+.svc-row__title{ color:var(--d-head) !important; }
+.svc-row p{ color:var(--d-dim) !important; }
+.svc-row{ border-color:var(--d-border) !important; }
+
+/* reviews */
+.reviews{ background:var(--d-bg) !important; color:var(--d-text) !important; }
+.reviews--stagger .section-sub{ color:var(--d-dim) !important; }
+.review, .stag-card{ background:var(--d-surface) !important; border-color:var(--d-border) !important; }
+.review blockquote, .stag-card blockquote{ color:var(--d-text) !important; }
+
+/* financing */
+.financing{ background:var(--d-bg) !important; color:var(--d-text) !important; }
+.financing__copy p, .fin-head__sub, .fcard__lbl, .financing__fine, .fin2-fine{ color:var(--d-dim) !important; }
+.fcard, .fin2-tab{ background:var(--d-surface) !important; border-color:var(--d-border) !important; }
+.fcard--alt{ background:var(--d-surface2) !important; }
+.fin-tab, .fin2-title{ color:var(--d-text) !important; border-color:var(--d-border) !important; }
+
+/* pricing */
+.pricing__intro{ color:var(--d-dim) !important; }
+.pcard{ background:var(--d-surface) !important; border-color:var(--d-border) !important; }
+.pcard__top{ border-bottom-color:var(--d-border) !important; }
+.pcard__title{ color:var(--d-head) !important; }
+.pcard__list li{ color:var(--d-dim) !important; }
+.pcard__price{ color:#fff !important; }
+.pricing__fine{ color:var(--d-dim) !important; }
+
+/* booking form + book copy */
+.bookform{ background:var(--d-surface2) !important; border-color:var(--d-border) !important; }
+.bookform .field input, .bookform .field select, .bookform .field textarea{ background:var(--d-bg) !important; color:var(--d-text) !important; border-color:var(--d-border) !important; }
+.field label{ color:var(--d-dim) !important; }
+.book__copy p{ color:var(--d-dim) !important; }
+.book__phone{ color:var(--d-text) !important; border-color:var(--d-border) !important; }
+
+/* footer */
+.site-footer{ background:var(--d-footer) !important; }
+
+/* small fixed badge so you know which preview you're viewing */
+#darkPreviewTag{ position:fixed; left:12px; bottom:12px; z-index:9999; font:600 12px/1 ui-monospace,monospace;
+  letter-spacing:.04em; color:#fff; background:var(--d-accent); padding:7px 11px; border-radius:0; opacity:.92; pointer-events:none; }

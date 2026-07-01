@@ -1,0 +1,8 @@
+/* Option 2 — Midnight (near-black, cool, high contrast) */
+:root{
+  --d-bg:#0b0f14; --d-surface:#161d26; --d-surface2:#1d2632;
+  --d-text:#eef2f6; --d-dim:#93a1b0; --d-head:#ffffff; --d-accent:#5cc2e8;
+  --d-border:rgba(255,255,255,.09); --d-footer:#07090d;
+  --d-headerbg:rgba(11,15,20,.88); --d-grid:rgba(150,170,195,.18); --d-cell:rgba(92,194,232,.12);
+  --d-veil1:rgba(6,9,13,.88); --d-veil2:rgba(6,9,13,.66); --d-veil3:rgba(6,9,13,.4);
+}

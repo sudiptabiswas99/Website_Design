@@ -1,0 +1,12 @@
+[
+  { "name": "Roto-Rooter",                "website": "https://www.rotorooter.com",                "email": "",  "preflight": "403", "reachable": false },
+  { "name": "Mr. Rooter Plumbing",         "website": "https://www.mrrooter.com",                  "email": "",  "preflight": "403", "reachable": false },
+  { "name": "Benjamin Franklin Plumbing",  "website": "https://www.benjaminfranklinplumbing.com",  "email": "",  "preflight": "200", "reachable": true  },
+  { "name": "Len The Plumber",             "website": "https://www.lentheplumber.com",             "email": "",  "preflight": "200", "reachable": true  },
+  { "name": "Michael & Son",               "website": "https://www.michaelandson.com",             "email": "",  "preflight": "200", "reachable": true  },
+  { "name": "bluefrog Plumbing + Drain",   "website": "https://www.bluefrogplumbing.com",          "email": "",  "preflight": "403", "reachable": false },
+  { "name": "Horizon Services",            "website": "https://www.horizonservices.com",           "email": "",  "preflight": "403", "reachable": false },
+  { "name": "Zoom Drain",                  "website": "https://www.zoomdrain.com",                 "email": "",  "preflight": "200", "reachable": true  },
+  { "name": "Plumbline Services",          "website": "https://www.plumblineservices.com",         "email": "",  "preflight": "200", "reachable": true  },
+  { "name": "Bob Hamilton Plumbing",       "website": "https://www.bobhamiltonplumbing.com",       "email": "",  "preflight": "403", "reachable": false }
+]

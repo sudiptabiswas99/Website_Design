@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hargrove &amp; Sons — Footer Lab</title>
+<meta name="description" content="The Hargrove & Sons footer, taken apart: the sticky pop-up reveal, the meteor-shower background, the staggered column reveal, and the gradient wordmark — each shown live." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2315110d'/%3E%3Cpath d='M9 22V12a4 4 0 0 1 4-4h3' stroke='%230e7ea8' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M23 10v10a4 4 0 0 1-4 4h-3' stroke='%230e7ea8' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+<style>
+  :root{
+    --ink:#15110d; --ink-2:#1b160f; --ink-3:#221b12; --paper:#f4eee2; --muted:#8a7c68;
+    --ocean:#0e7ea8; --ocean-l:#1a8fb5; --ocean-deep:#0a4d68; --brass:#c99a52;
+    --line-l:rgba(244,238,226,.16); --line-2:rgba(244,238,226,.07);
+    --font-display:"Fraunces",Georgia,serif;
+    --font-body:"Satoshi",-apple-system,BlinkMacSystemFont,sans-serif;
+    --font-mono:"Spline Sans Mono",ui-monospace,monospace;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:
+      radial-gradient(120% 60% at 50% -10%, #1c2a30 0%, transparent 55%),
+      #0c0a07;
+    color:var(--paper); font-family:var(--font-body); -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.4rem); }
+
+  /* ---------- showcase chrome ---------- */
+  .top{ position:sticky; top:0; z-index:50; background:rgba(12,10,7,.82); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-2); }
+  .top .wrap{ display:flex; align-items:center; gap:20px; height:62px; flex-wrap:wrap; }
+  .top .brand{ font-family:var(--font-display); font-weight:800; font-size:16px; letter-spacing:-.01em; }
+  .top .brand em{ color:var(--ocean-l); font-style:normal; }
+  .top nav{ display:flex; gap:6px; flex-wrap:wrap; margin-left:auto; }
+  .top nav a{ font-family:var(--font-mono); font-size:11.5px; letter-spacing:.02em; color:var(--muted); padding:6px 12px; border:1px solid var(--line-2); border-radius:999px; transition:.2s; }
+  .top nav a:hover{ color:var(--paper); border-color:var(--line-l); }
+
+  .intro{ padding:64px 0 6px; text-align:center; }
+  .intro .kick{ display:inline-flex; align-items:center; gap:10px; font-family:var(--font-mono); font-weight:600; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--ocean-l); }
+  .intro .kick::before,.intro .kick::after{ content:""; width:26px; height:1.5px; background:linear-gradient(90deg,transparent,var(--ocean-l)); }
+  .intro .kick::after{ background:linear-gradient(90deg,var(--ocean-l),transparent); }
+  .intro h1{ font-family:var(--font-display); font-weight:700; font-size:clamp(32px,5vw,58px); letter-spacing:-.02em; margin:16px 0 0; }
+  .intro h1 em{ font-style:italic; color:var(--brass); }
+  .intro p{ color:var(--muted); max-width:60ch; margin:16px auto 0; font-size:16px; line-height:1.65; }
+
+  /* ---------- effect sections ---------- */
+  .fx{ padding:60px 0; border-top:1px solid var(--line-2); }
+  .fx-head{ margin-bottom:28px; max-width:74ch; }
+  .fx-head .num{ font-family:var(--font-mono); font-weight:600; color:var(--brass); font-size:12px; letter-spacing:.12em; }
+  .fx-head h3{ font-family:var(--font-display); font-weight:700; font-size:clamp(24px,3vw,32px); margin:8px 0 10px; letter-spacing:-.01em; }
+  .fx-head p{ color:#c8bca9; font-size:15px; line-height:1.62; }
+  .fx-head p b{ color:var(--paper); font-weight:600; }
+  .spec{ display:inline-flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+  .spec span{ font-family:var(--font-mono); font-size:11px; letter-spacing:.02em; color:#a9b9c2; background:rgba(14,126,168,.12); border:1px solid rgba(26,143,181,.28); padding:5px 11px; border-radius:7px; }
+
+  /* framed live demo */
+  .frame{ position:relative; border:1px solid var(--line-l); border-radius:18px; overflow:hidden; background:var(--ocean-deep); box-shadow:0 30px 60px -30px rgba(0,0,0,.6); }
+  .frame__tag{ position:absolute; top:12px; left:14px; z-index:6; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(230,242,250,.62); }
+  .demo-ctrl{ display:flex; align-items:center; gap:12px; margin-top:16px; flex-wrap:wrap; }
+  .btn{ font-family:var(--font-mono); font-weight:600; font-size:12.5px; letter-spacing:.02em; color:var(--paper); background:transparent; border:1px solid var(--line-l); border-radius:999px; padding:9px 18px; cursor:pointer; transition:.22s var(--ease); display:inline-flex; align-items:center; gap:8px; }
+  .btn:hover{ background:var(--ocean); border-color:var(--ocean); color:#fff; transform:translateY(-2px); }
+  .btn svg{ width:15px; height:15px; }
+  .demo-ctrl .hint{ font-size:12.5px; color:var(--muted); }
+
+  /* ---------- the shared footer look (ocean brand blue, brass meteors) ---------- */
+  .site-footer{ background:var(--ocean-deep); color:#cfe3ee; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; padding-block:clamp(2rem,4vh,3.4rem); }
+  .site-footer > .wrap{ position:relative; z-index:1; }
+
+  .footer-meteors{ position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .meteor{
+    position:absolute; width:2px; height:2px; border-radius:9999px;
+    background:#caa46f; box-shadow:0 0 0 1px #ffffff12, 0 0 7px 1px #e2b07e44;
+    transform:rotate(215deg);
+    animation:footer-meteor var(--dur,5s) var(--delay,0s) linear infinite;
+  }
+  .meteor::before{
+    content:""; position:absolute; top:50%; left:0; width:60px; height:1px;
+    transform:translateY(-50%); background:linear-gradient(90deg,#caa46f,transparent); pointer-events:none;
+  }
+  @keyframes footer-meteor{
+    0%{ transform:rotate(215deg) translateX(0); opacity:0; }
+    12%{ opacity:1; } 70%{ opacity:1; }
+    100%{ transform:rotate(215deg) translateX(-540px); opacity:0; }
+  }
+
+  .site-footer__cols{ display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; padding-bottom:clamp(1.5rem,3vh,2.4rem); border-bottom:1px solid var(--line-l); }
+  .site-footer__col h4{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.18em; color:#7fb4ce; margin-bottom:1rem; font-weight:600; }
+  .site-footer__col a{ display:block; padding:.34rem 0; color:#cfe3ee; font-size:.96rem; transition:color .18s; }
+  .site-footer__col a:hover{ color:#fff; }
+  .site-footer__hours{ display:block; margin-top:.6rem; font-family:var(--font-mono); font-size:.62rem; letter-spacing:.16em; color:var(--brass); }
+
+  .site-footer__bottombar{ display:flex; justify-content:space-between; align-items:flex-end; gap:1.4rem 2rem; flex-wrap:wrap; padding-top:clamp(1.2rem,3vh,2.2rem); }
+  .site-footer__lead{ flex:1 1 22rem; min-width:0; }
+  .site-footer__big{
+    font-family:var(--font-display); font-weight:800; line-height:1; white-space:nowrap;
+    font-size:clamp(1.9rem,4.5vw,3.4rem);
+    background:linear-gradient(92deg,#f4eee2 0%, #e9c789 55%, #c99a52 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .site-footer__tag{ display:flex; align-items:center; gap:.9rem; margin-top:1rem; color:#cfe3ee; font-size:.92rem; }
+  .site-footer__rule{ width:clamp(2rem,4vw,3rem); height:2px; flex:none; background:linear-gradient(90deg,var(--ocean),var(--brass)); }
+  .site-footer__meta{ text-align:right; }
+  .site-footer__copy{ color:#9cc0d2; font-size:.78rem; letter-spacing:.02em; margin-bottom:.9rem; }
+  .site-footer__social{ display:flex; gap:.7rem; justify-content:flex-end; }
+  .fsoc{ width:38px; height:38px; border-radius:50%; flex:none; display:grid; place-items:center; color:#cabaa6; background:rgba(255,255,255,.06); border:1px solid var(--line-l); transition:transform .2s, background .2s, color .2s; }
+  .fsoc:hover{ background:var(--ocean); color:#fff; transform:translateY(-3px) rotate(8deg); }
+  .fsoc svg{ width:17px; height:17px; }
+
+  /* ---------- reveal (staggered column entrance) ---------- */
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s var(--ease); transition-delay:var(--d,0s); }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- effect 01: rotate-into-place tilt demo ---------- */
+  .tilt-frame{ perspective:none; }
+  .tiltbox{ transform-origin:bottom left; will-change:transform; }
+  .tiltbox.animating{ transition:transform 1.15s var(--ease); }
+
+  /* ---------- effect 02: meteors demo sizing ---------- */
+  .meteors-demo{ min-height:280px; display:flex; align-items:flex-end; }
+  .meteors-demo .site-footer{ width:100%; }
+
+  /* ---------- the live sticky pop-up finale ---------- */
+  .finale-lead{ padding:70px 0 0; text-align:center; }
+  .finale-lead .num{ font-family:var(--font-mono); font-weight:600; color:var(--brass); font-size:12px; letter-spacing:.12em; }
+  .finale-lead h3{ font-family:var(--font-display); font-weight:700; font-size:clamp(26px,3.4vw,40px); margin:10px 0 12px; letter-spacing:-.01em; }
+  .finale-lead p{ color:var(--muted); max-width:56ch; margin:0 auto; font-size:15.5px; line-height:1.6; }
+  .scrollcue{ margin:30px auto 8px; width:26px; height:42px; border:1.6px solid var(--line-l); border-radius:14px; position:relative; }
+  .scrollcue::after{ content:""; position:absolute; top:7px; left:50%; width:3px; height:8px; border-radius:2px; background:var(--ocean-l); transform:translateX(-50%); animation:cue 1.5s ease-in-out infinite; }
+  @keyframes cue{ 0%,100%{ opacity:0; transform:translate(-50%,0); } 40%{ opacity:1; } 70%{ opacity:0; transform:translate(-50%,12px); } }
+
+  /* the reveal track: footer pins behind the page and straightens as you hit bottom */
+  .sticky-footer{ --footer-h:clamp(28rem,52vh,32rem); position:relative; height:var(--footer-h); clip-path:polygon(0 0,100% 0,100% 100%,0 100%); background:var(--ocean-deep); }
+  .sticky-footer__track{ position:relative; height:calc(100vh + var(--footer-h)); top:-100vh; }
+  .sticky-footer__pin{ height:var(--footer-h); position:sticky; top:calc(100vh - var(--footer-h)); }
+  .sticky-footer .site-footer{ min-height:100%; height:auto; }
+
+  .above-footer{ padding:26vh 0 22vh; text-align:center; }
+  .above-footer p{ color:var(--muted); font-family:var(--font-mono); font-size:13px; letter-spacing:.04em; }
+
+  /* ---------- responsive ---------- */
+  @media(max-width:820px){
+    .site-footer__cols{ grid-template-columns:1fr 1fr; gap:1.6rem 2rem; }
+    .site-footer__bottombar{ flex-direction:column; align-items:flex-start; }
+    .site-footer__meta{ text-align:left; }
+    .site-footer__social{ justify-content:flex-start; }
+    .sticky-footer{ height:auto; clip-path:none; }
+    .sticky-footer__track{ height:auto; top:0; }
+    .sticky-footer__pin{ height:auto; position:static; }
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+    /* meteors are an explicit, wanted background — keep them running */
+  }
+</style>
+</head>
+<body>
+
+  <div class="top"><div class="wrap">
+    <span class="brand">HARGROVE <em>&amp; SONS</em> · Footer Lab</span>
+    <nav>
+      <a href="#f1">01 · Pop-up reveal</a>
+      <a href="#f2">02 · Meteor shower</a>
+      <a href="#f3">03 · Column reveal</a>
+      <a href="#f4">04 · Gradient wordmark</a>
+      <a href="#live">Live footer</a>
+    </nav>
+  </div></div>
+
+  <div class="wrap intro">
+    <span class="kick">One footer, taken apart</span>
+    <h1>The footer, as a <em>showcase</em>.</h1>
+    <p>The Hargrove &amp; Sons footer runs four effects at once: a sticky panel that pops up from behind the page and tilts into place, a slow meteor shower drifting behind the text, columns that stagger in on scroll, and a brass-into-cream gradient wordmark. Here each one is pulled out and shown on its own. Scroll to the very bottom to see all of it fire together, live.</p>
+  </div>
+
+  <!-- ============ 01 · POP-UP REVEAL ============ -->
+  <section class="fx" id="f1"><div class="wrap">
+    <div class="fx-head">
+      <div class="num">EFFECT 01</div>
+      <h3>The sticky pop-up reveal</h3>
+      <p>The footer is the last thing on the page, pinned behind the content on a <b>-100vh sticky track</b>. As you scroll into the final stretch it is uncovered and <b>rotates up from its bottom-left corner</b> (12° to flat) so it feels like a panel snapping into place rather than just appearing. A requestAnimationFrame scrubber maps the tilt to how close you are to the very bottom, so it can never freeze half-done. Press replay to watch just the straighten.</p>
+      <div class="spec"><span>position:sticky · top:-100vh</span><span>transform-origin:bottom left</span><span>rAF scroll scrubber</span><span>desktop · respects reduced-motion</span></div>
+    </div>
+    <div class="frame tilt-frame">
+      <span class="frame__tag">rotate into place</span>
+      <div class="tiltbox" id="tiltbox">
+        <div class="site-footer">
+          <div class="footer-meteors" aria-hidden="true"></div>
+          <div class="wrap site-footer__bottombar">
+            <div class="site-footer__lead">
+              <h2 class="site-footer__big">Hargrove &amp; Sons</h2>
+              <div class="site-footer__tag">
+                <span class="site-footer__rule" aria-hidden="true"></span>
+                <span>Family-owned plumbing. 24/7 emergency service.</span>
+              </div>
+            </div>
+            <div class="site-footer__meta">
+              <p class="site-footer__copy">© 2026 Hargrove &amp; Sons Plumbing, Inc. · CA LICENSE C-36 #784512 · BBB A+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-ctrl">
+      <button class="btn" id="tiltReplay" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg>
+        Replay tilt
+      </button>
+      <span class="hint">Also fires once when it scrolls into view.</span>
+    </div>
+  </div></section>
+
+  <!-- ============ 02 · METEOR SHOWER ============ -->
+  <section class="fx" id="f2"><div class="wrap">
+    <div class="fx-head">
+      <div class="num">EFFECT 02</div>
+      <h3>Meteor-shower background</h3>
+      <p>A vanilla port of the Aceternity “Meteors” effect: 22 tiny brass dots, each with a 60px trailing streak, launched on <b>randomised delay and duration</b> so the sky never loops in sync. They ride at a fixed 215° angle behind the footer text, glowing with a soft copper halo. The content sits on a higher z-index, so readability is untouched. Regenerate to reshuffle the field.</p>
+      <div class="spec"><span>22 spans · ::before trail</span><span>--delay / --dur custom props</span><span>rotate(215deg) drift</span><span>z-index:0 behind content</span></div>
+    </div>
+    <div class="frame meteors-demo">
+      <span class="frame__tag">22 meteors · randomised</span>
+      <div class="site-footer">
+        <div class="footer-meteors" aria-hidden="true"></div>
+        <div class="wrap site-footer__cols">
+          <div class="site-footer__col">
+            <h4>SERVICES</h4>
+            <a href="#f2">Emergency leaks</a>
+            <a href="#f2">Drain &amp; sewer</a>
+            <a href="#f2">Water heaters</a>
+          </div>
+          <div class="site-footer__col">
+            <h4>SERVICE AREA</h4>
+            <a href="#f2">Sacramento</a>
+            <a href="#f2">Roseville</a>
+            <a href="#f2">Folsom</a>
+          </div>
+          <div class="site-footer__col">
+            <h4>COMPANY</h4>
+            <a href="#f2">Our story</a>
+            <a href="#f2">Reviews</a>
+            <a href="#f2">Financing</a>
+          </div>
+          <div class="site-footer__col">
+            <h4>CONTACT</h4>
+            <a href="#f2">Call (562) 431-1960</a>
+            <span class="site-footer__hours">24 / 7 EMERGENCY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-ctrl">
+      <button class="btn" id="meteorRegen" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+        Regenerate shower
+      </button>
+      <span class="hint">New random positions, delays and speeds each time.</span>
+    </div>
+  </div></section>
+
+  <!-- ============ 03 · COLUMN REVEAL ============ -->
+  <section class="fx" id="f3"><div class="wrap">
+    <div class="fx-head">
+      <div class="num">EFFECT 03</div>
+      <h3>Staggered column reveal</h3>
+      <p>Each footer column starts <b>22px low and transparent</b> and eases up into place, one after another, when the footer enters the viewport. An IntersectionObserver flips the switch and a per-column <b>transition-delay</b> creates the cascade. It is the same reveal used across the whole site, so the footer resolves in the same visual language as everything above it.</p>
+      <div class="spec"><span>IntersectionObserver</span><span>translateY(22px) → 0</span><span>--d staggered delay</span><span>cubic-bezier(.2,.7,.2,1)</span></div>
+    </div>
+    <div class="frame" id="colFrame">
+      <span class="frame__tag">staggered entrance</span>
+      <div class="site-footer">
+        <div class="wrap site-footer__cols">
+          <div class="site-footer__col reveal" style="--d:0s">
+            <h4>SERVICES</h4>
+            <a href="#f3">Emergency leaks</a>
+            <a href="#f3">Drain &amp; sewer</a>
+            <a href="#f3">Water heaters</a>
+            <a href="#f3">Repipe &amp; remodel</a>
+            <a href="#f3">Leak detection</a>
+          </div>
+          <div class="site-footer__col reveal" style="--d:.09s">
+            <h4>SERVICE AREA</h4>
+            <a href="#f3">Sacramento</a>
+            <a href="#f3">Roseville</a>
+            <a href="#f3">Folsom</a>
+            <a href="#f3">Elk Grove</a>
+            <a href="#f3">All areas</a>
+          </div>
+          <div class="site-footer__col reveal" style="--d:.18s">
+            <h4>COMPANY</h4>
+            <a href="#f3">Our story</a>
+            <a href="#f3">Reviews</a>
+            <a href="#f3">Financing</a>
+            <a href="#f3">Book a visit</a>
+          </div>
+          <div class="site-footer__col reveal" style="--d:.27s">
+            <h4>CONTACT</h4>
+            <a href="#f3">Call (562) 431-1960</a>
+            <a href="#f3">Request a visit</a>
+            <span class="site-footer__hours">24 / 7 EMERGENCY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-ctrl">
+      <button class="btn" id="colReplay" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg>
+        Replay reveal
+      </button>
+      <span class="hint">Columns cascade in from left to right.</span>
+    </div>
+  </div></section>
+
+  <!-- ============ 04 · GRADIENT WORDMARK ============ -->
+  <section class="fx" id="f4"><div class="wrap">
+    <div class="fx-head">
+      <div class="num">EFFECT 04</div>
+      <h3>Gradient wordmark, brass rule &amp; social lift</h3>
+      <p>The sign-off line carries the weight: an oversized <b>Fraunces wordmark clipped to a cream-into-brass gradient</b>, a short rule that fades from ocean blue to brass, and three social buttons that <b>lift and rotate 8°</b> on hover, filling with brand blue. Hover the icons to feel it.</p>
+      <div class="spec"><span>background-clip:text gradient</span><span>ocean → brass rule</span><span>hover: translateY(-3px) rotate(8deg)</span></div>
+    </div>
+    <div class="frame">
+      <span class="frame__tag">sign-off bar</span>
+      <div class="site-footer">
+        <div class="wrap site-footer__bottombar">
+          <div class="site-footer__lead">
+            <h2 class="site-footer__big">Hargrove &amp; Sons</h2>
+            <div class="site-footer__tag">
+              <span class="site-footer__rule" aria-hidden="true"></span>
+              <span>Family-owned plumbing. 24/7 emergency service.</span>
+            </div>
+          </div>
+          <div class="site-footer__meta">
+            <p class="site-footer__copy">© 2026 Hargrove &amp; Sons Plumbing, Inc. · CA LICENSE C-36 #784512 · BBB A+</p>
+            <div class="site-footer__social">
+              <a class="fsoc" href="#f4" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a class="fsoc" href="#f4" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a class="fsoc" href="#f4" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ============ LIVE FINALE ============ -->
+  <div class="wrap finale-lead" id="live">
+    <div class="num">ALL FOUR, TOGETHER</div>
+    <h3>Now the real thing.</h3>
+    <p>Everything above, assembled exactly as it ships on the live site. Keep scrolling — the footer is pinned behind this page and will pop up and straighten as you reach the bottom.</p>
+    <div class="scrollcue" aria-hidden="true"></div>
+  </div>
+
+  <div class="above-footer">
+    <p>keep scrolling ↓</p>
+  </div>
+
+  <!-- the genuine sticky scroll-reveal footer -->
+  <div class="sticky-footer">
+    <div class="sticky-footer__track">
+      <div class="sticky-footer__pin">
+        <footer class="site-footer" id="liveFooter">
+          <div class="footer-meteors" aria-hidden="true"></div>
+          <div class="wrap site-footer__cols">
+            <div class="site-footer__col reveal" style="--d:0s">
+              <h4>SERVICES</h4>
+              <a href="#f2">Emergency leaks</a>
+              <a href="#f2">Drain &amp; sewer</a>
+              <a href="#f2">Water heaters</a>
+              <a href="#f2">Repipe &amp; remodel</a>
+              <a href="#f2">Leak detection</a>
+            </div>
+            <div class="site-footer__col reveal" style="--d:.09s">
+              <h4>SERVICE AREA</h4>
+              <a href="#f2">Sacramento</a>
+              <a href="#f2">Roseville</a>
+              <a href="#f2">Folsom</a>
+              <a href="#f2">Elk Grove</a>
+              <a href="#f2">All areas</a>
+            </div>
+            <div class="site-footer__col reveal" style="--d:.18s">
+              <h4>COMPANY</h4>
+              <a href="#f2">Our story</a>
+              <a href="#f2">Reviews</a>
+              <a href="#f2">Financing</a>
+              <a href="#f2">Book a visit</a>
+            </div>
+            <div class="site-footer__col reveal" style="--d:.27s">
+              <h4>CONTACT</h4>
+              <a href="#f2">Call (562) 431-1960</a>
+              <a href="#f2">Request a visit</a>
+              <span class="site-footer__hours">24 / 7 EMERGENCY</span>
+            </div>
+          </div>
+
+          <div class="wrap site-footer__bottombar">
+            <div class="site-footer__lead reveal">
+              <h2 class="site-footer__big">Hargrove &amp; Sons</h2>
+              <div class="site-footer__tag">
+                <span class="site-footer__rule" aria-hidden="true"></span>
+                <span>Family-owned plumbing. 24/7 emergency service.</span>
+              </div>
+            </div>
+            <div class="site-footer__meta reveal">
+              <p class="site-footer__copy">© 2026 Hargrove &amp; Sons Plumbing, Inc. · CA LICENSE C-36 #784512 · BBB A+</p>
+              <div class="site-footer__social">
+                <a class="fsoc" href="#f4" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a class="fsoc" href="#f4" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                <a class="fsoc" href="#f4" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- meteors: populate every .footer-meteors box ---------- */
+  function fillMeteors(box, n){
+    box.innerHTML = '';
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < n; i++){
+      var m = document.createElement('span');
+      m.className = 'meteor';
+      m.style.left = (Math.random() * 100).toFixed(2) + '%';
+      m.style.top = (Math.random() * 88 - 8).toFixed(2) + '%';
+      m.style.setProperty('--delay', (Math.random() * 5).toFixed(2) + 's');
+      m.style.setProperty('--dur', (Math.random() * 6 + 3).toFixed(2) + 's');
+      frag.appendChild(m);
+    }
+    box.appendChild(frag);
+  }
+  var boxes = document.querySelectorAll('.footer-meteors');
+  boxes.forEach(function(b){ fillMeteors(b, 22); });
+
+  var regen = document.getElementById('meteorRegen');
+  if (regen){
+    regen.addEventListener('click', function(){
+      document.querySelectorAll('.meteors-demo .footer-meteors').forEach(function(b){ fillMeteors(b, 22); });
+    });
+  }
+
+  /* ---------- reveal observer (columns + sign-off) ---------- */
+  var revealables = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.25 });
+    revealables.forEach(function(el){ io.observe(el); });
+  } else {
+    revealables.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* replay the column cascade */
+  var colReplay = document.getElementById('colReplay');
+  if (colReplay){
+    colReplay.addEventListener('click', function(){
+      var cols = document.querySelectorAll('#colFrame .reveal');
+      cols.forEach(function(c){ c.classList.remove('in'); });
+      // next frame -> re-add so the transition plays again
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        cols.forEach(function(c){ c.classList.add('in'); });
+      }); });
+    });
+  }
+
+  /* ---------- effect 01: tilt replay + scroll-into-view ---------- */
+  var tilt = document.getElementById('tiltbox');
+  function playTilt(){
+    if (!tilt || reduce) return;
+    tilt.classList.remove('animating');
+    tilt.style.transform = 'rotate(12deg)';
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      tilt.classList.add('animating');
+      tilt.style.transform = 'rotate(0deg)';
+    }); });
+  }
+  var tiltBtn = document.getElementById('tiltReplay');
+  if (tiltBtn) tiltBtn.addEventListener('click', playTilt);
+  if (tilt && 'IntersectionObserver' in window && !reduce){
+    var seen = false;
+    var tio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting && !seen){ seen = true; playTilt(); } });
+    }, { threshold: 0.5 });
+    tio.observe(tilt);
+  }
+
+  /* ---------- live finale: rotate-into-place scrubber ----------
+     Ported 1:1 from the site's footer-reveal.js — maps tilt to
+     page-bottom proximity so it always straightens fully at the bottom. */
+  var liveFooter = document.getElementById('liveFooter');
+  var deskMQ = window.matchMedia('(min-width: 821px)');
+  var MAX_TILT = 12, ZONE = 0.85, raf = null, active = false;
+  function clamp01(v){ return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function render(){
+    raf = null;
+    var vh = window.innerHeight;
+    var docH = document.documentElement.scrollHeight;
+    var distFromBottom = docH - (window.scrollY + vh);
+    var p = clamp01(1 - distFromBottom / (vh * ZONE));
+    liveFooter.style.transform = 'rotate(' + ((1 - p) * MAX_TILT).toFixed(3) + 'deg)';
+  }
+  function onScroll(){ if (raf === null) raf = requestAnimationFrame(render); }
+  function enable(){
+    if (active || !liveFooter) return;
+    active = true;
+    liveFooter.style.transformOrigin = 'bottom left';
+    liveFooter.style.willChange = 'transform';
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    render();
+  }
+  function disable(){
+    if (!active) return;
+    active = false;
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
+    if (raf !== null){ cancelAnimationFrame(raf); raf = null; }
+    liveFooter.style.transform = '';
+    liveFooter.style.transformOrigin = '';
+    liveFooter.style.willChange = '';
+  }
+  function sync(){ if (deskMQ.matches && !reduce) enable(); else disable(); }
+  sync();
+  deskMQ.addEventListener('change', sync);
+  window.addEventListener('load', function(){ if (active) render(); });
+})();
+</script>
+</body>
+</html>

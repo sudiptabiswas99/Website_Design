@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Benjamin Franklin Plumbing — The Punctual Plumber. On-Time Guaranteed.</title>
+<meta name="description" content="Benjamin Franklin Plumbing, The Punctual Plumber. If we're not on time, we pay you $5 for every minute we're late. Licensed plumbers, emergency service. Book now: 562-431-1960." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<script>(function(){try{var p=new URLSearchParams(location.search).get('theme');var t=p||localStorage.getItem('bf-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root[data-theme="dark"]{
+    --bg:#0B1322; --bg-2:#0F1A2D; --card:#14223A; --line:#243651;
+    --gold:#D9AE55; --gold-2:#EFD08A; --ink:#EEF2F8; --muted:#93A2BC; --muted-2:#5C6E8C;
+    --on-accent:#0B1322; --shadow:0 30px 70px -30px rgba(0,0,0,.85);
+    --glass:rgba(20,34,58,.55); --glass-2:rgba(20,34,58,.78); --glass-brd:rgba(239,208,138,.16); --glass-sh:0 14px 40px -16px rgba(0,0,0,.6);
+    --img-filter:grayscale(.25) contrast(1.05) brightness(.78) sepia(.12) saturate(1.05);
+  }
+  :root[data-theme="light"]{
+    --bg:#F6F3EC; --bg-2:#FFFFFF; --card:#FFFFFF; --line:#E5DFCE;
+    --gold:#B0822A; --gold-2:#946B1C; --ink:#16243C; --muted:#56627A; --muted-2:#9A9580;
+    --on-accent:#FFFFFF; --shadow:0 30px 60px -34px rgba(20,30,50,.2);
+    --glass:rgba(255,255,255,.62); --glass-2:rgba(255,255,255,.85); --glass-brd:rgba(176,130,42,.22); --glass-sh:0 14px 40px -18px rgba(20,30,50,.18);
+    --img-filter:grayscale(.06) contrast(1.03) brightness(1.02) saturate(1.05);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .4s,color .4s}
+  body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .serif{font-family:'Playfair Display',Georgia,serif}
+  .gold{color:var(--gold)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+  section{position:relative}
+  .glass{background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid var(--glass-brd);box-shadow:var(--glass-sh)}
+
+  /* TOP BAR */
+  .topbar{background:var(--bg-2);border-bottom:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:38px;gap:18px;flex-wrap:wrap}
+  .topbar b{color:var(--gold);font-weight:600;letter-spacing:.02em}
+  .topbar .sep{color:var(--muted-2)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:var(--glass-2);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line);transition:.3s}
+  nav.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.5)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mk{width:44px;height:44px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);position:relative}
+  .brand .mk svg{width:22px;height:22px}
+  .brand .nm{font-weight:700;font-size:1.12rem;letter-spacing:-.01em;line-height:1}
+  .brand .nm small{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:.76rem;color:var(--muted);margin-top:3px}
+  .navlinks{display:flex;gap:30px;font-size:.9rem;font-weight:500}
+  .navlinks a{color:var(--ink);opacity:.78;transition:.2s;position:relative;padding:4px 0}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:.25s}
+  .navlinks a:hover{opacity:1}.navlinks a:hover::after{width:100%}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .tgl{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--ink);cursor:pointer;background:var(--glass);border:1px solid var(--glass-brd);transition:.25s}
+  .tgl:hover{color:var(--gold);transform:translateY(-1px)}
+  .tgl svg{width:18px;height:18px}.tgl .ic-sun{display:none}
+  :root[data-theme="light"] .tgl .ic-moon{display:none}:root[data-theme="light"] .tgl .ic-sun{display:block}
+  .navcall{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:var(--on-accent);font-weight:700;font-size:.9rem;padding:11px 18px;border-radius:9px;transition:.25s;white-space:nowrap}
+  .navcall:hover{background:var(--gold-2);transform:translateY(-1px)}
+  .menu-btn{display:none;background:none;border:0;color:var(--ink);cursor:pointer}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;padding:15px 26px;border-radius:10px;transition:.25s;cursor:pointer;border:0;font-family:inherit}
+  .btn-solid{background:var(--gold);color:var(--on-accent)}
+  .btn-solid:hover{background:var(--gold-2);transform:translateY(-2px)}
+  .btn-line{border:1.5px solid var(--glass-brd);color:var(--ink);background:var(--glass)}
+  .btn-line:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .magnetic{will-change:transform}
+
+  /* HERO — centered full-bleed */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;filter:var(--img-filter)}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,19,34,.72),rgba(11,19,34,.86)),radial-gradient(circle at 50% 30%,rgba(217,174,85,.16),transparent 60%)}
+  :root[data-theme="light"] .hero-bg::after{background:linear-gradient(180deg,rgba(246,243,236,.82),rgba(246,243,236,.92)),radial-gradient(circle at 50% 30%,rgba(176,130,42,.14),transparent 60%)}
+  .hero-in{position:relative;z-index:1;max-width:880px;padding:120px 24px 90px}
+  .kicker{display:inline-flex;align-items:center;gap:11px;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:26px}
+  .kicker::before,.kicker::after{content:"";width:28px;height:1.5px;background:var(--gold)}
+  .hero h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.02em;font-weight:700}
+  .hero h1 .serif{font-style:italic;font-weight:500;color:var(--gold)}
+  .hero h1 .hw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+  .hero h1 .hi{display:inline-block;will-change:transform}
+  .hero .sub{color:var(--muted);font-size:1.18rem;margin:26px auto 36px;max-width:34em}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center}
+  .guarantee-seal{position:absolute;right:5%;bottom:8%;z-index:2;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,var(--card),var(--bg-2));border:2px solid var(--gold);box-shadow:0 20px 50px -18px rgba(0,0,0,.6);animation:spinSeal 26s linear infinite}
+  .guarantee-seal .gtxt{position:absolute;inset:0}
+  .guarantee-seal .gtxt svg{width:100%;height:100%}
+  .guarantee-seal .gtxt text{fill:var(--gold);font-size:9.3px;letter-spacing:2.4px;font-weight:700;font-family:'Hanken Grotesk',sans-serif;text-transform:uppercase}
+  .guarantee-seal .gctr{position:relative;z-index:1;animation:spinSeal 26s linear infinite reverse}
+  .guarantee-seal .gctr b{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--gold);line-height:1}
+  .guarantee-seal .gctr span{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  @keyframes spinSeal{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.guarantee-seal,.guarantee-seal .gctr{animation:none}}
+  @media(max-width:760px){.guarantee-seal{display:none}}
+
+  /* STATS ticker band */
+  .stats{border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .stat{padding:38px 20px;text-align:center;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:'Playfair Display',serif;font-size:2.7rem;color:var(--gold);line-height:1;font-weight:600}
+  .stat .l{font-size:.82rem;color:var(--muted);letter-spacing:.03em;margin-top:9px}
+
+  /* SECTION head */
+  .sec{padding:100px 0}
+  .sec-head{text-align:center;max-width:42em;margin:0 auto 54px}
+  .eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px}
+  .eyebrow::before,.eyebrow.ctr::after{content:"";width:28px;height:1.5px;background:var(--gold)}
+  .sec h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.02em;line-height:1.08;font-weight:700}
+  .sec h2 .serif{font-style:italic;font-weight:500;color:var(--gold)}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.05rem}
+
+  /* GUARANTEE feature */
+  .guar{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .guar .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:96px 32px}
+  .guar-card{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:420px;display:grid;place-items:center;background:linear-gradient(150deg,var(--card),var(--bg-2))}
+  .guar-card .big5{font-family:'Playfair Display',serif;font-size:clamp(7rem,16vw,12rem);font-weight:700;color:var(--gold);line-height:.8;font-style:italic}
+  .guar-card .big5 small{display:block;font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:.92rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:18px}
+  .guar h2{font-size:clamp(2rem,4vw,2.9rem)}
+  .guar p{color:var(--muted);font-size:1.06rem;margin:16px 0 8px;max-width:32em}
+  .guar .gpoints{list-style:none;margin-top:22px}
+  .guar .gpoints li{display:flex;gap:14px;align-items:flex-start;padding:13px 0}
+  .guar .gpoints svg{width:22px;height:22px;color:var(--gold);flex-shrink:0;margin-top:2px}
+
+  /* SERVICES — spotlight card grid */
+  .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .scard{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 24px;transition:transform .3s,border-color .3s;--mx:50%;--my:50%;opacity:1!important}
+  .scard::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(240px circle at var(--mx) var(--my),rgba(217,174,85,.16),transparent 62%)}
+  .scard:hover{transform:translateY(-5px);border-color:rgba(217,174,85,.45)}
+  .scard:hover::after{opacity:1}
+  .scard .si{width:50px;height:50px;border-radius:12px;background:rgba(217,174,85,.12);display:grid;place-items:center;color:var(--gold);margin-bottom:18px}
+  .scard .si svg{width:24px;height:24px}
+  .scard h3{font-size:1.16rem;font-weight:600;letter-spacing:-.01em}
+  .scard p{color:var(--muted);font-size:.9rem;margin-top:7px}
+
+  /* PROCESS — drawing stepper (horizontal) */
+  .steps{position:relative;margin-top:60px}
+  .steprail{position:absolute;left:8%;right:8%;top:34px;height:3px;background:var(--line);border-radius:3px;overflow:hidden;z-index:0}
+  .steprail .fill{position:absolute;left:0;top:0;height:100%;width:0;background:linear-gradient(90deg,var(--gold-2),var(--gold));box-shadow:0 0 12px rgba(217,174,85,.5);transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+  .stepgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;z-index:1}
+  .step{text-align:center}
+  .step .dot{width:68px;height:68px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;background:var(--card);border:2px solid var(--line);color:var(--muted-2);font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;font-weight:600;transition:.5s;position:relative}
+  .step.on .dot{border-color:var(--gold);background:linear-gradient(135deg,var(--gold-2),var(--gold));color:var(--on-accent);box-shadow:0 0 0 8px rgba(217,174,85,.12),0 0 22px rgba(217,174,85,.4);transform:scale(1.06)}
+  .step h3{font-size:1.14rem;font-weight:600}
+  .step p{color:var(--muted);font-size:.9rem;margin-top:6px;max-width:18em;margin-left:auto;margin-right:auto}
+  @media(max-width:760px){
+    .steprail{left:34px;right:auto;top:8px;bottom:8px;width:3px;height:auto}
+    .stepgrid{grid-template-columns:1fr;gap:30px;text-align:left}
+    .step{display:grid;grid-template-columns:68px 1fr;gap:20px;text-align:left;align-items:start}
+    .step .dot{margin:0}.step p{margin-left:0}
+  }
+
+  /* REVIEWS marquee */
+  .rev-strip{overflow:hidden;position:relative;padding:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .rev-track{display:flex;gap:18px;width:max-content;will-change:transform;animation:revScroll 52s linear infinite}
+  @keyframes revScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .rev-strip:hover .rev-track{animation-play-state:paused}
+  .rcard{flex:0 0 auto;width:368px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .rcard .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
+  .rcard .rtext{font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--ink)}
+  .rcard .rwho{display:flex;align-items:center;gap:10px;margin-top:16px;color:var(--muted);font-weight:600;font-size:.9rem}
+  .sample-pill{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:3px 9px}
+  @media(prefers-reduced-motion:reduce){.rev-track{animation:none}}
+
+  /* FAQ */
+  .faq-grid{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .faq{background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+  .faq.open{border-color:var(--gold);box-shadow:var(--shadow)}
+  .faq>button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 23px;background:none;border:0;cursor:pointer;font-family:inherit;font-size:1.04rem;font-weight:600;color:var(--ink);text-align:left}
+  .faq>button .pls{flex-shrink:0;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--bg-2);color:var(--gold);transition:.3s}
+  .faq>button .pls svg{width:16px;height:16px}
+  .faq.open>button .pls{background:var(--gold);color:var(--on-accent);transform:rotate(45deg)}
+  .faq .ans{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .faq .ans p{padding:0 23px 21px;color:var(--muted);font-size:.95rem;line-height:1.65;margin:0}
+
+  /* CONTACT */
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .c-info{padding:60px 50px;background:var(--bg-2)}
+  .c-info h2{font-size:2.1rem;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+  .c-info h2 .serif{font-style:italic;color:var(--gold)}
+  .c-info p{color:var(--muted);margin-top:14px;font-size:1.01rem;max-width:30em}
+  .crow{display:flex;gap:16px;align-items:flex-start;margin-top:26px}
+  .crow .ic{width:46px;height:46px;border:1.5px solid var(--line);border-radius:10px;display:grid;place-items:center;color:var(--gold);flex-shrink:0}
+  .crow .lbl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);font-weight:600}
+  .crow a,.crow span.v{display:block;font-size:1.08rem;font-weight:600;margin-top:3px;color:var(--ink)}
+  .crow small{color:var(--muted);font-size:.85rem}
+  .c-form{padding:56px 50px;background:var(--card)}
+  .c-form h3{font-size:1.34rem;font-weight:700}
+  .c-form .s{color:var(--muted);font-size:.92rem;margin:7px 0 24px}
+  .field{margin-bottom:17px}
+  .field label{display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--ink);font-family:inherit;font-size:.95rem;transition:.2s}
+  .field input::placeholder,.field textarea::placeholder{color:var(--muted-2)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,174,85,.16)}
+  .c-form .btn-solid{width:100%;justify-content:center;margin-top:4px}
+  .c-form .fine{text-align:center;font-size:.82rem;color:var(--muted);margin-top:13px}
+
+  /* FOOTER */
+  footer{background:var(--bg-2);border-top:1px solid var(--line);padding:62px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:42px}
+  .foot-grid h4{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:15px;font-weight:600}
+  .foot-grid a,.foot-grid p{display:block;color:var(--muted);font-size:.92rem;margin-bottom:9px;transition:.2s}
+  .foot-grid a:hover{color:var(--gold)}
+  .foot-brand p{max-width:24em;margin-top:13px;line-height:1.7}
+  .foot-bottom{border-top:1px solid var(--line);margin-top:46px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted-2)}
+
+  .sticky-call{position:fixed;left:14px;right:14px;bottom:14px;z-index:120;display:none;background:var(--gold);color:var(--on-accent);font-weight:700;padding:15px;border-radius:12px;align-items:center;justify-content:center;gap:10px;box-shadow:0 16px 36px -12px rgba(0,0,0,.6)}
+  [data-rise]{opacity:0;transform:translateY(26px)}
+
+  /* CHAT */
+  .cb-bubble{position:fixed;right:22px;bottom:22px;z-index:300;width:60px;height:60px;border-radius:50%;border:0;cursor:pointer;background:var(--gold);color:var(--on-accent);display:grid;place-items:center;box-shadow:0 16px 36px -10px rgba(217,174,85,.6);transition:transform .25s,background .25s}
+  .cb-bubble:hover{transform:translateY(-2px) scale(1.05);background:var(--gold-2)}
+  .cb-bubble svg{width:26px;height:26px}.cb-bubble .ic-close{display:none}
+  .cb-open .cb-bubble .ic-chat{display:none}.cb-open .cb-bubble .ic-close{display:block}
+  .cb-badge{position:absolute;top:-3px;right:-3px;width:20px;height:20px;border-radius:50%;background:var(--gold-2);color:#1a1206;font-size:.7rem;font-weight:700;display:grid;place-items:center;border:2px solid var(--bg)}
+  .cb-open .cb-badge{display:none}
+  .cb-panel{position:fixed;right:22px;bottom:94px;z-index:300;width:374px;max-width:calc(100vw - 28px);height:540px;max-height:calc(100vh - 130px);background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 80px -24px rgba(0,0,0,.6);display:flex;flex-direction:column;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(16px) scale(.98);transform-origin:bottom right;transition:.28s cubic-bezier(.4,0,.2,1)}
+  .cb-open .cb-panel{opacity:1;visibility:visible;transform:none}
+  .cb-head{background:linear-gradient(150deg,var(--bg-2),var(--card));color:var(--ink);padding:15px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+  .cb-head .av{width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--on-accent);display:grid;place-items:center;font-weight:800;flex-shrink:0;font-size:1.05rem;font-family:'Playfair Display',serif;font-style:italic}
+  .cb-head .who{flex:1;min-width:0}.cb-head .who b{font-size:1rem;display:block;line-height:1.15}
+  .cb-head .who span{font-size:.76rem;color:var(--muted);display:flex;align-items:center;gap:6px;margin-top:1px}
+  .cb-head .who span::before{content:"";width:7px;height:7px;border-radius:50%;background:#5ec98f;box-shadow:0 0 0 3px rgba(94,201,143,.2)}
+  .cb-call{display:inline-flex;align-items:center;gap:7px;background:rgba(217,174,85,.16);border:1px solid rgba(217,174,85,.32);color:var(--gold);font-weight:600;font-size:.82rem;padding:8px 12px;border-radius:10px;transition:.2s;white-space:nowrap}
+  .cb-call:hover{background:rgba(217,174,85,.28)}.cb-call svg{width:15px;height:15px}
+  .cb-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:11px;background:var(--bg)}
+  .cb-msg{max-width:84%;padding:11px 14px;border-radius:15px;font-size:.93rem;line-height:1.45;animation:cbIn .3s ease;word-wrap:break-word}
+  @keyframes cbIn{from{opacity:0;transform:translateY(8px)}}
+  .cb-bot{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:5px;color:var(--ink)}
+  .cb-bot a{color:var(--gold);font-weight:700}
+  .cb-user{align-self:flex-end;background:var(--gold);color:var(--on-accent);border-bottom-right-radius:5px;font-weight:500}
+  .cb-typing{align-self:flex-start;display:flex;gap:4px;padding:14px 15px;background:var(--card);border:1px solid var(--line);border-radius:15px;border-bottom-left-radius:5px}
+  .cb-typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:cbDot 1s infinite}
+  .cb-typing i:nth-child(2){animation-delay:.15s}.cb-typing i:nth-child(3){animation-delay:.3s}
+  @keyframes cbDot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+  .cb-chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;background:var(--bg)}
+  .cb-chip{background:var(--card);border:1px solid var(--line);color:var(--ink);font-weight:500;font-size:.82rem;padding:8px 13px;border-radius:999px;cursor:pointer;transition:.2s}
+  .cb-chip:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+  .cb-foot{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:var(--card)}
+  .cb-foot input{flex:1;border:1px solid var(--line);background:var(--bg);border-radius:11px;padding:12px 14px;font-family:inherit;font-size:.92rem;color:var(--ink)}
+  .cb-foot input:focus{outline:0;border-color:var(--gold)}.cb-foot input::placeholder{color:var(--muted-2)}
+  .cb-send{width:46px;flex-shrink:0;border:0;border-radius:11px;background:var(--gold);color:var(--on-accent);cursor:pointer;display:grid;place-items:center;transition:.2s}
+  .cb-send:hover{background:var(--gold-2)}.cb-send svg{width:19px;height:19px}
+  @media(max-width:480px){.cb-panel{right:10px;left:10px;width:auto;bottom:84px;height:min(74vh,520px)}.cb-bubble{right:16px;bottom:16px}}
+
+  @media(max-width:920px){
+    .navlinks{display:none}.menu-btn{display:block}
+    .navcall{font-size:.82rem;padding:9px 13px}.nav .wrap{height:64px}
+    .stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat{border-bottom:1px solid var(--line)}
+    .guar .wrap{grid-template-columns:1fr;gap:40px;padding:62px 32px}.guar-card{min-height:300px}
+    .sgrid{grid-template-columns:1fr 1fr}
+    .contact .wrap{grid-template-columns:1fr}.c-info,.c-form{padding:42px 28px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .sticky-call{display:flex}body{padding-bottom:80px}
+  }
+  @media(max-width:560px){.sgrid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.rcard{width:300px}}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span><b>The Punctual Plumber®</b> <span class="sep">·</span> On-Time Service Guaranteed</span>
+    <span>Licensed Plumbers <span class="sep">·</span> <b>Emergency Service Available</b></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mk"><i data-lucide="clock-3"></i></span>
+      <span class="nm">Benjamin Franklin<small>The Punctual Plumber</small></span>
+    </a>
+    <div class="navlinks">
+      <a href="#guarantee">Guarantee</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="tgl" id="themeBtn" aria-label="Toggle theme">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+      <a class="navcall magnetic" href="tel:+15624311960"><i data-lucide="phone"></i> 562-431-1960</a>
+    </div>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.navlinks').style.display='flex'"><i data-lucide="menu"></i></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets/_img/a7d10d4d4434.jpg" alt="Licensed plumber at work" loading="eager" /></div>
+  <div class="hero-in">
+    <span class="kicker">America's Punctual Plumber</span>
+    <h1>If we're late, <span class="serif">we pay you.</span></h1>
+    <p class="sub">It's the promise that made us famous: if we're not on time, we pay you <b style="color:var(--gold)">$5 for every minute</b> we keep you waiting. Expert plumbing, backed by the clock.</p>
+    <div class="hero-cta">
+      <a class="btn btn-solid magnetic" href="tel:+15624311960"><i data-lucide="phone-call"></i> Book Now · 562-431-1960</a>
+      <a class="btn btn-line magnetic" href="#services">Our Services <i data-lucide="arrow-down-right"></i></a>
+    </div>
+  </div>
+  <div class="guarantee-seal" aria-hidden="true">
+    <div class="gtxt"><svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0"/></defs><text><textPath href="#circ" startOffset="0%">· On-Time Guaranteed · The Punctual Plumber </textPath></text></svg></div>
+    <div class="gctr"><b>$5</b><span>per minute</span></div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="n" data-count="5" data-prefix="$">$0</div><div class="l">Paid per minute we're late</div></div>
+    <div class="stat"><div class="n">On-Time</div><div class="l">Service guarantee</div></div>
+    <div class="stat"><div class="n">24/7</div><div class="l">Emergency service</div></div>
+    <div class="stat"><div class="n">Licensed</div><div class="l">Expert plumbers</div></div>
+  </div>
+</div>
+
+<!-- GUARANTEE -->
+<section class="guar" id="guarantee">
+  <div class="wrap">
+    <div class="guar-card" data-rise><div class="big5"><span class="serif">$5</span><small>Per minute, every minute</small></div></div>
+    <div data-rise>
+      <span class="eyebrow">The on-time guarantee</span>
+      <h2>Your time is worth <span class="serif">money.</span> We agree.</h2>
+      <p>Most plumbers give you a four-hour window and hope you're grateful. We give you a promise: if we're not there on time, we pay you $5 for every single minute we're late. It keeps us honest, and it keeps you in control of your day.</p>
+      <ul class="gpoints">
+        <li><i data-lucide="clock"></i><span><b>We show up when we say we will</b> — punctuality is the whole point.</span></li>
+        <li><i data-lucide="receipt-text"></i><span><b>Straightforward, upfront pricing</b> — you approve the price before we start.</span></li>
+        <li><i data-lucide="shield-check"></i><span><b>Licensed, background-checked plumbers</b> — national expertise, local support.</span></li>
+        <li><i data-lucide="badge-check"></i><span><b>Workmanship you can trust</b> — done right, the first time.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow ctr">What we fix</span>
+      <h2>Expert plumbing, <span class="serif">on the clock.</span></h2>
+      <p>From a slow drain to a slab leak, our licensed plumbers handle it, and we're there when we say we will be.</p>
+    </div>
+    <div class="sgrid">
+      <div class="scard" data-rise><span class="si"><i data-lucide="waves"></i></span><h3>Drain Cleaning</h3><p>Clearing slow and clogged drains throughout the home.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="gauge"></i></span><h3>Hydro Jetting</h3><p>High-pressure clearing for the toughest blockages.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="flame"></i></span><h3>Water Heaters</h3><p>Repair and installation of tank and tankless units.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="thermometer"></i></span><h3>Boilers</h3><p>Boiler repair and installation, kept running all winter.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="pipette"></i></span><h3>Gas Lines</h3><p>Safe, code-compliant gas line repair and installation.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="search"></i></span><h3>Leak Detection</h3><p>Finding hidden leaks, including slab and pool leaks.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="droplets"></i></span><h3>Faucets &amp; Fixtures</h3><p>Repairs and new installs for faucets, tubs and bidets.</p></div>
+      <div class="scard" data-rise><span class="si"><i data-lucide="trash-2"></i></span><h3>Garbage Disposals</h3><p>Replacement and repair of jammed or failed disposals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow ctr">How it works</span>
+      <h2>Four steps, <span class="serif">zero waiting.</span></h2>
+      <p>Booking the Punctual Plumber is as dependable as our arrival time.</p>
+    </div>
+    <div class="steps" id="steps">
+      <div class="steprail"><div class="fill" id="stepFill"></div></div>
+      <div class="stepgrid">
+        <div class="step" data-i="0"><div class="dot">1</div><h3>Book Your Time</h3><p>Call 562-431-1960 or book online and lock in an appointment window.</p></div>
+        <div class="step" data-i="1"><div class="dot">2</div><h3>We Arrive On Time</h3><p>Your plumber shows up on the dot, or we pay you $5 a minute.</p></div>
+        <div class="step" data-i="2"><div class="dot">3</div><h3>Upfront Price</h3><p>You see and approve the price before any work begins.</p></div>
+        <div class="step" data-i="3"><div class="dot">4</div><h3>Done Right</h3><p>Expert work, tested and tidied, backed by our workmanship.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow ctr">What customers say</span>
+      <h2>Trusted for showing up <span class="serif">on time.</span></h2>
+      <p>National expertise, local support. (Quotes below are sample placeholders; real customer reviews drop in here.)</p>
+    </div>
+  </div>
+  <div class="rev-strip">
+    <div class="rev-track">
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Showed up exactly on time and the price was just what they quoted. No games.”</p><div class="rwho"><span>Dana R.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“The on-time guarantee is real, they were early and fixed our water heater fast.”</p><div class="rwho"><span>Marcus T.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Professional, clean, and explained the price before starting. Highly recommend.”</p><div class="rwho"><span>Priya S.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Cleared a drain two other companies couldn't. Punctual and polite.”</p><div class="rwho"><span>Kevin L.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Booked online, got a same-day window, and they kept every promise.”</p><div class="rwho"><span>Angela M.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Showed up exactly on time and the price was just what they quoted. No games.”</p><div class="rwho"><span>Dana R.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“The on-time guarantee is real, they were early and fixed our water heater fast.”</p><div class="rwho"><span>Marcus T.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Professional, clean, and explained the price before starting. Highly recommend.”</p><div class="rwho"><span>Priya S.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Cleared a drain two other companies couldn't. Punctual and polite.”</p><div class="rwho"><span>Kevin L.</span><span class="sample-pill">Sample</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">“Booked online, got a same-day window, and they kept every promise.”</p><div class="rwho"><span>Angela M.</span><span class="sample-pill">Sample</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow ctr">Good to know</span><h2>Questions, <span class="serif">answered.</span></h2></div>
+    <div class="faq-grid">
+      <div class="faq" data-rise><button type="button"><span>Is the on-time guarantee real?</span><span class="pls"><i data-lucide="plus"></i></span></button><div class="ans"><p>Yes. If we're not on time for your scheduled appointment, we pay you $5 for every minute we're late. It's the promise that made us The Punctual Plumber.</p></div></div>
+      <div class="faq" data-rise><button type="button"><span>What plumbing services do you offer?</span><span class="pls"><i data-lucide="plus"></i></span></button><div class="ans"><p>Drain cleaning, hydro jetting, water heaters, boilers, gas lines, leak detection (including slab and pool leaks), faucets and fixtures, garbage disposals and more, repair and installation.</p></div></div>
+      <div class="faq" data-rise><button type="button"><span>Do you offer emergency service?</span><span class="pls"><i data-lucide="plus"></i></span></button><div class="ans"><p>Yes. Our licensed plumbers are prepared for emergencies. Call <a href="tel:+15624311960" class="gold" style="font-weight:600">562-431-1960</a> and we'll get a plumber to you.</p></div></div>
+      <div class="faq" data-rise><button type="button"><span>Will I know the price before work starts?</span><span class="pls"><i data-lucide="plus"></i></span></button><div class="ans"><p>Yes. You receive upfront, straightforward pricing and approve it before any work begins, no surprises.</p></div></div>
+      <div class="faq" data-rise><button type="button"><span>Are your plumbers licensed?</span><span class="pls"><i data-lucide="plus"></i></span></button><div class="ans"><p>Yes. Our plumbers are licensed and background-checked, combining national expertise with local support.</p></div></div>
+      <div class="faq" data-rise><button type="button"><span>How do I book?</span><span class="pls"><i data-lucide="plus"></i></span></button><div class="ans"><p>Call <a href="tel:+15624311960" class="gold" style="font-weight:600">562-431-1960</a> to book now and find your local Benjamin Franklin Plumbing team.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="wrap">
+    <div class="c-info">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Need a <span class="serif">punctual</span> plumber? Book now.</h2>
+      <p>Call to lock in an on-time appointment, or send a few details and your local team will reach out.</p>
+      <div class="crow"><span class="ic"><i data-lucide="phone"></i></span><div><span class="lbl">Book now</span><a href="tel:+15624311960">562-431-1960</a></div></div>
+      <div class="crow"><span class="ic"><i data-lucide="map-pin"></i></span><div><span class="lbl">Coverage</span><span class="v">National expertise, local support</span><small>Find your local Benjamin Franklin Plumbing team</small></div></div>
+      <div class="crow"><span class="ic"><i data-lucide="clock"></i></span><div><span class="lbl">Service</span><span class="v">On-time guaranteed</span><small>Emergency service available</small></div></div>
+    </div>
+    <div class="c-form">
+      <h3>Request service</h3>
+      <p class="s">Tell us what's going on, we'll call you back.</p>
+      <form onsubmit="return sendReq(event)">
+        <div class="field"><label>Name</label><input required name="name" placeholder="Your name" /></div>
+        <div class="field"><label>Phone</label><input required name="phone" type="tel" placeholder="(000) 000-0000" /></div>
+        <div class="field"><label>Service needed</label>
+          <select name="service"><option>Drain cleaning</option><option>Hydro jetting</option><option>Water heater</option><option>Boiler</option><option>Gas line</option><option>Leak detection</option><option>Faucet / fixture</option><option>Garbage disposal</option><option>Emergency</option><option>Something else</option></select>
+        </div>
+        <div class="field"><label>Details</label><textarea name="msg" rows="3" placeholder="Briefly describe the problem"></textarea></div>
+        <button class="btn btn-solid" type="submit"><i data-lucide="send"></i> Send Request</button>
+        <p class="fine">Or call <a href="tel:+15624311960" class="gold" style="font-weight:600">562-431-1960</a> to book now.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><span class="mk"><i data-lucide="clock-3"></i></span><span class="nm">Benjamin Franklin<small>The Punctual Plumber</small></span></a>
+        <p>Expert plumbing, backed by the on-time guarantee. National expertise with local support, licensed plumbers who show up when they say they will.</p>
+      </div>
+      <div><h4>Services</h4><a href="#services">Drain Cleaning</a><a href="#services">Water Heaters</a><a href="#services">Gas Lines</a><a href="#services">Leak Detection</a></div>
+      <div><h4>Company</h4><a href="#guarantee">The Guarantee</a><a href="#process">Our Process</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+      <div><h4>Book now</h4><a href="tel:+15624311960">562-431-1960</a><p>On-time guaranteed</p><p>Emergency service available</p></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Benjamin Franklin Plumbing · The Punctual Plumber®</span>
+      <span>On-Time Guaranteed · Licensed &amp; Insured</span>
+    </div>
+  </div>
+</footer>
+
+<a class="sticky-call" href="tel:+15624311960"><i data-lucide="phone-call"></i> Book Now · 562-431-1960</a>
+
+<!-- CHAT -->
+<button class="cb-bubble" id="cbBubble" aria-label="Chat with us">
+  <span class="cb-badge">1</span>
+  <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+</button>
+<div class="cb-panel" id="cbPanel">
+  <div class="cb-head">
+    <span class="av">B</span>
+    <div class="who"><b>Benjamin Franklin Plumbing</b><span>Auto-assistant</span></div>
+    <a class="cb-call" href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a>
+  </div>
+  <div class="cb-body" id="cbBody"></div>
+  <div class="cb-chips" id="cbChips"></div>
+  <form class="cb-foot" id="cbForm"><input id="cbInput" placeholder="Type a message..." autocomplete="off" /><button class="cb-send" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></form>
+</div>
+
+<script>
+  try{ lucide.createIcons(); }catch(e){}
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  (function(){ var btn=document.getElementById('themeBtn'); if(!btn) return;
+    btn.addEventListener('click',function(){ var cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark'; var next=cur==='light'?'dark':'light'; document.documentElement.setAttribute('data-theme',next); try{localStorage.setItem('bf-theme',next);}catch(e){} });
+  })();
+
+  // HERO mask-rise (one-time)
+  (function(){ var h1=document.querySelector('.hero h1'); if(!h1) return;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches; var hasGSAP=false; try{hasGSAP=!!window.gsap;}catch(e){}
+    var segs=[]; h1.childNodes.forEach(function(n){segs.push({text:n.textContent, cls:n.nodeType===3?null:(n.className||null)});});
+    h1.textContent=''; var inners=[];
+    segs.forEach(function(seg){ seg.text.split(/(\s+)/).forEach(function(tok){ if(tok==='') return; if(/^\s+$/.test(tok)){ h1.appendChild(document.createTextNode(' ')); return; }
+      var w=document.createElement('span'); w.className='hw'; var i=document.createElement('span'); i.className='hi'+(seg.cls?' '+seg.cls:''); i.textContent=tok; w.appendChild(i); h1.appendChild(w); inners.push(i); });});
+    if(reduce||!hasGSAP) return;
+    ((document.fonts&&document.fonts.ready)||Promise.resolve()).then(function(){ gsap.set(inners,{yPercent:118}); gsap.to(inners,{yPercent:0,duration:.62,ease:'power3.out',stagger:0.05,delay:.15}); });
+  })();
+
+  var nav=document.getElementById('nav'); addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>30);});
+
+  // SCROLL REVEAL + safety net
+  try{ gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('[data-rise]').forEach(function(el,i){ gsap.to(el,{opacity:1,y:0,duration:.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%',toggleActions:'play none none none',once:true},delay:(i%4)*0.04}); });
+    addEventListener('load',function(){ScrollTrigger.refresh();});
+    setTimeout(function(){document.querySelectorAll('[data-rise]').forEach(function(el){ if(getComputedStyle(el).opacity==='0'){el.style.transition='opacity .5s,transform .5s';el.style.opacity=1;el.style.transform='none';} });},1400);
+  }catch(e){ document.querySelectorAll('[data-rise]').forEach(function(el){el.style.opacity=1;el.style.transform='none';}); }
+
+  // NUMBER TICKER (count-up on view)
+  (function(){ var els=[].slice.call(document.querySelectorAll('[data-count]')); if(!els.length) return;
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function run(el){ var target=+el.dataset.count, pre=el.dataset.prefix||'', dur=1200, t0=null;
+      if(reduce){ el.textContent=pre+target; return; }
+      function tick(ts){ if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/dur); el.textContent=pre+Math.round(p*target); if(p<1) requestAnimationFrame(tick); }
+      requestAnimationFrame(tick);
+    }
+    if(window.IntersectionObserver){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} }); },{threshold:.5}); els.forEach(function(e){io.observe(e);}); }
+    else els.forEach(run);
+  })();
+
+  // PROCESS drawing stepper
+  (function(){ var steps=document.getElementById('steps'); if(!steps) return;
+    var fill=document.getElementById('stepFill'); var nodes=[].slice.call(steps.querySelectorAll('.step'));
+    var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches; var started=false;
+    var horiz=function(){ return window.matchMedia('(min-width:761px)').matches; };
+    function play(){ if(started) return; started=true;
+      if(reduce){ fill.style.transition='none'; fill.style[horiz()?'width':'height']='100%'; nodes.forEach(function(n){n.classList.add('on');}); return; }
+      fill.style[horiz()?'width':'height']='100%';
+      nodes.forEach(function(n,i){ setTimeout(function(){ n.classList.add('on'); }, 250 + i*420); });
+    }
+    // rail is horizontal width on desktop, vertical height on mobile
+    function prep(){ if(horiz()){ fill.style.height='100%'; fill.style.width=started?'100%':'0'; } else { fill.style.width='100%'; fill.style.height=started?'100%':'0'; } }
+    prep(); addEventListener('resize',prep);
+    var hasGSAP=false; try{hasGSAP=!!window.gsap;}catch(e){}
+    if(hasGSAP){ try{ gsap.registerPlugin(ScrollTrigger); ScrollTrigger.create({trigger:steps,start:'top 72%',onEnter:play}); }catch(e){ play(); } }
+    else { setTimeout(play,300); }
+  })();
+
+  function sendReq(e){ e.preventDefault();var f=e.target;
+    var body='Name: '+f.name.value+'%0D%0APhone: '+f.phone.value+'%0D%0AService: '+f.service.value+'%0D%0ADetails: '+f.msg.value;
+    window.location.href='mailto:?subject=Plumbing Request, '+encodeURIComponent(f.name.value)+'&body='+body; return false;
+  }
+
+  // MAGNETIC
+  (function(){ if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    document.querySelectorAll('.magnetic').forEach(function(el){ el.addEventListener('mousemove',function(e){ var r=el.getBoundingClientRect(); el.style.transform='translate('+((e.clientX-r.left-r.width/2)*.3)+'px,'+((e.clientY-r.top-r.height/2)*.45)+'px) scale(1.04)'; }); el.addEventListener('mouseleave',function(){ el.style.transform=''; }); });
+  })();
+  // SPOTLIGHT cards
+  (function(){ if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    document.querySelectorAll('.scard').forEach(function(c){ c.addEventListener('mousemove',function(e){ var r=c.getBoundingClientRect(); c.style.setProperty('--mx',(e.clientX-r.left)+'px'); c.style.setProperty('--my',(e.clientY-r.top)+'px'); }); });
+  })();
+  // FAQ
+  (function(){ var items=[].slice.call(document.querySelectorAll('.faq'));
+    items.forEach(function(f){ var btn=f.querySelector('button'), ans=f.querySelector('.ans');
+      btn.addEventListener('click',function(){ var isOpen=f.classList.contains('open'); items.forEach(function(o){ o.classList.remove('open'); o.querySelector('.ans').style.maxHeight='0px'; }); if(!isOpen){ f.classList.add('open'); ans.style.maxHeight=ans.scrollHeight+'px'; } });
+    });
+  })();
+  // CHATBOT
+  (function(){ var bubble=document.getElementById('cbBubble'); if(!bubble) return;
+    var body=document.getElementById('cbBody'), chipsWrap=document.getElementById('cbChips'), form=document.getElementById('cbForm'), input=document.getElementById('cbInput');
+    var started=false, PHONE='+15624311960', PD='562-431-1960';
+    var CHIPS=['Is the guarantee real?','What do you fix?','Emergency!','Book now'];
+    function down(){ body.scrollTop=body.scrollHeight; }
+    function add(html,who){ var d=document.createElement('div'); d.className='cb-msg '+(who==='user'?'cb-user':'cb-bot'); if(who==='user'){d.textContent=html;}else{d.innerHTML=html;} body.appendChild(d); down(); }
+    function typing(){ var t=document.createElement('div'); t.className='cb-typing'; t.innerHTML='<i></i><i></i><i></i>'; body.appendChild(t); down(); return t; }
+    function botSay(html,delay){ var t=typing(); setTimeout(function(){ t.remove(); add(html,'bot'); }, delay||750); }
+    function renderChips(){ chipsWrap.innerHTML=''; CHIPS.forEach(function(c){ var b=document.createElement('button'); b.className='cb-chip'; b.type='button'; b.textContent=c; b.onclick=function(){ handle(c); }; chipsWrap.appendChild(b); }); }
+    function open(){ document.body.classList.add('cb-open');
+      if(!started){ started=true; botSay("Hi, thanks for reaching out to Benjamin Franklin Plumbing, The Punctual Plumber. What can we help with? (Quick auto-assistant, we'll get a plumber on it.)", 500); setTimeout(renderChips, 1000); }
+      setTimeout(function(){ input.focus(); }, 300);
+    }
+    function close(){ document.body.classList.remove('cb-open'); }
+    bubble.onclick=function(){ document.body.classList.contains('cb-open')?close():open(); };
+    function has(s,a){ for(var i=0;i<a.length;i++){ if(s.indexOf(a[i])>-1) return true; } return false; }
+    function reply(text){ var s=text.toLowerCase(); var ph=text.match(/(\(?\+?\d[\d().\-\s]{6,}\d)/);
+      if(ph){ return "Got it, I have your number as <b>"+ph[0].trim()+"</b>. Your local team will reach out shortly. Anything else to note?"; }
+      if(has(s,['guarantee','on time','on-time','late','5','five','punctual','minute'])) return "Yes, the guarantee is real: if we're not on time, we pay you <b>$5 for every minute</b> we're late. That's why we're The Punctual Plumber.";
+      if(has(s,['emergency','burst','flood','urgent','asap','no water','sewage','overflow','leak now'])) return "Sounds urgent. The fastest way to get a plumber out is to call <a href='tel:"+PHONE+"'><b>"+PD+"</b></a>, or drop your number and your local team will call right back.";
+      if(has(s,['license','licensed','insured','legit','credential'])) return "Yes, our plumbers are <b>licensed and background-checked</b>, national expertise with local support.";
+      if(has(s,['quote','price','cost','estimate','how much','pricing','charge'])) return "You get <b>upfront pricing you approve before work begins</b>, no surprises. What's the issue, and your best number?";
+      if(has(s,['water heater','tankless','hot water','boiler'])) return "We repair and install water heaters and boilers. Want a quote? Drop your number and we'll call.";
+      if(has(s,['drain','clog','hydro','jet','backed up','slow drain'])) return "We handle drain cleaning and hydro jetting for the toughest clogs. One fixture or the whole house? Share your number.";
+      if(has(s,['gas'])) return "We repair and install gas lines safely and to code. If you smell gas, leave the home and call "+PD+".";
+      if(has(s,['leak','slab','pool'])) return "We do leak detection, including slab and pool leaks. Want us to take a look? Drop your number.";
+      if(has(s,['fix','do','service','offer','work','what'])) return "Expert plumbing: drains, hydro jetting, water heaters, boilers, gas lines, leak detection, faucets, fixtures and disposals. What's going on?";
+      if(has(s,['book','appointment','schedule','come out','visit','find','location'])) return "Happy to. Call <a href='tel:"+PHONE+"'><b>"+PD+"</b></a> to book now and find your local Benjamin Franklin Plumbing team.";
+      if(has(s,['hour','open','time','today','weekend','when','24'])) return "We offer emergency service and on-time scheduled appointments. Call <a href='tel:"+PHONE+"'><b>"+PD+"</b></a> and we'll find a time that fits.";
+      if(has(s,['hi','hello','hey','yo'])) return "Hello! What's going on with your plumbing today?";
+      if(has(s,['thank','thanks'])) return "Anytime. Want a callback? Drop your number and we'll reach out.";
+      return "We're The Punctual Plumber, expert plumbing backed by the on-time guarantee. Tell me what's going on, or share your number. You can also reach us now at <a href='tel:"+PHONE+"'><b>"+PD+"</b></a>.";
+    }
+    function handle(text){ text=(text||'').trim(); if(!text) return; add(text,'user'); chipsWrap.innerHTML=''; botSay(reply(text), 650+Math.random()*450); }
+    form.onsubmit=function(e){ e.preventDefault(); var v=input.value; input.value=''; handle(v); };
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IRONHAND — Theme Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#0B0B0D; --ink-2:#141417; --cream:#F4EFE7; --muted:#9A958C;
+         --line:rgba(244,239,231,.12); --line-2:rgba(244,239,231,.06);
+         --ease:cubic-bezier(.22,.61,.36,1); }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{ background:var(--ink); color:var(--cream); font-family:"Inter",system-ui,sans-serif;
+        min-height:100vh; -webkit-font-smoothing:antialiased;
+        background-image:
+          radial-gradient(110% 80% at 80% -10%, rgba(242,117,43,.10), transparent 55%),
+          radial-gradient(90% 70% at 0% 0%, rgba(46,155,230,.08), transparent 50%); }
+  .wrap{ max-width:1180px; margin:0 auto; padding:64px 28px 90px; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-family:"Syne"; font-weight:700;
+            font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+  .eyebrow::before{ content:""; width:26px; height:1.5px; background:#F2752B; display:inline-block; }
+  h1{ font-family:"Syne"; font-weight:800; font-size:clamp(32px,5vw,56px); line-height:1.02;
+      letter-spacing:-.02em; margin:16px 0 14px; }
+  h1 em{ font-style:normal; color:#F2752B; }
+  .sub{ color:var(--muted); font-size:clamp(15px,1.4vw,18px); max-width:62ch; line-height:1.6; }
+  .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; margin-top:46px; }
+  @media (max-width:760px){ .grid{ grid-template-columns:1fr; } }
+  .card{ position:relative; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+         background:var(--ink-2); text-decoration:none; color:inherit; display:block;
+         transition:transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease); }
+  .card:hover{ transform:translateY(-6px); border-color:rgba(244,239,231,.28);
+               box-shadow:0 30px 60px rgba(0,0,0,.5); }
+  .shot{ position:relative; aspect-ratio:16/10; overflow:hidden; border-bottom:1px solid var(--line-2); }
+  .shot img{ width:100%; height:100%; object-fit:cover; object-position:top center; display:block;
+             transition:transform .6s var(--ease); }
+  .card:hover .shot img{ transform:scale(1.04); }
+  .badge{ position:absolute; top:14px; left:14px; z-index:2; font-family:"Syne"; font-weight:700;
+          font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:7px 12px; border-radius:100px;
+          background:rgba(11,11,13,.78); backdrop-filter:blur(8px); border:1px solid var(--line); }
+  .badge.rec{ background:#F2752B; color:#160c03; border-color:transparent; }
+  .badge.cur{ color:var(--cream); }
+  .meta{ padding:20px 22px 22px; }
+  .row{ display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .name{ font-family:"Syne"; font-weight:800; font-size:22px; letter-spacing:-.01em; }
+  .swatches{ display:flex; gap:7px; }
+  .sw{ width:18px; height:18px; border-radius:50%; border:1px solid rgba(255,255,255,.18); }
+  .desc{ color:var(--muted); font-size:14.5px; margin-top:8px; line-height:1.55; }
+  .go{ margin-top:16px; display:inline-flex; align-items:center; gap:8px; font-family:"Syne";
+       font-weight:700; font-size:14px; color:var(--cream); }
+  .go svg{ width:16px; height:16px; transition:transform .3s var(--ease); }
+  .card:hover .go svg{ transform:translateX(5px); }
+  .card:hover .go{ color:#F2752B; }
+  .foot{ margin-top:42px; color:var(--muted); font-size:13.5px; line-height:1.6; }
+  .foot b{ color:var(--cream); font-weight:600; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="eyebrow">IRONHAND Plumbing Co.</span>
+    <h1>Pick a <em>color theme</em>.</h1>
+    <p class="sub">Same site, same globe choreography, same grid footer — five palettes. Click any card to open the full live site in a new tab, scroll the whole thing, then come back and pick.</p>
+
+    <div class="grid">
+
+      <a class="card" href="copper/" target="_blank" rel="noopener">
+        <div class="shot"><span class="badge cur">● Current</span><img src="_shots/copper.jpeg" alt="Copper theme" /></div>
+        <div class="meta">
+          <div class="row">
+            <span class="name">Copper</span>
+            <span class="swatches"><i class="sw" style="background:#F2752B"></i><i class="sw" style="background:#E8B04B"></i><i class="sw" style="background:#0D0D0F"></i></span>
+          </div>
+          <p class="desc">Artisan, heavy-duty, distinctive. What's live on the site right now.</p>
+          <span class="go">View live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="card" href="blue/" target="_blank" rel="noopener">
+        <div class="shot"><span class="badge rec">★ Recommended</span><img src="_shots/blue.jpeg" alt="Blue theme" /></div>
+        <div class="meta">
+          <div class="row">
+            <span class="name">Ocean Blue</span>
+            <span class="swatches"><i class="sw" style="background:#2E9BE6"></i><i class="sw" style="background:#E3AE38"></i><i class="sw" style="background:#08111C"></i></span>
+          </div>
+          <p class="desc">The plumbing trust-standard. The globe looks its absolute best as a glowing blue earth.</p>
+          <span class="go">View live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="card" href="green/" target="_blank" rel="noopener">
+        <div class="shot"><img src="_shots/green.jpeg" alt="Green theme" /></div>
+        <div class="meta">
+          <div class="row">
+            <span class="name">Emerald</span>
+            <span class="swatches"><i class="sw" style="background:#18B866"></i><i class="sw" style="background:#E3AE38"></i><i class="sw" style="background:#0A0F0C"></i></span>
+          </div>
+          <p class="desc">Fresh, modern, eco. Stands out from every blue plumber in town.</p>
+          <span class="go">View live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="card" href="violet/" target="_blank" rel="noopener">
+        <div class="shot"><span class="badge" style="background:#8C5CFF;color:#fff;border-color:transparent">✦ New</span><img src="_shots/violet.jpeg" alt="Violet theme" /></div>
+        <div class="meta">
+          <div class="row">
+            <span class="name">Violet</span>
+            <span class="swatches"><i class="sw" style="background:#8C5CFF"></i><i class="sw" style="background:#E3AE38"></i><i class="sw" style="background:#1A1B1E"></i></span>
+          </div>
+          <p class="desc">Modern SaaS-grade purple. The globe glows violet — bold, distinctive, unmistakably premium.</p>
+          <span class="go">View live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+      <a class="card" href="white/" target="_blank" rel="noopener">
+        <div class="shot"><img src="_shots/white.jpeg" alt="White theme" /></div>
+        <div class="meta">
+          <div class="row">
+            <span class="name">Light Premium</span>
+            <span class="swatches"><i class="sw" style="background:#1273C6"></i><i class="sw" style="background:#C7902A"></i><i class="sw" style="background:#F6F8FB"></i></span>
+          </div>
+          <p class="desc">Clean, expensive, high-end remodel feel. Globe reads as a soft blue sphere on light.</p>
+          <span class="go">View live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+    <p class="foot">Throwaways — your real site stays on <b>Copper</b> until you choose. Tell me the one you want (“go blue”, “use green”…) and I'll apply it to the live <b>index.html</b> in one pass.</p>
+  </div>
+
+<!-- pf-chatbot:start -->
+<script>window.CHATBOT_KB={"name": "IRONHAND — Theme Showcase", "accent": "#f2752b", "mode": "design", "intro": "Hi! I can describe this piece — IRONHAND — Theme Showcase (Color-theme picker · 5 variants). Ask what design, colors, buttons, fonts, layout or tech it uses, or how to build one like it.", "suggestions": ["What design?", "Colors", "Buttons", "Fonts", "How to build one"], "qa": [{"k": ["design", "style", "aesthetic", "look", "feel", "vibe", "theme"], "a": "IRONHAND — Theme Showcase — Color-theme picker · 5 variants. Style: Pick a color theme → live preview of the IRONHAND Plumbing site in Blue / Copper / Green / Violet / White. Palette: ink #0B0B0D, muted #9A958C. Typography: Inter, Syne."}, {"k": ["color", "colour", "palette", "hex", "accent", "brand color"], "a": "Palette — ink #0B0B0D, muted #9A958C. The primary accent is #f2752b."}, {"k": ["button", "btn", "cta", "call to action"], "a": "Buttons are pill / strongly rounded."}, {"k": ["font", "type", "typography", "typeface", "headline font"], "a": "Typefaces: Inter, Syne."}, {"k": ["layout", "section", "structure", "flow", "page", "wireframe"], "a": "Page flow: Pick a color theme → live preview of the IRONHAND Plumbing site in Blue / Copper / Green / Violet / White."}, {"k": ["tech", "stack", "built", "build", "framework", "made", "code", "recreate", "rebuild", "library", "how do i build", "how to build", "how should i build"], "a": "Built with hand-written HTML/CSS/JS. To recreate it: type in Inter, Syne, accent #f2752b over your background, pill / strongly rounded buttons, and structure it as — Pick a color theme → live preview of the IRONHAND Plumbing site in Blue / Copper / Green / Violet / White."}], "fallback": "I can talk about this site's design (colors, buttons, fonts, layout, tech) and how to rebuild it. Try a chip below."};</script>
+
+<style>
+#pfbot-root{--pfa:#f2752b;position:fixed;right:20px;bottom:20px;z-index:2147483000;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+#pfbot-launch{width:58px;height:58px;border:0;border-radius:50%;background:var(--pfa);color:#fff;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);display:grid;place-items:center;transition:transform .15s}
+#pfbot-launch:hover{transform:scale(1.06)}
+#pfbot-launch svg{width:26px;height:26px}
+#pfbot-panel{position:absolute;right:0;bottom:72px;width:350px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 110px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#pfbot-root[data-open="true"] #pfbot-panel{display:flex}
+#pfbot-head{background:var(--pfa);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+#pfbot-head .t{font-weight:700;font-size:15px;line-height:1.1}
+#pfbot-head .s{font-size:11px;opacity:.85}
+#pfbot-head .av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:17px}
+#pfbot-x{margin-left:auto;background:0;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.85;line-height:1}
+#pfbot-log{flex:1;overflow-y:auto;padding:14px;background:#f6f7f9;display:flex;flex-direction:column;gap:10px}
+.pfb{max-width:84%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.pfb.bot{background:#fff;color:#1d2430;border:1px solid #e7e9ee;border-bottom-left-radius:4px;align-self:flex-start}
+.pfb.me{background:var(--pfa);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.pfb.typing{color:#8a93a3;font-style:italic}
+#pfbot-chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;background:#fff;border-top:1px solid #eef0f3}
+.pfchip{border:1px solid var(--pfa);color:var(--pfa);background:#fff;border-radius:999px;padding:6px 11px;font-size:12px;cursor:pointer;transition:.12s}
+.pfchip:hover{background:var(--pfa);color:#fff}
+#pfbot-form{display:flex;gap:8px;padding:11px;border-top:1px solid #eef0f3;background:#fff}
+#pfbot-input{flex:1;border:1px solid #d8dce3;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:0}
+#pfbot-input:focus{border-color:var(--pfa)}
+#pfbot-send{border:0;background:var(--pfa);color:#fff;border-radius:10px;padding:0 15px;cursor:pointer;font-size:14px}
+@media(max-width:430px){#pfbot-panel{width:calc(100vw - 24px);right:-2px}}
+</style>
+<script>
+(function(){
+ var KB=window.CHATBOT_KB; if(!KB||document.getElementById('pfbot-root'))return;
+ var root=document.createElement('div'); root.id='pfbot-root';
+ root.innerHTML=
+  '<button id="pfbot-launch" aria-label="Open assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l2-5.3A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg></button>'+
+  '<div id="pfbot-panel" role="dialog" aria-label="Site assistant">'+
+   '<div id="pfbot-head"><div class="av">✨</div><div><div class="t"></div><div class="s">AI assistant · ask me anything</div></div><button id="pfbot-x" aria-label="Close">×</button></div>'+
+   '<div id="pfbot-log"></div><div id="pfbot-chips"></div>'+
+   '<form id="pfbot-form"><input id="pfbot-input" autocomplete="off" placeholder="Type your question…"/><button id="pfbot-send">➤</button></form>'+
+  '</div>';
+ document.body.appendChild(root);
+ root.style.setProperty('--pfa', KB.accent||'#1a9fcf');
+ root.querySelector('#pfbot-head .t').textContent=KB.name||'Assistant';
+ var log=root.querySelector('#pfbot-log'), chips=root.querySelector('#pfbot-chips'),
+     form=root.querySelector('#pfbot-form'), input=root.querySelector('#pfbot-input'),
+     launch=root.querySelector('#pfbot-launch'), greeted=false;
+ function bubble(role,txt){var d=document.createElement('div');d.className='pfb '+role;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+ function botSay(txt){var tp=bubble('bot typing','typing…');setTimeout(function(){tp.remove();bubble('bot',txt);},380+Math.min(900,txt.length*7));}
+ function renderChips(){chips.innerHTML='';(KB.suggestions||[]).forEach(function(s){var b=document.createElement('button');b.className='pfchip';b.type='button';b.textContent=s;b.onclick=function(){send(s);};chips.appendChild(b);});}
+ function answer(q){
+   q=(q||'').toLowerCase().trim();
+   if(/^(hi|hey|hello|yo|sup|good (morning|evening|afternoon))\b/.test(q))return KB.intro;
+   if(/(thank|thanks|thx|cheers|appreciate)/.test(q))return "Anytime! Anything else you want to know?";
+   if(/(bye|goodbye|see ya|that's all|done)/.test(q))return "Take care — come back if you need anything.";
+   var best=null,bs=0;
+   (KB.qa||[]).forEach(function(it){var s=0;it.k.forEach(function(k){if(q.indexOf(k)>=0)s+=k.length;});if(s>bs){bs=s;best=it;}});
+   return best?best.a:KB.fallback;
+ }
+ function send(txt){txt=(txt||'').trim();if(!txt)return;bubble('me',txt);input.value='';botSay(answer(txt));}
+ form.addEventListener('submit',function(e){e.preventDefault();send(input.value);});
+ launch.addEventListener('click',function(){var o=root.getAttribute('data-open')==='true';root.setAttribute('data-open',o?'false':'true');if(!o&&!greeted){greeted=true;renderChips();botSay(KB.intro);input.focus();}});
+ root.querySelector('#pfbot-x').addEventListener('click',function(){root.setAttribute('data-open','false');});
+})();
+</script>
+
+<!-- pf-chatbot:end -->
+</body>
+</html>
