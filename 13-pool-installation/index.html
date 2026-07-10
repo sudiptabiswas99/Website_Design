@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Azure Pools &amp; Spas | Custom Pool Builder in Tampa FL · Free 3D Design</title>
+<meta name="description" content="Azure Pools &amp; Spas designs and builds custom gunite, fiberglass, and vinyl pools across Tampa, FL. Free 3D design, pool financing, and PHTA certified builders. 2026 build slots are filling. Call (562) 431-1960." />
+<meta name="theme-color" content="#1C3A5E" />
+<link rel="canonical" href="https://azurepools.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Azure Pools &amp; Spas | Tampa's Custom Pool Builder" />
+<meta property="og:description" content="Custom gunite, fiberglass, and vinyl pools in Tampa, FL. Free 3D design, financing, and PHTA certified builders. Reserve a 2026 build slot. Call (562) 431-1960." />
+<meta property="og:image" content="assets/_img/db6577f3ac2c.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23F7F2EA'/%3E%3Cellipse cx='32' cy='28' rx='17' ry='11' fill='none' stroke='%231C3A5E' stroke-width='3.6'/%3E%3Cpath d='M15 42c4 0 4 3 8.5 3s4.5-3 8.5-3 4 3 8.5 3 4.5-3 8.5-3' fill='none' stroke='%2326201A' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:rgba(255,252,247,.56);   /* frosted porcelain floating over pool water */
+  --paper2:rgba(245,238,228,.48);  /* frosted sand, alt sections */
+  --paper3:#E7DDCC;
+  --card:rgba(255,253,248,.86);    /* floating panel above the water */
+  --solid:#F5EFE4;                 /* opaque porcelain for overlays/menus */
+  --ink:#26201A;       /* warm espresso near-black */
+  --ink2:#4C4038;
+  --muted:#7C6F63;
+  --line:#E4DACB;
+  --line2:#D6C9B4;
+  --terra:#1C3A5E;     /* terracotta accent */
+  --terra2:#12283F;
+  --terra-soft:#DBE5F1;
+  --sand:#E7D8C1;
+  --star:#C0913F;      /* ochre, stars only */
+  --maxw:1200px;
+  --fdisp:'Sora','Segoe UI',system-ui,sans-serif;
+  --fbody:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:transparent;color:var(--ink2);font-family:var(--fbody);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* sunlit pool water: fixed background with two drifting caustic light-nets */
+.pool-water{position:fixed;inset:0;z-index:-1;overflow:hidden;background:linear-gradient(180deg,#a9e2dd 0%,#74c8ce 24%,#43a2c1 56%,#2c81ad 82%,#1f6f9e 100%)}
+.pool-water::before{content:"";position:absolute;inset:0;background:radial-gradient(130% 80% at 50% -12%,rgba(255,255,255,.55),rgba(255,255,255,0) 58%)}
+.pw-caustic{position:absolute;inset:-30%;background-repeat:repeat;mix-blend-mode:screen;will-change:transform;pointer-events:none}
+.pw-c1{opacity:.5;background-size:560px 560px;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='560'><filter id='c1'><feTurbulence type='fractalNoise' baseFrequency='0.016 0.02' numOctaves='2' seed='11' stitchTiles='stitch'/><feComponentTransfer><feFuncR type='table' tableValues='1 1'/><feFuncG type='table' tableValues='1 1'/><feFuncB type='table' tableValues='1 1'/><feFuncA type='table' tableValues='0 0 0 0.12 0.6 0.12 0 0 0'/></feComponentTransfer></filter><rect width='560' height='560' filter='url(%23c1)'/></svg>");animation:pwdrift1 26s linear infinite}
+.pw-c2{opacity:.34;background-size:820px 820px;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='820' height='820'><filter id='c2'><feTurbulence type='fractalNoise' baseFrequency='0.011 0.014' numOctaves='2' seed='4' stitchTiles='stitch'/><feComponentTransfer><feFuncR type='table' tableValues='1 1'/><feFuncG type='table' tableValues='1 1'/><feFuncB type='table' tableValues='1 1'/><feFuncA type='table' tableValues='0 0 0.1 0.5 0.1 0 0'/></feComponentTransfer></filter><rect width='820' height='820' filter='url(%23c2)'/></svg>");animation:pwdrift2 38s linear infinite reverse}
+@keyframes pwdrift1{from{transform:translate3d(0,0,0)}to{transform:translate3d(-280px,-200px,0)}}
+@keyframes pwdrift2{from{transform:translate3d(0,0,0)}to{transform:translate3d(300px,240px,0)}}
+.hero,.strip,.reviews,.design,.types,.fin,.creds,.faq,.quote,footer,.waterline{-webkit-backdrop-filter:blur(7px) saturate(112%);backdrop-filter:blur(7px) saturate(112%)}
+@media(prefers-reduced-motion:reduce){.pw-caustic{animation:none}}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--fdisp);font-weight:700;line-height:1.03;letter-spacing:-.02em;color:var(--ink)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.sec{padding:clamp(52px,6vh,74px) 0}
+.eyebrow{display:inline-flex;align-items:center;font-family:var(--fbody);font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--terra)}
+.eyebrow::before{display:none}
+/* editorial asymmetric running-head: label top, oversized heading left, note right, section rule */
+.shead{display:grid;grid-template-columns:1.42fr .58fr;grid-template-areas:"eye eye" "head note";gap:14px 48px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:40px}
+.shead .eyebrow{grid-area:eye}
+.shead h2{grid-area:head;margin-top:0;font-size:clamp(2.5rem,5.8vw,4.5rem);letter-spacing:-.04em;line-height:.98}
+.shead h2 em{font-style:normal;color:var(--terra)}
+.shead p{grid-area:note;margin-top:0;color:var(--muted);font-size:1rem;line-height:1.56;align-self:end;max-width:40ch}
+.shead.center{text-align:left}
+.shead.center .eyebrow{justify-content:flex-start}
+@media(max-width:820px){.shead{grid-template-columns:1fr;grid-template-areas:"eye" "head" "note";gap:14px}.shead p{max-width:52ch}}
+.stars{color:var(--star);letter-spacing:2px}
+
+/* buttons: terracotta pill + warm outline */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:999px;font-family:var(--fbody);font-weight:600;font-size:.98rem;white-space:nowrap;cursor:pointer;border:1.5px solid transparent;transition:transform .15s,background .2s,box-shadow .2s,color .2s,border-color .2s}
+a:focus-visible,button:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.btn svg{width:18px;height:18px}
+.btn-cta{background:var(--terra);color:#fff;box-shadow:0 16px 30px -16px rgba(28,58,94,.75)}
+.btn-cta:hover{background:var(--terra2);transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:#FFFDF9}
+.btn-ink:hover{background:#000;transform:translateY(-2px)}
+.btn-out{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn-out:hover{border-color:var(--terra);color:var(--terra);transform:translateY(-2px)}
+
+/* header: light over the porcelain hero, solid on scroll */
+.hdr{position:absolute;left:0;right:0;top:0;z-index:50;transition:background .3s,box-shadow .25s,transform .35s cubic-bezier(.16,1,.3,1);will-change:transform}
+.hdr.scrolled{position:fixed;background:rgba(247,242,234,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line),0 12px 30px -24px rgba(38,32,26,.5)}
+.hdr.hide{transform:translateY(-100%)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:86px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:44px;height:44px;flex:none;display:block}
+.brand b{font-family:var(--fdisp);font-weight:700;font-size:1.4rem;display:block;line-height:.95;color:var(--ink);letter-spacing:-.02em}
+.brand small{font-family:var(--fbody);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;white-space:nowrap;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:9px 13px;border-radius:8px;font-size:.9rem;font-weight:500;color:var(--ink2);white-space:nowrap;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--terra)}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.hdr-phone{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
+.hdr-phone .em{font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+.hdr-phone a{font-family:var(--fdisp);font-weight:700;font-size:1.14rem;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.hdr-phone a svg{width:15px;height:15px;color:var(--terra)}
+.navcta{padding:11px 22px;font-size:.9rem}
+.burger{display:none;width:46px;height:46px;border:1.5px solid var(--line2);border-radius:12px;background:var(--card);cursor:pointer;color:var(--ink)}
+.burger svg{width:22px;height:22px;margin:auto}
+
+.mmenu{position:fixed;inset:0;z-index:60;background:var(--solid);display:none;flex-direction:column;padding:92px 26px 26px;gap:4px}
+.mmenu.open{display:flex}
+.mmenu a{font-family:var(--fdisp);font-weight:700;font-size:1.6rem;color:var(--ink);padding:14px 0;border-bottom:1px solid var(--line);letter-spacing:-.02em}
+.mmenu .btn{margin-top:20px}
+.mclose{position:absolute;top:24px;right:22px;width:46px;height:46px;border:1.5px solid var(--line2);border-radius:12px;background:var(--card);cursor:pointer;color:var(--ink)}
+.mclose svg{width:22px;height:22px;margin:auto}
+
+/* HERO: cinematic full-bleed, flagship pool image (video-ready), copy seated bottom-left over a warm scrim */
+.hero{position:relative;min-height:clamp(600px,94vh,920px);display:flex;flex-direction:column;overflow:hidden;background:#141010;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img,.hero-bg video{width:100%;height:100%;object-fit:cover;object-position:50% 64%;transform:scale(1.07);animation:heroKen 24s ease-out forwards}
+@keyframes heroKen{to{transform:scale(1)}}
+/* warm scrim seats the header (top) and the copy (bottom-left) without muddying the water */
+.hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(180deg,rgba(20,15,12,.48) 0%,rgba(20,15,12,0) 24%),
+  linear-gradient(0deg,rgba(18,13,10,.82) 0%,rgba(18,13,10,.36) 30%,rgba(18,13,10,0) 60%),
+  linear-gradient(90deg,rgba(18,13,10,.44) 0%,rgba(18,13,10,0) 54%)}
+.hero-inner{position:relative;z-index:2;flex:1;align-self:center;min-width:0;width:100%;max-width:var(--maxw);padding:120px 26px 36px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-copy{display:flex;flex-direction:column}
+.hero .eyebrow{align-self:flex-start;color:#AECBEC;letter-spacing:.28em;text-shadow:0 1px 18px rgba(0,0,0,.5)}
+.hero h1{color:#FFFDF9;font-size:clamp(3rem,7.4vw,6.4rem);letter-spacing:-.045em;margin-top:15px;max-width:15ch;line-height:.95;text-shadow:0 2px 44px rgba(0,0,0,.4)}
+.hero h1 .tw-word{color:#7FB2E8}
+.hero h1 .tw-caret{background:#7FB2E8}
+.hero-lead{color:rgba(255,253,248,.92);font-size:clamp(1.06rem,1.4vw,1.24rem);max-width:50ch;line-height:1.55;margin-top:22px;text-shadow:0 1px 22px rgba(0,0,0,.34)}
+.hero-slot{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;font-family:var(--fbody);font-size:.8rem;font-weight:600;color:#FFFDF9;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:9px 17px 9px 13px;border-radius:999px;margin-bottom:20px}
+.hero-slot .dot{width:8px;height:8px;border-radius:50%;background:var(--terra);animation:slotPulse 2.4s ease-out infinite}
+@keyframes slotPulse{0%{box-shadow:0 0 0 0 rgba(28,58,94,.55)}70%{box-shadow:0 0 0 9px rgba(28,58,94,0)}100%{box-shadow:0 0 0 0 rgba(28,58,94,0)}}
+.cta-row{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}
+.hero .btn-out{background:rgba(255,255,255,.10);color:#FFFDF9;border-color:rgba(255,255,255,.36);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hero .btn-out:hover{background:rgba(255,255,255,.2);border-color:#fff;color:#fff}
+/* frosted-glass trust bar floating over the water */
+.hero-trust{align-self:flex-start;max-width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:38px;padding:15px 22px;border-radius:16px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(16px) saturate(120%);backdrop-filter:blur(16px) saturate(120%);box-shadow:0 26px 54px -32px rgba(0,0,0,.75)}
+.hero-trust span{display:inline-flex;align-items:center;gap:9px;font-size:.9rem;font-weight:500;color:#FBF7F1}
+.hero-trust svg{width:17px;height:17px;color:#AECBEC;flex:none}
+.hero-trust .divi{width:1px;height:16px;background:rgba(255,255,255,.24)}
+.hero-trust .st{color:var(--star)}
+.hero-trust .cup{font-weight:700}
+@media(prefers-reduced-motion:reduce){.hero-bg img,.hero-bg video{animation:none;transform:none}}
+
+/* header rides over the cinematic hero: white until scrolled, then the solid porcelain bar takes over */
+.hdr:not(.scrolled) .brand b{color:#FFFDF9}
+.hdr:not(.scrolled) .brand small{color:rgba(255,253,248,.74)}
+.hdr:not(.scrolled) .nav-links a{color:rgba(255,253,248,.9)}
+.hdr:not(.scrolled) .nav-links a:hover{color:#fff;background:rgba(255,255,255,.12)}
+.hdr:not(.scrolled) .hdr-phone .em{color:#AECBEC}
+.hdr:not(.scrolled) .hdr-phone a{color:#FFFDF9}
+.hdr:not(.scrolled) .hdr-phone a svg{color:#AECBEC}
+.hdr:not(.scrolled) .burger{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+.hdr:not(.scrolled) .brand .mark path[stroke="#26201A"]{stroke:#FFFDF9}
+.hdr:not(.scrolled) .brand .mark ellipse[stroke="#1C3A5E"]{stroke:#C3D6EE}
+
+/* NUMBERS strip */
+.strip{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip .st-item{padding:28px 26px;border-right:1px solid var(--line)}
+.strip .st-item:last-child{border-right:0}
+.strip .st-num{font-family:var(--fdisp);font-weight:800;font-size:2.9rem;color:var(--terra);line-height:1;letter-spacing:-.03em}
+.strip .st-item p{margin-top:12px;font-size:.9rem;color:var(--muted);max-width:24ch}
+
+/* STYLE GALLERY: sharp editorial cards, caption below */
+.gal-grid{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:1fr 1fr;gap:26px}
+.gal-card{display:flex;flex-direction:column}
+.gal-card.feat{grid-column:1;grid-row:1 / 3}
+.gal-card:not(.feat){grid-column:2}
+.gal-fig{position:relative;overflow:hidden;aspect-ratio:16/10;border:1px solid var(--line)}
+.gal-card.feat .gal-fig{aspect-ratio:auto;flex:1;min-height:360px}
+.gal-fig img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.gal-card:hover .gal-fig img{transform:scale(1.05)}
+.gal-card .gtag{position:absolute;top:0;left:0;z-index:2;background:var(--terra);color:#fff;font-weight:600;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px}
+.gal-card h3{font-size:1.7rem;margin-top:20px;letter-spacing:-.02em}
+.gal-card .idx{font-family:var(--fbody);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-top:2px;display:block}
+.gal-card p{color:var(--muted);margin-top:10px;font-size:.98rem;line-height:1.55}
+
+/* REVIEWS */
+.reviews{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev-grid{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:1fr 1fr;gap:24px}
+.rev-feature{grid-column:1;grid-row:1 / 3;background:var(--card);border:1px solid var(--line);padding:clamp(28px,3vw,42px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.rev-feature::before{content:"\201C";position:absolute;top:8px;right:26px;font-family:var(--fdisp);font-weight:800;font-size:9rem;line-height:1;color:var(--terra-soft)}
+.rev-feature .rc-stars{color:var(--star);letter-spacing:3px;font-size:1.2rem;position:relative}
+.rev-feature blockquote{font-family:var(--fdisp);font-weight:600;font-size:clamp(1.6rem,2.7vw,2.5rem);line-height:1.2;color:var(--ink);letter-spacing:-.025em;margin:22px 0 30px;position:relative}
+.rev-feature figcaption{display:flex;align-items:center;gap:14px;margin-top:auto;position:relative}
+.rev-small{grid-column:2;background:var(--card);border:1px solid var(--line);padding:28px 28px;display:flex;flex-direction:column}
+.rev-small .rc-stars{color:var(--star);letter-spacing:2px;font-size:.98rem}
+.rev-small p{font-family:var(--fdisp);font-weight:500;font-size:1.1rem;line-height:1.34;color:var(--ink);margin:13px 0 18px;letter-spacing:-.01em}
+.rev-small .rc-by{display:flex;align-items:center;gap:11px;margin-top:auto}
+.rev-feature .ava,.rev-small .ava{width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-family:var(--fdisp);font-weight:700;font-size:.98rem;flex:none}
+.rev-feature .nm,.rev-small .nm{font-family:var(--fbody);font-weight:600;color:var(--ink);display:block;line-height:1.2;font-size:.96rem}
+.rev-feature .src,.rev-small .src{font-size:.8rem;color:var(--muted)}
+@media(max-width:820px){.rev-grid{grid-template-columns:1fr;grid-template-rows:none}.rev-feature,.rev-small{grid-column:1;grid-row:auto}}
+
+/* 3D DESIGN feature (light) */
+.design{background:var(--paper)}
+.design-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.design h2{font-size:clamp(2.3rem,4.2vw,3.4rem);margin-top:16px;letter-spacing:-.03em}
+.design h2 em{font-style:normal;color:var(--terra)}
+.design .lead{color:var(--muted);margin-top:18px;font-size:1.1rem;max-width:46ch}
+.design-list{margin-top:28px;display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line)}
+.design-list .di{display:flex;gap:16px;align-items:flex-start;padding:20px 2px;border-bottom:1px solid var(--line)}
+.design-list .di svg{width:24px;height:24px;color:var(--terra);flex:none;margin-top:2px}
+.design-list .di b{font-family:var(--fbody);font-weight:600;color:var(--ink);font-size:1.02rem;display:block}
+.design-list .di span{color:var(--muted);font-size:.94rem}
+.design-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:13px}
+.design-media{position:relative;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(38,32,26,.5)}
+.design-media::before{content:"";position:absolute;left:-14px;top:-14px;width:80px;height:80px;border-top:3px solid var(--terra);border-left:3px solid var(--terra);z-index:2}
+.design-media img{width:100%;height:100%;object-fit:cover}
+/* group photo effect: crossfade to a second photo on hover */
+.gal-fig .ph-swap,.design-media .ph-swap{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .55s ease;z-index:1}
+.gal-card:hover .gal-fig .ph-swap,.design-media:hover .ph-swap{opacity:1}
+@media(prefers-reduced-motion:reduce){.gal-fig .ph-swap,.design-media .ph-swap{transition:none}}
+
+/* BUILD TYPES: editorial index (no icon-card grid) */
+.types{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.type-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.type-col{padding:26px 28px 26px 0;border-right:1px solid var(--line)}
+.type-col:last-child{border-right:0;padding-right:0}
+.type-col:not(:first-child){padding-left:28px}
+.type-col .tnum{font-family:var(--fdisp);font-weight:800;font-size:1rem;color:var(--terra);letter-spacing:.02em}
+.type-col h3{font-size:1.7rem;margin-top:14px;letter-spacing:-.02em}
+.type-col .tw{display:inline-block;margin-top:10px;font-family:var(--fbody);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--terra);padding:5px 11px;border-radius:999px}
+.type-col p{color:var(--muted);font-size:.96rem;margin-top:14px;line-height:1.58}
+.type-extra{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.type-mini{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-weight:500;font-size:.92rem;color:var(--ink)}
+.type-mini svg{width:18px;height:18px;color:var(--terra);flex:none}
+
+/* PROCESS: vertical timeline, terracotta numbers */
+.proc-wrap{max-width:860px;margin:0 auto}
+.proc-step{display:grid;grid-template-columns:80px 1fr;gap:26px;padding:22px 0;border-bottom:1px solid var(--line);position:relative}
+.proc-step:last-child{border-bottom:0}
+.proc-num{font-family:var(--fdisp);font-weight:800;font-size:2.6rem;color:var(--terra);line-height:.9;letter-spacing:-.03em}
+.proc-step h4{font-family:var(--fdisp);font-size:1.5rem;color:var(--ink);letter-spacing:-.02em}
+.proc-step p{color:var(--muted);font-size:1rem;margin-top:7px;line-height:1.6;max-width:60ch}
+.proc-step .wk{display:inline-block;margin-top:9px;font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--terra);text-transform:uppercase;font-family:var(--fbody)}
+
+/* FINANCING (light sand) */
+.fin{background:var(--paper)}
+.fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.fin h2{font-size:clamp(2.2rem,4vw,3.2rem);letter-spacing:-.03em}
+.fin h2 em{font-style:normal;color:var(--terra)}
+.fin .lead{color:var(--muted);margin-top:18px;font-size:1.08rem;max-width:44ch}
+.fin .btn{margin-top:28px}
+.fin-card{background:var(--card);border:1px solid var(--line);padding:40px;box-shadow:0 30px 60px -46px rgba(38,32,26,.5)}
+.fin-card .pill{display:inline-flex;align-items:center;gap:8px;background:var(--terra-soft);color:var(--terra2);font-weight:600;font-size:.78rem;padding:7px 14px;border-radius:999px}
+.fin-card .pill svg{width:15px;height:15px}
+.fin-card .big{font-family:var(--fdisp);font-weight:800;font-size:3.4rem;color:var(--ink);line-height:1;margin-top:20px;letter-spacing:-.03em}
+.fin-card .big span{font-size:1.2rem;color:var(--muted);font-weight:500}
+.fin-card .note{color:var(--muted);font-size:.9rem;margin-top:12px}
+.fin-card .frow{display:flex;flex-direction:column;gap:2px;margin-top:24px;border-top:1px solid var(--line);padding-top:8px}
+.fin-card .frow .di{display:flex;gap:13px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
+.fin-card .frow .di:last-child{border-bottom:0}
+.fin-card .frow svg{width:21px;height:21px;color:var(--terra);flex:none;margin-top:1px}
+.fin-card .frow b{font-family:var(--fbody);font-weight:600;color:var(--ink);font-size:.96rem;display:block}
+.fin-card .frow span{color:var(--muted);font-size:.88rem}
+
+/* CREDENTIALS: horizontal assurance ribbon (no badge grid, no photo) */
+.creds{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.creds .shead{max-width:720px}
+.creds h2 em{font-style:normal;color:var(--terra)}
+.cred-ribbon{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);margin-top:8px}
+.cred-cell{padding:24px 28px 24px 0;border-right:1px solid var(--line)}
+.cred-cell:last-child{border-right:0;padding-right:0}
+.cred-cell:not(:first-child){padding-left:28px}
+.cred-cell .cn{font-family:var(--fdisp);font-weight:800;font-size:.9rem;color:var(--terra);letter-spacing:.04em}
+.cred-cell b{font-family:var(--fdisp);font-weight:700;color:var(--ink);font-size:1.16rem;display:block;margin-top:12px;letter-spacing:-.01em}
+.cred-cell span{color:var(--muted);font-size:.92rem;display:block;margin-top:6px}
+
+/* FAQ */
+.faq{background:var(--paper)}
+.faq-list{max-width:860px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item>button{width:100%;text-align:left;background:transparent;border:0;cursor:pointer;color:var(--ink);font-family:var(--fdisp);font-weight:600;font-size:1.28rem;line-height:1.25;padding:26px 4px;display:flex;align-items:center;justify-content:space-between;gap:16px;letter-spacing:-.02em}
+.faq-item>button .fq-ic{width:24px;height:24px;color:var(--terra);flex:none;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.faq-item.open>button .fq-ic{transform:rotate(45deg)}
+.faq-item .fa{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item .fa p{padding:0 40px 26px 4px;color:var(--muted);font-size:1rem;line-height:1.62}
+
+/* QUOTE / FINAL CTA (light) */
+.quote{background:var(--paper2);border-top:1px solid var(--line)}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.quote h2{font-size:clamp(2.3rem,4.2vw,3.4rem);letter-spacing:-.03em}
+.quote h2 em{font-style:normal;color:var(--terra)}
+.quote .lead{color:var(--muted);margin-top:18px;font-size:1.1rem;max-width:42ch}
+.qcall{display:inline-flex;align-items:center;gap:13px;margin-top:28px;padding:15px 30px;border-radius:999px;background:var(--terra);color:#fff;font-family:var(--fdisp);font-weight:700;font-size:1.5rem;letter-spacing:-.02em}
+.qcall svg{width:24px;height:24px}
+.qcall:hover{background:var(--terra2)}
+.qnote{margin-top:16px;color:var(--muted);font-size:.94rem}
+.qnote a{color:var(--terra);font-weight:600}
+.qform{background:var(--card);border:1px solid var(--line);padding:36px;box-shadow:0 30px 60px -46px rgba(38,32,26,.5);color:var(--ink2)}
+.qform h3{font-size:1.7rem;margin-bottom:4px;letter-spacing:-.02em}
+.qform .sub{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.78rem;font-weight:600;color:var(--ink);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line2);border-radius:12px;padding:13px 15px;font-family:inherit;font-size:.96rem;color:var(--ink);background:#fff}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--terra);box-shadow:0 0 0 3px rgba(28,58,94,.15)}
+.field textarea{resize:vertical;min-height:74px}
+.qform .btn{width:100%;margin-top:6px}
+
+/* footer (light) */
+footer{background:var(--paper);color:var(--ink2);padding:52px 0 30px;border-top:1px solid var(--line)}
+footer .ftop{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+footer .fbrand{max-width:330px}
+footer .fbrand p{margin-top:16px;font-size:.92rem;color:var(--muted);line-height:1.6}
+.fcol h4{font-family:var(--fbody);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:15px}
+.fcol a,.fcol p{display:block;color:var(--ink2);font-size:.93rem;margin-bottom:10px;transition:color .2s}
+.fcol a:hover{color:var(--terra)}
+.fbot{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.82rem;color:var(--muted)}
+
+/* sticky mobile call */
+.scall{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;padding:11px 14px calc(11px + env(safe-area-inset-bottom));background:var(--solid);border-top:1px solid var(--line2)}
+.scall a{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;border-radius:999px;background:var(--terra);color:#fff;font-family:var(--fdisp);font-weight:700;font-size:1.15rem}
+.scall svg{width:20px;height:20px}
+
+/* reveal */
+/* rise + zoom reveal (replays both scroll directions) */
+.reveal{opacity:0;transform:translateY(24px) scale(.92);transition:opacity .6s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* kinetic + parallax layer */
+#sprog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:60;background:var(--terra);transform:scaleX(0);transform-origin:0 50%;will-change:transform;pointer-events:none}
+.px{will-change:transform;transform:scale(1.14)}
+.tw{white-space:nowrap}
+.tw-word{color:var(--terra);display:inline-block;transition:opacity .34s ease,transform .34s ease}
+.tw-word.tw-swap{opacity:0;transform:translateY(8px)}
+.tw-caret{display:inline-block;width:.055em;min-width:3px;height:.86em;background:var(--terra);margin-left:.08em;vertical-align:-.05em;animation:twblink 1.05s steps(1) infinite}
+@keyframes twblink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.tw-caret{animation:none}#sprog{display:none}}
+
+/* signature waterline: a terracotta ripple that drifts sideways */
+.waterline{height:34px;background:var(--paper);position:relative;overflow:hidden}
+.waterline::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 8 Q15 1 30 8 T60 8 T90 8 T120 8' fill='none' stroke='%231C3A5E' stroke-width='2' stroke-opacity='0.5'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:0 center;background-size:120px 16px;animation:wl 5s linear infinite}
+@keyframes wl{to{background-position:120px center}}
+@media(prefers-reduced-motion:reduce){.waterline::before{animation:none}}
+
+@media(max-width:980px){
+  .hero-top,.design-grid,.fin-grid,.quote-grid{grid-template-columns:1fr;gap:34px}
+  .design-media,.fin-card{max-width:520px}
+  .gal-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .strip .wrap,.type-row,.cred-ribbon{grid-template-columns:1fr 1fr}
+  .strip .st-item:nth-child(2),.type-col:nth-child(2),.cred-cell:nth-child(2){border-right:0}
+  .type-col,.cred-cell{padding:26px 20px!important;border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)}
+  .type-row,.cred-ribbon{border-left:0}
+  .nav-links,.hdr-phone{display:none}
+  .burger{display:grid;place-items:center}
+  .navcta{display:none}
+  .scall{display:block}
+  body{padding-bottom:76px}
+}
+@media(max-width:620px){
+  .wrap{padding:0 18px}
+  .sec{padding:70px 0}
+  .hero{min-height:clamp(560px,90vh,780px)}
+  .hero-inner{padding:104px 18px 26px}
+  .hero h1{font-size:clamp(2.5rem,10.5vw,3.5rem);max-width:18ch;margin-top:12px}
+  .hero-lead{margin-top:16px}
+  .hero-trust{gap:10px 16px;padding:13px 16px;margin-top:28px}
+  .hero-trust .divi{display:none}
+  .gal-grid,.rev-grid{grid-template-columns:1fr}
+  .strip .wrap,.type-row,.cred-ribbon{grid-template-columns:1fr}
+  .strip .st-item,.type-col,.cred-cell{border-right:0!important}
+  .proc-step{grid-template-columns:56px 1fr;gap:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;clip-path:none;transform:none;transition:none}
+  .faq-item .fa,.faq-item>button .fq-ic,.hdr,.gal-card .gal-fig img{transition:none}
+  .gal-card:hover .gal-fig img{transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="pool-water" aria-hidden="true"><div class="pw-caustic pw-c1"></div><div class="pw-caustic pw-c2"></div></div>
+<div id="sprog" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Azure Pools and Spas home">
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="Azure Pools and Spas logo" fill="none">
+        <ellipse cx="32" cy="28" rx="19" ry="12.5" stroke="#1C3A5E" stroke-width="3.4"/>
+        <ellipse cx="32" cy="28" rx="11" ry="6.5" stroke="rgba(38,32,26,.35)" stroke-width="2"/>
+        <path d="M11 44c4.5 0 4.5 3.4 9.5 3.4S25.5 44 31 44s4.5 3.4 9.5 3.4S45.5 44 51 44" stroke="#26201A" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M13 52c4 0 4 3 9 3s5-3 10-3 4 3 9 3 5-3 9-3" stroke="rgba(28,58,94,.5)" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span><b>Azure</b><small>Pools &amp; Spas · Tampa</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#styles">Pool styles</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#design">3D Design</a>
+      <a href="#types">Build types</a>
+      <a href="#process">Process</a>
+      <a href="#financing">Financing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr-right">
+      <span class="hdr-phone"><span class="em">Talk to a designer</span><a href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(562) 431-1960</a></span>
+      <a href="#quote" class="btn btn-cta navcta">Free 3D Design</a>
+      <button class="burger" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <button class="mclose" id="mclose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <a href="#styles">Pool styles</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#design">3D Design</a>
+  <a href="#types">Build types</a>
+  <a href="#process">Process</a>
+  <a href="#financing">Financing</a>
+  <a href="#faq">FAQ</a>
+  <a href="#quote" class="btn btn-cta">Get a Free 3D Design</a>
+</div>
+
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <!-- Still image now; a looping pool video drops straight in here later (same object-fit, zero layout change) -->
+    <img class="px" src="assets/_img/98f451e7cd6d.jpg" alt="Infinity-edge backyard pool at sunset overlooking the coastline, with blue mosaic tile and a sand-colored deck" loading="eager" fetchpriority="high" />
+  </div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <div class="hero-copy reveal">
+      <span class="hero-slot"><span class="dot"></span>2026 build slots are filling fast</span>
+      <span class="eyebrow">Custom pool builder · Tampa Bay</span>
+      <h1>Your backyard, made a <span class="tw-word" id="twword">resort.</span></h1>
+      <p class="hero-lead">Azure Pools &amp; Spas designs and builds custom gunite, fiberglass, and vinyl pools across the Tampa Bay area. See yours in 3D before a single shovel hits the ground.</p>
+      <div class="cta-row">
+        <a href="#quote" class="btn btn-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6l2 13h9l3-8H7"/><circle cx="11" cy="20" r="1"/><circle cx="19" cy="20" r="1"/></svg>Get a Free 3D Design</a>
+        <a href="tel:+15624311960" class="btn btn-out">(562) 431-1960</a>
+      </div>
+      <div class="hero-trust">
+        <span><svg viewBox="0 0 24 24" fill="currentColor" class="st"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="cup" data-to="5" data-dec="1">5.0</span> on reviews</span>
+        <span class="divi"></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PHTA member builder</span>
+        <span class="divi"></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Licensed &amp; insured</span>
+        <span class="divi"></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Financing available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="waterline" aria-hidden="true"></div>
+
+<!-- NUMBERS -->
+<section class="strip">
+  <div class="wrap">
+    <div class="st-item"><div class="st-num">3D</div><p>See your pool rendered before you commit</p></div>
+    <div class="st-item"><div class="st-num"><span class="cup" data-to="3">3</span></div><p>Build types: gunite, fiberglass, vinyl</p></div>
+    <div class="st-item"><div class="st-num">$0</div><p>Down financing options for qualified buyers</p></div>
+    <div class="st-item"><div class="st-num">PHTA</div><p>Pool &amp; Hot Tub Alliance member builder</p></div>
+  </div>
+</section>
+
+<!-- STYLE GALLERY -->
+<section class="sec" id="styles">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Pool styles we build</span>
+      <h2>Pick the shape of your <em>summer.</em></h2>
+      <p>Every Azure pool starts as a sketch of how you want to live in the backyard. These are the three directions most Tampa families start from.</p>
+    </div>
+    <div class="gal-grid">
+      <article class="gal-card feat reveal">
+        <figure class="gal-fig"><span class="gtag">Infinity edge</span><img src="assets/_img/156c209f3aee.jpg" alt="A blue-tiled infinity-edge pool that drops off toward a long sunset view" loading="lazy" /><img class="ph-swap" src="assets/_img/dc08a8989f61.jpg" alt="" aria-hidden="true" loading="lazy" /></figure>
+        <h3>Infinity</h3><span class="idx">01 / Long views</span>
+        <p>A vanishing edge that pours toward the horizon. Built for sloped lots and long views.</p>
+      </article>
+      <article class="gal-card reveal">
+        <figure class="gal-fig"><span class="gtag">Modern lines</span><img src="assets/_img/039d3eadbed7.jpg" alt="A clean rectangular geometric pool with a raised spa and stone deck" loading="lazy" /><img class="ph-swap" src="assets/_img/98f451e7cd6d.jpg" alt="" aria-hidden="true" loading="lazy" /></figure>
+        <h3>Geometric</h3><span class="idx">02 / Modern homes</span>
+        <p>Crisp rectangles, a raised spa, sharp coping. The look that suits a modern home.</p>
+      </article>
+      <article class="gal-card reveal">
+        <figure class="gal-fig"><span class="gtag">Natural curves</span><img src="assets/_img/db6577f3ac2c.jpg" alt="A curved freeform pool at sunset with a tiled edge, lounge chairs, and a hillside view" loading="lazy" /><img class="ph-swap" src="assets/_img/039d3eadbed7.jpg" alt="" aria-hidden="true" loading="lazy" /></figure>
+        <h3>Freeform</h3><span class="idx">03 / Classic Florida</span>
+        <p>Soft, curving shapes with a tanning ledge and paver deck. The classic Florida backyard.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews sec" id="reviews">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow">What Tampa families say</span>
+      <h2>The pool became the <em>whole backyard.</em></h2>
+      <p>Real five-star reviews from Tampa families who built their backyard with Azure.</p>
+    </div>
+    <div class="rev-grid">
+      <figure class="rev-feature reveal">
+        <div class="rc-stars">★★★★★</div>
+        <blockquote>"The 3D render was the moment it clicked. We changed the shape twice on the call and never felt rushed."</blockquote>
+        <figcaption><span class="ava">DM</span><span><span class="nm">Dana M.</span><span class="src">Westchase</span></span></figcaption>
+      </figure>
+      <div class="rev-small reveal">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Permits, engineering, inspections, they handled all of it. We just watched the backyard turn into a resort."</p>
+        <div class="rc-by"><span class="ava">RC</span><span><span class="nm">Ray C.</span><span class="src">Brandon</span></span></div>
+      </div>
+      <div class="rev-small reveal">
+        <div class="rc-stars">★★★★★</div>
+        <p>"Financing made it doable this year instead of someday. The price they quoted is the price we paid."</p>
+        <div class="rc-by"><span class="ava">SL</span><span><span class="nm">Sofia L.</span><span class="src">South Tampa</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3D DESIGN FEATURE -->
+<section class="design sec" id="design">
+  <div class="wrap design-grid">
+    <div class="reveal">
+      <span class="eyebrow">The Azure 3D design studio</span>
+      <h2>See it before you <em>build it.</em></h2>
+      <p class="lead">A pool is a big decision to make from a flat drawing. So we render yours in 3D first. Walk around it, change the shape, swap the tile, and add a spa, all before you sign anything.</p>
+      <div class="design-list">
+        <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg><div><b>A real render of your yard</b><span>Your lot, your home, your pool in context.</span></div></div>
+        <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><div><b>Change it on the spot</b><span>Shape, tile, decking, and features, side by side.</span></div></div>
+        <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><div><b>An honest price with it</b><span>You leave the call knowing the real range, not a guess.</span></div></div>
+      </div>
+      <div class="design-cta">
+        <a href="#quote" class="btn btn-cta">Book your free 3D design</a>
+        <a href="tel:+15624311960" class="btn btn-out">Call a designer</a>
+      </div>
+    </div>
+    <figure class="design-media reveal"><img class="px" src="assets/_img/dc08a8989f61.jpg" alt="A modern pool glowing blue at dusk with lounge chairs along the edge" loading="lazy" width="1000" height="1250" /><img class="ph-swap" src="assets/_img/156c209f3aee.jpg" alt="" aria-hidden="true" loading="lazy" /></figure>
+  </div>
+</section>
+
+<!-- 3D DESIGN STUDIO (interactive) -->
+<style>
+.studio{background:var(--paper);-webkit-backdrop-filter:blur(7px) saturate(112%);backdrop-filter:blur(7px) saturate(112%)}
+.studio-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.stab{font-family:var(--fbody);font-weight:600;font-size:.92rem;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line2);background:var(--card);color:var(--ink2);cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.stab:hover{border-color:var(--terra);color:var(--terra)}
+.stab.is-on{background:var(--terra);border-color:var(--terra);color:#fff}
+.studio-stage{display:grid;grid-template-columns:1.7fr 1fr;gap:22px;align-items:stretch}
+.studio-canvas{position:relative;min-height:clamp(360px,54vh,560px);border-radius:16px;overflow:hidden;border:1px solid var(--line2);background:linear-gradient(180deg,#bfe6f4,#eef6f2);box-shadow:0 30px 60px -46px rgba(38,32,26,.5);cursor:grab}
+.studio-canvas:active{cursor:grabbing}
+.studio-canvas canvas{display:block}
+.studio-loading{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--ink2);font-weight:500;font-size:.95rem;z-index:2}
+.studio-hint{position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--fdisp);font-size:.72rem;font-weight:600;color:#1c3f4d;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:6px 12px;border-radius:999px;pointer-events:none}
+.studio-spec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
+.ss-name{font-family:var(--fdisp);font-weight:800;font-size:1.75rem;color:var(--ink);letter-spacing:-.02em}
+.ss-blurb{color:var(--muted);font-size:.98rem;margin:8px 0 20px;line-height:1.55}
+.ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px 18px;margin-bottom:24px}
+.ss-grid>div{border-top:1px solid var(--line);padding-top:11px}
+.ss-grid dt{font-family:var(--fdisp);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra)}
+.ss-grid dd{font-family:var(--fdisp);font-weight:700;font-size:1.16rem;color:var(--ink);margin-top:4px;letter-spacing:-.01em}
+.studio-spec .btn{margin-top:auto;width:100%}
+.studio-addons{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 22px}
+.sadd-label{font-family:var(--fdisp);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.sadd{font-family:var(--fbody);font-weight:600;font-size:.85rem;padding:8px 15px;border-radius:999px;border:1.5px dashed var(--line2);background:transparent;color:var(--ink2);cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .18s,color .18s,border-color .18s}
+.sadd::before{content:"+";font-weight:800;color:var(--terra);font-size:1rem;line-height:1}
+.sadd:hover{border-color:var(--terra);color:var(--terra)}
+.sadd.on{background:var(--terra);border-style:solid;border-color:var(--terra);color:#fff}
+.sadd.on::before{content:"\2713";color:#fff}
+@media(max-width:860px){.studio-stage{grid-template-columns:1fr}.studio-canvas{min-height:340px}}
+</style>
+<section class="studio sec" id="studio">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">The 3D design studio</span>
+      <h2>Spin your pool <em>before you build it.</em></h2>
+      <p>Pick a style, drag to look around, and see the real footprint. Every design here shows its length, width, depth, and water volume, with the surroundings we would build around it.</p>
+    </div>
+    <div class="studio-wrap reveal">
+      <div class="studio-tabs" role="tablist" aria-label="Pool designs">
+        <button class="stab is-on" type="button" data-design="rectangle">Rectangle</button>
+        <button class="stab" type="button" data-design="infinity">Infinity edge</button>
+        <button class="stab" type="button" data-design="freeform">Freeform</button>
+        <button class="stab" type="button" data-design="kidney">Kidney</button>
+        <button class="stab" type="button" data-design="roman">Roman</button>
+        <button class="stab" type="button" data-design="lap">Lap pool</button>
+        <button class="stab" type="button" data-design="plunge">Plunge</button>
+      </div>
+      <div class="studio-addons" aria-label="Add features">
+        <span class="sadd-label">Add features</span>
+        <button class="sadd" type="button" data-addon="spa">Attached spa</button>
+        <button class="sadd" type="button" data-addon="ledge">Tanning ledge</button>
+        <button class="sadd" type="button" data-addon="bubblers">Bubblers</button>
+        <button class="sadd" type="button" data-addon="fire">Fire bowls</button>
+        <button class="sadd" type="button" data-addon="waterfall">Sheer descent</button>
+      </div>
+      <div class="studio-stage">
+        <div class="studio-canvas" id="poolCanvas">
+          <div class="studio-loading" id="poolLoading">Loading the 3D studio...</div>
+          <span class="studio-hint">Drag to orbit &middot; scroll to zoom</span>
+        </div>
+        <aside class="studio-spec" id="poolSpec">
+          <div class="ss-name">Rectangle</div>
+          <p class="ss-blurb">The most popular shape, perfect for laps and entertaining.</p>
+          <dl class="ss-grid">
+            <div><dt>Length</dt><dd data-k="L">32 ft</dd></div>
+            <div><dt>Width</dt><dd data-k="W">16 ft</dd></div>
+            <div><dt>Depth</dt><dd data-k="D">3 to 5 ft</dd></div>
+            <div><dt>Water volume</dt><dd data-k="V">~17,500 gal</dd></div>
+            <div><dt>Deck</dt><dd data-k="deck">Cut stone</dd></div>
+            <div><dt>Surroundings</dt><dd data-k="surround">Stone deck, loungers</dd></div>
+            <div style="grid-column:1 / -1"><dt>Features</dt><dd data-k="features">None added</dd></div>
+          </dl>
+          <a href="#quote" class="btn btn-cta">Design this in your yard</a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const mount = document.getElementById('poolCanvas');
+const loading = document.getElementById('poolLoading');
+const specEl = document.getElementById('poolSpec');
+const GAL = 7.48;
+
+const designs = {
+  rectangle: { name:'Rectangle', L:32, W:16, D:5, avgD:4.6, shape:'rect', water:0x27abcb, deck:0xd9caa8, deckName:'Cut stone', ground:0xcbba90, grass:false, loungers:3, umbrella:true, planters:2, palms:false, surround:'Stone deck, loungers', blurb:'The most popular shape. Perfect ninety-degree corners, ideal for laps, games, and entertaining.' },
+  infinity: { name:'Infinity edge', L:40, W:16, D:5, avgD:4.3, shape:'rect', water:0x1f9ecb, deck:0xd0d3d1, deckName:'Poured concrete', ground:0xbcc0bd, grass:false, loungers:2, umbrella:true, planters:3, palms:false, surround:'Vanishing edge, long view', blurb:'A vanishing edge that pours toward the horizon. Built for sloped lots and long views.' },
+  freeform: { name:'Freeform', L:34, W:18, D:4.5, avgD:3.9, shape:'free', water:0x2bb2d0, deck:0xcaa987, deckName:'Paver deck', ground:0x6f9f5a, grass:true, loungers:2, umbrella:false, planters:0, palms:true, surround:'Palms, paver deck, grass', blurb:'Organic curves with no straight lines. The natural, resort look that softens a backyard.' },
+  kidney: { name:'Kidney', L:32, W:18, D:4.5, avgD:3.8, shape:'kidney', water:0x2aa9c8, deck:0xcaa987, deckName:'Paver deck', ground:0x6f9f5a, grass:true, loungers:2, umbrella:true, planters:1, palms:true, surround:'Classic curve, planting', blurb:'A timeless curved shape, rounded on both sides with a gentle waist. A backyard classic since the fifties.' },
+  roman: { name:'Roman', L:34, W:15, D:5, avgD:4.6, shape:'roman', water:0x27abcb, deck:0xd9caa8, deckName:'Travertine', ground:0xcbba90, grass:false, loungers:3, umbrella:true, planters:2, palms:false, surround:'Rounded ends, travertine', blurb:'Elegant rounded ends inspired by the baths of ancient Rome. Refined, symmetrical, and formal.' },
+  lap: { name:'Lap pool', L:50, W:9, D:4, avgD:3.8, shape:'rect', water:0x1f9ecb, deck:0xd0d3d1, deckName:'Poured concrete', ground:0xbcc0bd, grass:false, loungers:2, umbrella:false, planters:4, palms:false, surround:'Long and narrow, planting run', blurb:'Long and narrow, built for swimming laps and daily exercise. Fits neatly along the side of a house.' },
+  plunge: { name:'Plunge pool', L:16, W:13, D:5.5, avgD:5, shape:'rect', water:0x2aa9c8, deck:0xd9caa8, deckName:'Cut stone', ground:0xcbba90, grass:false, loungers:2, umbrella:true, planters:2, palms:false, surround:'Compact, deep, cooling', blurb:'Small and deep, for a quick cool-off in a compact yard. Big on relief, light on footprint.' }
+};
+const ADDONS = { spa:{label:'Attached spa'}, ledge:{label:'Tanning ledge'}, bubblers:{label:'Bubblers'}, fire:{label:'Fire bowls'}, waterfall:{label:'Sheer descent'} };
+const active = new Set();
+let currentKey = 'rectangle';
+
+let scene, camera, renderer, controls, poolGroup, WATER_NORMAL, running=false, visible=false, lastT=0;
+
+function mat(color, o={}){ return new THREE.MeshStandardMaterial(Object.assign({color, roughness:.85, metalness:.02}, o)); }
+function waterMat(color){ return new THREE.MeshStandardMaterial({color, transparent:true, opacity:.86, roughness:.22, metalness:.18, emissive:color, emissiveIntensity:.12, normalMap:WATER_NORMAL, normalScale:new THREE.Vector2(.55,.55), depthWrite:false}); }
+function waterNormalTex(){ const S=128, c=document.createElement('canvas'); c.width=c.height=S; const ctx=c.getContext('2d'), img=ctx.createImageData(S,S), TAU=Math.PI*2;
+  const H=(x,y)=>Math.sin(TAU*3*x/S)*.6+Math.cos(TAU*2*y/S)*.6+Math.sin(TAU*(2*x+3*y)/S)*.4+Math.cos(TAU*(4*x-2*y)/S)*.3;
+  for(let y=0;y<S;y++)for(let x=0;x<S;x++){ const l=H((x-1+S)%S,y),r=H((x+1)%S,y),d=H(x,(y-1+S)%S),u=H(x,(y+1)%S);
+    let nx=l-r,ny=d-u,nz=2.4,inv=1/Math.hypot(nx,ny,nz); nx*=inv;ny*=inv;nz*=inv; const i=(y*S+x)*4;
+    img.data[i]=(nx*.5+.5)*255; img.data[i+1]=(ny*.5+.5)*255; img.data[i+2]=(nz*.5+.5)*255; img.data[i+3]=255; }
+  ctx.putImageData(img,0,0); const t=new THREE.CanvasTexture(c); t.wrapS=t.wrapT=THREE.RepeatWrapping; t.repeat.set(3.2,3.2); return t; }
+
+function rectPool(L,W){ const s=new THREE.Shape(),l=L/2,w=W/2; s.moveTo(-l,-w); s.lineTo(l,-w); s.lineTo(l,w); s.lineTo(-l,w); s.closePath(); return s; }
+function freePool(L,W){ const s=new THREE.Shape(),l=L/2,w=W/2; s.moveTo(-l,0.05*w);
+  s.bezierCurveTo(-l,-w*0.85,-l*0.35,-w,l*0.05,-w*0.92);
+  s.bezierCurveTo(l*0.6,-w*0.84,l*0.98,-w*0.42,l,-w*0.03);
+  s.bezierCurveTo(l*1.02,w*0.55,l*0.55,w,l*0.02,w*0.9);
+  s.bezierCurveTo(-l*0.5,w*0.84,-l*0.98,w*0.5,-l,0.05*w); s.closePath(); return s; }
+function kidneyPool(L,W){ const s=new THREE.Shape(),l=L/2,w=W/2; s.moveTo(-l*0.95,-w*0.15);
+  s.bezierCurveTo(-l,-w*0.95,-l*0.3,-w,l*0.05,-w*0.72);
+  s.bezierCurveTo(l*0.3,-w*0.55,l*0.55,-w*0.55,l*0.75,-w*0.78);
+  s.bezierCurveTo(l*1.02,-w*0.35,l*1.02,w*0.4,l*0.72,w*0.8);
+  s.bezierCurveTo(l*0.45,w,l*0.05,w,-l*0.25,w*0.62);
+  s.bezierCurveTo(-l*0.72,w*0.9,-l,w*0.35,-l*0.95,-w*0.15); s.closePath(); return s; }
+function romanPool(L,W){ const s=new THREE.Shape(),l=L/2,w=W/2,r=Math.min(w,l*0.5);
+  s.moveTo(-l+r,-w); s.lineTo(l-r,-w); s.absarc(l-r,0,w,-Math.PI/2,Math.PI/2,false);
+  s.lineTo(-l+r,w); s.absarc(-l+r,0,w,Math.PI/2,Math.PI*1.5,false); s.closePath(); return s; }
+function poolShape(d){ return d.shape==='free'?freePool(d.L,d.W):d.shape==='kidney'?kidneyPool(d.L,d.W):d.shape==='roman'?romanPool(d.L,d.W):rectPool(d.L,d.W); }
+
+function wallStrip(pts,y0,y1){ const v=[]; for(let i=0;i<pts.length-1;i++){ const a=pts[i],b=pts[i+1];
+  v.push(a.x,y0,-a.y, b.x,y0,-b.y, b.x,y1,-b.y, a.x,y0,-a.y, b.x,y1,-b.y, a.x,y1,-a.y); }
+  const g=new THREE.BufferGeometry(); g.setAttribute('position',new THREE.Float32BufferAttribute(v,3)); g.computeVertexNormals(); return g; }
+
+function buildDeck(d){ const m=7,dl=d.L/2+m,dw=d.W/2+m,outer=new THREE.Shape();
+  outer.moveTo(-dl,-dw); outer.lineTo(dl,-dw); outer.lineTo(dl,dw); outer.lineTo(-dl,dw); outer.closePath();
+  outer.holes.push(poolShape(d));
+  const geo=new THREE.ExtrudeGeometry(outer,{depth:1.1,bevelEnabled:false});
+  geo.rotateX(-Math.PI/2); geo.computeBoundingBox(); geo.translate(0,-geo.boundingBox.max.y,0);
+  const mesh=new THREE.Mesh(geo, mat(d.deck,{roughness:.96})); mesh.receiveShadow=true; mesh.castShadow=true; return mesh; }
+function buildGround(d){ const big=200,outer=new THREE.Shape();
+  outer.moveTo(-big,-big); outer.lineTo(big,-big); outer.lineTo(big,big); outer.lineTo(-big,big); outer.closePath();
+  outer.holes.push(poolShape(d));
+  const g=new THREE.ShapeGeometry(outer); g.rotateX(-Math.PI/2); g.translate(0,-0.08,0);
+  const mesh=new THREE.Mesh(g, mat(d.grass?0x6f9f5a:d.ground,{roughness:1})); mesh.receiveShadow=true; return mesh; }
+function buildCoping(shape){ const pts=shape.getPoints(90); let cx=0,cy=0; pts.forEach(p=>{cx+=p.x;cy+=p.y;}); cx/=pts.length; cy/=pts.length;
+  const outer=new THREE.Shape(); pts.forEach((p,i)=>{ const dx=p.x-cx,dy=p.y-cy,len=Math.hypot(dx,dy)||1,s=(len+0.85)/len,x=cx+dx*s,y=cy+dy*s; i?outer.lineTo(x,y):outer.moveTo(x,y); }); outer.closePath(); outer.holes.push(shape);
+  const g=new THREE.ShapeGeometry(outer); g.rotateX(-Math.PI/2); g.translate(0,0.13,0);
+  const m=new THREE.Mesh(g, mat(0xe3e3de,{roughness:.7})); m.receiveShadow=true; m.castShadow=true; return m; }
+function buildBasin(d,group){ const shape=poolShape(d),D=d.D,pts=shape.getPoints(90);
+  const plaster=mat(new THREE.Color(d.water).lerp(new THREE.Color(0xffffff),.46),{roughness:.5,side:THREE.DoubleSide});
+  const tile=mat(new THREE.Color(d.water).lerp(new THREE.Color(0x08283a),.3),{roughness:.35,metalness:.12,side:THREE.DoubleSide});
+  const band=new THREE.Mesh(wallStrip(pts,0,-0.85),tile); band.receiveShadow=true; group.add(band);
+  const low=new THREE.Mesh(wallStrip(pts,-0.85,-D),plaster); low.receiveShadow=true; group.add(low);
+  const fg=new THREE.ShapeGeometry(shape); fg.rotateX(-Math.PI/2); fg.translate(0,-D,0); const floor=new THREE.Mesh(fg,plaster.clone()); floor.receiveShadow=true; group.add(floor);
+  const wt=new THREE.ShapeGeometry(shape); wt.rotateX(-Math.PI/2); wt.translate(0,-0.4,0); const water=new THREE.Mesh(wt,waterMat(d.water)); water.renderOrder=3; group.add(water); group.userData.water=water;
+  group.add(buildCoping(shape)); }
+
+function lounger(){ const g=new THREE.Group(),fr=mat(0x8b8578,{roughness:.5,metalness:.15}),cu=mat(0xeee7d7,{roughness:.95});
+  const rail=new THREE.BoxGeometry(2.4,.12,.12); [-.36,.36].forEach(z=>{ const r=new THREE.Mesh(rail,fr); r.position.set(0,.55,z); g.add(r); });
+  const legG=new THREE.BoxGeometry(.12,.55,.12); [[-1,-.36],[-1,.36],[1,-.36],[1,.36]].forEach(p=>{ const lg=new THREE.Mesh(legG,fr); lg.position.set(p[0],.27,p[1]); g.add(lg); });
+  const seat=new THREE.Mesh(new THREE.BoxGeometry(2.3,.22,.86),cu); seat.position.y=.7; seat.castShadow=true; g.add(seat);
+  const back=new THREE.Mesh(new THREE.BoxGeometry(1.1,.2,.86),cu); back.position.set(-.95,1.02,0); back.rotation.z=.6; back.castShadow=true; g.add(back);
+  const pil=new THREE.Mesh(new THREE.BoxGeometry(.5,.16,.7),mat(0xd7ccb6,{roughness:.95})); pil.position.set(-1.05,1.24,0); pil.rotation.z=.6; g.add(pil); return g; }
+function palm(){ const g=new THREE.Group(); const t=new THREE.Mesh(new THREE.CylinderGeometry(.3,.55,9.5,8),mat(0x876744,{roughness:.9})); t.position.y=4.75; t.castShadow=true; g.add(t);
+  const fm=mat(0x3c7a37,{roughness:.85}); for(let i=0;i<8;i++){ const f=new THREE.Mesh(new THREE.ConeGeometry(.5,5.6,4),fm); f.position.y=9.5; f.rotation.z=Math.PI/2.2+Math.sin(i)*0.1; f.rotation.y=i*(Math.PI*2/8); f.castShadow=true; g.add(f);}
+  const top=new THREE.Mesh(new THREE.IcosahedronGeometry(1,0),fm); top.position.y=9.6; g.add(top); return g; }
+function umbrella(){ const g=new THREE.Group(); const p=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,7,8),mat(0x7a7a76)); p.position.y=3.5; g.add(p);
+  const c=new THREE.Mesh(new THREE.ConeGeometry(3.3,1.7,12),mat(0x1C3A5E,{roughness:.7})); c.position.y=7; c.castShadow=true; g.add(c); return g; }
+function planter(){ const g=new THREE.Group(); const b=new THREE.Mesh(new THREE.BoxGeometry(1.7,1.4,1.7),mat(0x6d685e,{roughness:.95})); b.position.y=.7; b.castShadow=true; g.add(b);
+  const s=new THREE.Mesh(new THREE.IcosahedronGeometry(1.15,0),mat(0x4a7d43,{roughness:.9})); s.position.y=1.95; s.castShadow=true; g.add(s); return g; }
+function placeProps(d,group){ const hl=d.L/2,hw=d.W/2;
+  for(let i=0;i<(d.loungers||0);i++){ const l=lounger(),span=(d.loungers-1)*3.7; l.position.set(-span/2+i*3.7,0,hw+4.6); l.rotation.y=Math.PI; group.add(l); }
+  if(d.umbrella){ const u=umbrella(); u.position.set(hl*0.55,0,hw+5.4); group.add(u); }
+  for(let i=0;i<(d.planters||0);i++){ const p=planter(),span=(d.planters-1)*5; p.position.set(-span/2+i*5,0,-(hw+4.2)); group.add(p); }
+  if(d.palms){ [[-1,-1],[1,-1],[1,1],[-1,1]].forEach(c=>{ const p=palm(); p.position.set(c[0]*(hl+6),0,c[1]*(hw+6)); group.add(p); }); } }
+
+function spaFeature(d,group){ const hl=d.L/2,hw=d.W/2,g=new THREE.Group(),stone=mat(0xcbb48f,{roughness:.8});
+  const body=new THREE.Mesh(new THREE.CylinderGeometry(4,4,2,26),stone); body.position.y=1; body.castShadow=true; body.receiveShadow=true; g.add(body);
+  const w=new THREE.Mesh(new THREE.CircleGeometry(3.5,26),waterMat(d.water)); w.rotation.x=-Math.PI/2; w.position.y=1.9; g.add(w);
+  const sheet=new THREE.Mesh(new THREE.PlaneGeometry(3,2),waterMat(d.water)); sheet.position.set(-4,1,0); sheet.rotation.y=Math.PI/2; g.add(sheet);
+  g.position.set(hl+3.5,0,-(hw-2)); group.add(g); }
+function ledgeFeature(d,group){ const hl=d.L/2,shelfLen=Math.min(6,d.L*0.28);
+  const shelf=new THREE.Mesh(new THREE.BoxGeometry(shelfLen,0.2,d.W*0.82),mat(new THREE.Color(d.water).lerp(new THREE.Color(0xffffff),.5),{roughness:.5}));
+  shelf.position.set(-hl+shelfLen/2,-0.55,0); shelf.receiveShadow=true; group.add(shelf);
+  const l=lounger(); l.scale.set(.85,.85,.85); l.position.set(-hl+shelfLen/2,-0.4,0); l.rotation.y=Math.PI/2; group.add(l); }
+function bubblersFeature(d,group){ const hl=d.L/2,arr=group.userData.bubblers;
+  for(let i=0;i<3;i++){ const b=new THREE.Mesh(new THREE.CylinderGeometry(.35,.5,1.4,10),new THREE.MeshStandardMaterial({color:0xdff4fb,transparent:true,opacity:.72,roughness:.2,emissive:0xbfe6f4,emissiveIntensity:.35}));
+    b.geometry.translate(0,.7,0); b.position.set(-hl+3,-0.1,-d.W*0.26+i*(d.W*0.26)); group.add(b); arr.push(b); } }
+function fireFeature(d,group){ const hl=d.L/2,hw=d.W/2,fires=group.userData.fires;
+  [-1,1].forEach((s,i)=>{ const g=new THREE.Group();
+    const bowl=new THREE.Mesh(new THREE.CylinderGeometry(1.1,.8,.9,16),mat(0x38352f,{roughness:.6,metalness:.2})); bowl.position.y=.9; bowl.castShadow=true; g.add(bowl);
+    const fmat=new THREE.MeshStandardMaterial({color:0xff8a2a,emissive:0xff5a0f,emissiveIntensity:1.6,roughness:.5,transparent:true,opacity:.92});
+    const flame=new THREE.Mesh(new THREE.ConeGeometry(.8,2,10),fmat); flame.position.y=2.1; g.add(flame);
+    const light=new THREE.PointLight(0xff7a2a,1.6,16); light.position.y=2.6; g.add(light);
+    g.position.set(hl+4,0,s*(hw-1)); group.add(g); fires.push({mesh:flame,mat:fmat,light}); }); }
+function waterfallFeature(d,group){ const hw=d.W/2,wallLen=Math.min(d.L*0.5,16);
+  const wall=new THREE.Mesh(new THREE.BoxGeometry(wallLen,2.6,1),mat(0xb9b3a5,{roughness:.85})); wall.position.set(0,1.3,-(hw+0.5)); wall.castShadow=true; wall.receiveShadow=true; group.add(wall);
+  const sheet=new THREE.Mesh(new THREE.PlaneGeometry(wallLen-1,2.4),waterMat(d.water)); sheet.position.set(0,0.9,-(hw-0.05)); group.add(sheet); }
+function addFeatures(d,group){ if(active.has('ledge')) ledgeFeature(d,group); if(active.has('spa')) spaFeature(d,group); if(active.has('bubblers')) bubblersFeature(d,group); if(active.has('fire')) fireFeature(d,group); if(active.has('waterfall')) waterfallFeature(d,group); }
+
+function disposeGroup(g){ g.traverse(o=>{ if(o.geometry) o.geometry.dispose(); if(o.material){ (Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.dispose()); } }); }
+function updateSpec(d){ const vol=Math.round(d.L*d.W*d.avgD*GAL/500)*500;
+  specEl.querySelector('.ss-name').textContent=d.name; specEl.querySelector('.ss-blurb').textContent=d.blurb;
+  const set=(k,v)=>{ const el=specEl.querySelector('[data-k="'+k+'"]'); if(el) el.textContent=v; };
+  set('L',d.L+' ft'); set('W',d.W+' ft'); set('D','3 to '+d.D+' ft'); set('V','~'+vol.toLocaleString()+' gal'); set('deck',d.deckName); set('surround',d.surround);
+  const feats=[...active].map(a=>ADDONS[a].label); set('features', feats.length?feats.join(', '):'None added'); }
+function buildPool(key){ currentKey=key; const d=designs[key];
+  if(poolGroup){ scene.remove(poolGroup); disposeGroup(poolGroup); }
+  poolGroup=new THREE.Group(); poolGroup.userData.bubblers=[]; poolGroup.userData.fires=[];
+  poolGroup.add(buildGround(d)); poolGroup.add(buildDeck(d)); buildBasin(d,poolGroup); placeProps(d,poolGroup); addFeatures(d,poolGroup);
+  scene.add(poolGroup); updateSpec(d); }
+
+function makeSky(){ const c=document.createElement('canvas'); c.width=8; c.height=256; const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);
+  gr.addColorStop(0,'#bfe6f4'); gr.addColorStop(.55,'#d8eef2'); gr.addColorStop(1,'#eef6f2'); g.fillStyle=gr; g.fillRect(0,0,8,256);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; return t; }
+function onResize(){ if(!renderer) return; const w=mount.clientWidth,h=mount.clientHeight; camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h); }
+function loop(){ if(!visible){running=false;return;} requestAnimationFrame(loop);
+  const now=performance.now(),dt=Math.min(.05,(now-lastT)/1000); lastT=now; const t=now*0.001;
+  if(WATER_NORMAL){ WATER_NORMAL.offset.x+=dt*0.035; WATER_NORMAL.offset.y+=dt*0.022; }
+  const u=poolGroup&&poolGroup.userData;
+  if(u&&u.water) u.water.position.y=-0.4+Math.sin(t*1.1)*0.035;
+  if(u&&u.bubblers) u.bubblers.forEach((b,i)=>{ b.scale.y=.55+Math.abs(Math.sin(t*4+i*1.3))*.9; });
+  if(u&&u.fires) u.fires.forEach((f,i)=>{ const k=.7+Math.sin(t*9+i*2)*.22+Math.sin(t*15+i)*.1; f.mesh.scale.set(1,k,1); f.mat.emissiveIntensity=1.3+k*.6; if(f.light) f.light.intensity=1.5+k; });
+  controls.update(); renderer.render(scene,camera); }
+
+function init(){ scene=new THREE.Scene(); scene.background=makeSky(); scene.fog=new THREE.Fog(0xe6f2f2,160,340);
+  WATER_NORMAL=waterNormalTex();
+  const w=mount.clientWidth,h=mount.clientHeight;
+  camera=new THREE.PerspectiveCamera(42,w/h,0.5,1200); camera.position.set(34,26,40);
+  renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'}); renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(w,h);
+  renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.05; mount.appendChild(renderer.domElement);
+  scene.add(new THREE.HemisphereLight(0xcdeaf5,0x5b6b52,0.9));
+  const sun=new THREE.DirectionalLight(0xffffff,1.35); sun.position.set(38,52,30); sun.castShadow=true; sun.shadow.mapSize.set(2048,2048);
+  const ss=80; sun.shadow.camera.left=-ss; sun.shadow.camera.right=ss; sun.shadow.camera.top=ss; sun.shadow.camera.bottom=-ss; sun.shadow.camera.far=240; sun.shadow.bias=-0.0004; scene.add(sun);
+  controls=new OrbitControls(camera,renderer.domElement); controls.target.set(0,-2,0); controls.enableDamping=true; controls.dampingFactor=.06;
+  controls.autoRotate=true; controls.autoRotateSpeed=.7; controls.enablePan=false; controls.minDistance=22; controls.maxDistance=110; controls.minPolarAngle=.22; controls.maxPolarAngle=1.33; controls.update();
+  buildPool(currentKey); loading.style.display='none'; lastT=performance.now();
+  window.addEventListener('resize',onResize);
+  const io=new IntersectionObserver(es=>{ visible=es[0].isIntersecting; if(visible&&!running){ running=true; lastT=performance.now(); loop(); } },{threshold:.04}); io.observe(mount);
+  document.querySelectorAll('.stab').forEach(b=>b.addEventListener('click',()=>{ document.querySelectorAll('.stab').forEach(x=>x.classList.remove('is-on')); b.classList.add('is-on'); buildPool(b.dataset.design); }));
+  document.querySelectorAll('.sadd').forEach(b=>b.addEventListener('click',()=>{ const a=b.dataset.addon; if(active.has(a)){ active.delete(a); b.classList.remove('on'); } else { active.add(a); b.classList.add('on'); } buildPool(currentKey); }));
+}
+try{ init(); }catch(err){ console.error(err); loading.textContent='This 3D preview needs a WebGL browser. Call (562) 431-1960 for a live 3D design.'; }
+</script>
+
+<!-- BUILD TYPES -->
+<section class="types sec" id="types">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Three ways to build</span>
+      <h2>Gunite, fiberglass, or <em>vinyl.</em></h2>
+      <p>Each build type has a different cost, timeline, and feel. On your design call we walk through which one fits your yard, your budget, and how soon you want to swim.</p>
+    </div>
+    <div class="type-row reveal">
+      <div class="type-col">
+        <div class="tnum">01</div><h3>Gunite concrete</h3><span class="tw">8 to 12+ weeks</span>
+        <p>Sprayed concrete shells shaped to any design with no size or form limits. The choice for custom features, beach entries, and built-in spas.</p>
+      </div>
+      <div class="type-col">
+        <div class="tnum">02</div><h3>Fiberglass</h3><span class="tw">3 to 6 weeks</span>
+        <p>A factory-made shell set in a few weeks, with a smooth surface that resists algae. The fastest way from contract to swimming.</p>
+      </div>
+      <div class="type-col">
+        <div class="tnum">03</div><h3>Vinyl liner</h3><span class="tw">6 to 8 weeks</span>
+        <p>A custom-framed pool with a replaceable liner, soft underfoot and friendly on the budget. A practical way into pool ownership.</p>
+      </div>
+    </div>
+    <div class="type-extra reveal">
+      <div class="type-mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Spas &amp; hot tubs</div>
+      <div class="type-mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Water &amp; fire features</div>
+      <div class="type-mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Decking &amp; hardscape</div>
+      <div class="type-mini"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Lighting &amp; automation</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow">How a build goes</span>
+      <h2>From first sketch to <em>first swim.</em></h2>
+      <p>A pool is a months-long project. Here is the order it happens in, so you know what comes next at every stage.</p>
+    </div>
+    <div class="proc-wrap">
+      <div class="proc-step reveal"><div class="proc-num">1</div><div><h4>Free 3D design consult</h4><p>We meet, look at your yard, and render your pool in 3D. You see the shape, the tile, and an honest price range before you decide anything.</p><span class="wk">No cost, no obligation</span></div></div>
+      <div class="proc-step reveal"><div class="proc-num">2</div><div><h4>Design, financing &amp; contract</h4><p>We finalize the plan, sort out financing if you want it, and put the scope in writing so there are no surprises later.</p><span class="wk">Lock your build slot</span></div></div>
+      <div class="proc-step reveal"><div class="proc-num">3</div><div><h4>Permits &amp; engineering</h4><p>We pull the permits and handle the engineering and inspections the county requires. This is part of why a pool takes time done right.</p><span class="wk">Handled for you</span></div></div>
+      <div class="proc-step reveal"><div class="proc-num">4</div><div><h4>Excavation &amp; the build</h4><p>Dig, shell, plumbing, electrical, decking, and tile, in sequence with inspections between stages. Timeline depends on your build type.</p><span class="wk">3 to 12+ weeks</span></div></div>
+      <div class="proc-step reveal"><div class="proc-num">5</div><div><h4>Startup &amp; your first swim</h4><p>We fill it, balance the water, walk you through the equipment, and hand you a pool that is ready to live in.</p><span class="wk">Welcome to the resort</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCING -->
+<section class="fin sec" id="financing">
+  <div class="wrap fin-grid">
+    <div class="reveal">
+      <span class="eyebrow">Pool financing</span>
+      <h2>Spread it out, <em>swim this year.</em></h2>
+      <p class="lead">Most of our clients finance their pool rather than pay all at once. We work with pool-loan lenders so you can lock this year's pricing and pay over time. Pre-qualifying takes minutes and does not affect your credit.</p>
+      <a href="#quote" class="btn btn-cta">Check your financing options</a>
+    </div>
+    <div class="fin-card reveal">
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Example, not a quote</span>
+      <div class="big">$0 <span>down options</span></div>
+      <p class="note">Terms, rates, and monthly payments vary by lender, credit, and the size of your build. We will walk you through the real numbers on your design call.</p>
+      <div class="frow">
+        <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>Soft-pull pre-qualification</b><span>See your options without a hit to your score.</span></div></div>
+        <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>Lock this year's pricing</b><span>Reserve your slot before 2026 rates move.</span></div></div>
+        <div class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>Loan amounts for full builds</b><span>Cover the pool, the deck, and the features.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="creds sec" id="credentials">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">Built right, built to last</span>
+      <h2>The people building your pool are <em>certified to do it.</em></h2>
+      <p>A pool is one of the largest projects a home ever takes on. Azure builds to industry standards, pulls every permit, and stands behind the work in writing.</p>
+    </div>
+    <div class="cred-ribbon reveal">
+      <div class="cred-cell"><div class="cn">01</div><b>PHTA member builder</b><span>Pool &amp; Hot Tub Alliance standards.</span></div>
+      <div class="cred-cell"><div class="cn">02</div><b>GENESIS trained design</b><span>Design and construction best practices.</span></div>
+      <div class="cred-cell"><div class="cn">03</div><b>Licensed &amp; fully insured</b><span>State licensed, with liability coverage.</span></div>
+      <div class="cred-cell"><div class="cn">04</div><b>Written warranty</b><span>Structural and surface coverage in writing.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq sec" id="faq">
+  <div class="wrap">
+    <div class="shead center reveal">
+      <span class="eyebrow">Questions before you build</span>
+      <h2>The ones we hear on every <em>design call.</em></h2>
+      <p>Straight answers on cost, timing, and how a pool actually gets built.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button type="button" aria-expanded="false"><span>How much does a new pool cost?</span><svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="fa"><p>It depends heavily on the build type, the size, and the features. As a national range, vinyl pools tend to start around the lower end, fiberglass sits in the middle, and a fully custom gunite build with spa, decking, and water features reaches the top. Pricing varies by region and scope. We give you a real range for your specific yard on the free 3D design call.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" aria-expanded="false"><span>Fiberglass, gunite, or vinyl, which should I pick?</span><svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="fa"><p>Gunite is fully custom with no shape limits, takes the longest, and costs the most. Fiberglass is the fastest to install with a smooth, low-maintenance surface, but comes in set shapes. Vinyl is the friendliest on budget and soft underfoot, with a liner that gets replaced over the years. We walk through the trade-offs for your yard so the choice is clear.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" aria-expanded="false"><span>How long does it take to build a pool?</span><svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="fa"><p>From the start of construction, fiberglass runs roughly 3 to 6 weeks, vinyl about 6 to 8 weeks, and gunite 8 to 12 weeks or more for a complex build. Permitting and inspections add time before and during. We give you a realistic schedule for your project up front.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" aria-expanded="false"><span>Do you offer financing?</span><svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="fa"><p>Yes. We work with pool-loan lenders, and pre-qualifying takes minutes with a soft credit pull that does not affect your score. Many clients finance the full build so they can lock this year's pricing and pay over time. We go over the real terms on your design call.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" aria-expanded="false"><span>When should I get on the build schedule?</span><svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="fa"><p>Earlier than most people expect. Spring fills up first, so the smart move is to design in the fall or winter and reserve a slot before the season is booked. Our 2026 calendar is already filling, which is why locking a slot now matters.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" aria-expanded="false"><span>Do you handle permits and engineering?</span><svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+        <div class="fa"><p>We do. We pull the permits, manage the engineering, and schedule the inspections the county requires at each stage. It is part of what separates a properly built pool from a cheap one, and it is all included in your project.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE / FINAL CTA -->
+<section class="quote sec" id="quote">
+  <div class="wrap quote-grid">
+    <div class="reveal">
+      <span class="eyebrow">Start your build</span>
+      <h2>Get your free <em>3D design.</em></h2>
+      <p class="lead">Tell us a little about your yard and what you have in mind. We will set up a free design call, render your pool in 3D, and give you an honest price. 2026 slots are filling, so the sooner the better.</p>
+      <a href="tel:+15624311960" class="qcall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(562) 431-1960</a>
+      <p class="qnote">Or email <a href="mailto:hello@azurepools.com">hello@azurepools.com</a> · Serving Tampa, FL and the surrounding bay area</p>
+    </div>
+    <form class="qform reveal" id="quoteForm" onsubmit="return sendQuote(event)">
+      <h3>Request a free 3D design</h3>
+      <div class="sub">We will reach out to set up your design call.</div>
+      <div class="field"><label for="qn">Name</label><input id="qn" name="name" required placeholder="Your name" /></div>
+      <div class="field"><label for="qp">Phone</label><input id="qp" name="phone" type="tel" required placeholder="(813) 000-0000" /></div>
+      <div class="field"><label for="qt">Build type you're leaning toward</label>
+        <select id="qt" name="type">
+          <option>Not sure yet, help me decide</option>
+          <option>Gunite concrete (fully custom)</option>
+          <option>Fiberglass (fastest install)</option>
+          <option>Vinyl liner (budget friendly)</option>
+        </select>
+      </div>
+      <div class="field"><label for="qm">Tell us about your yard (optional)</label><textarea id="qm" name="msg" placeholder="Rough yard size, the style you like, and whether you want a spa or features."></textarea></div>
+      <button type="submit" class="btn btn-cta">Get my free 3D design</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <div class="fbrand">
+        <a href="#top" class="brand">
+          <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="Azure Pools and Spas logo" fill="none">
+            <ellipse cx="32" cy="28" rx="19" ry="12.5" stroke="#1C3A5E" stroke-width="3.4"/>
+            <ellipse cx="32" cy="28" rx="11" ry="6.5" stroke="rgba(38,32,26,.35)" stroke-width="2"/>
+            <path d="M11 44c4.5 0 4.5 3.4 9.5 3.4S25.5 44 31 44s4.5 3.4 9.5 3.4S45.5 44 51 44" stroke="#26201A" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M13 52c4 0 4 3 9 3s5-3 10-3 4 3 9 3 5-3 9-3" stroke="rgba(28,58,94,.5)" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <span><b>Azure</b><small>Pools &amp; Spas · Tampa</small></span>
+        </a>
+        <p>Custom gunite, fiberglass, and vinyl pools across the Tampa Bay area. Free 3D design, financing, and PHTA member builders.</p>
+      </div>
+      <div class="fcol">
+        <h4>Pools</h4>
+        <a href="#styles">Infinity pools</a><a href="#styles">Geometric pools</a><a href="#styles">Freeform pools</a><a href="#types">Gunite, fiberglass, vinyl</a><a href="#types">Spas &amp; features</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#design">3D Design studio</a><a href="#financing">Financing</a><a href="#process">Build process</a><a href="#credentials">Credentials</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+      </div>
+      <div class="fcol">
+        <h4>Get in touch</h4>
+        <a href="tel:+15624311960">(562) 431-1960</a>
+        <a href="mailto:hello@azurepools.com">hello@azurepools.com</a>
+        <p>Serving Tampa, FL &amp; the bay area</p>
+        <p>2026 build slots filling fast</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Azure Pools &amp; Spas. PHTA member · Licensed &amp; insured.</span>
+      <span>Pricing shown as ranges and varies by region.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CALL -->
+<div class="scall">
+  <a href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (562) 431-1960</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var hdr = document.getElementById('hdr'), lastY = window.pageYOffset;
+  window.addEventListener('scroll', function(){
+    var y = window.pageYOffset;
+    hdr.classList.toggle('scrolled', y > 60);
+    if (y > lastY && y > 300) hdr.classList.add('hide'); else hdr.classList.remove('hide');
+    lastY = y;
+  }, {passive:true});
+
+  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu'), mclose = document.getElementById('mclose');
+  function closeMenu(){ mmenu.classList.remove('open'); document.body.style.overflow=''; }
+  burger.addEventListener('click', function(){ mmenu.classList.add('open'); document.body.style.overflow='hidden'; });
+  mclose.addEventListener('click', closeMenu);
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  document.querySelectorAll('.faq-item > button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement, open = item.classList.contains('open'), fa = item.querySelector('.fa');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){
+        o.classList.remove('open'); o.querySelector('.fa').style.maxHeight = null; o.querySelector('button').setAttribute('aria-expanded','false');
+      });
+      if (!open){ item.classList.add('open'); fa.style.maxHeight = fa.scrollHeight + 'px'; btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  if (reduce || !('IntersectionObserver' in window)){
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.target.classList.toggle('in', e.isIntersecting); });
+    }, {threshold:0, rootMargin:'0px 0px -12% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+
+  /* hero last word: gentle fade swap (whole words, no typewriter) */
+  (function(){
+    var el = document.getElementById('twword');
+    if (!el || reduce) return;
+    var words = ['resort.','retreat.','sanctuary.','getaway.','haven.'], i = 0;
+    setInterval(function(){
+      el.classList.add('tw-swap');
+      setTimeout(function(){ i = (i + 1) % words.length; el.textContent = words[i]; el.classList.remove('tw-swap'); }, 360);
+    }, 2600);
+  })();
+
+  /* count-up on real numbers when they enter view */
+  var cups = document.querySelectorAll('.cup');
+  if (!reduce && ('IntersectionObserver' in window) && cups.length){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var el = e.target; cio.unobserve(el);
+        var to = parseFloat(el.getAttribute('data-to')) || 0,
+            dec = parseInt(el.getAttribute('data-dec') || '0', 10),
+            pre = el.getAttribute('data-prefix') || '',
+            suf = el.getAttribute('data-suffix') || '',
+            dur = 1150, t0 = null;
+        function step(ts){
+          if (t0 === null) t0 = ts;
+          var p = Math.min(1, (ts - t0) / dur),
+              eo = 1 - Math.pow(1 - p, 3);
+          el.textContent = pre + (to * eo).toFixed(dec) + suf;
+          if (p < 1){ requestAnimationFrame(step); }
+          else { el.textContent = pre + to.toFixed(dec) + suf; }
+        }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:0.6});
+    cups.forEach(function(el){ cio.observe(el); });
+  }
+
+  /* parallax drift on the big images + terracotta scroll-progress bar */
+  var sprog = document.getElementById('sprog'),
+      pxEls = [].slice.call(document.querySelectorAll('.px')),
+      pxTicking = false;
+  function pxScroll(){
+    if (pxTicking) return; pxTicking = true;
+    requestAnimationFrame(function(){
+      var doc = document.documentElement,
+          y = window.pageYOffset || doc.scrollTop,
+          max = (doc.scrollHeight - doc.clientHeight) || 1;
+      if (sprog) sprog.style.transform = 'scaleX(' + Math.min(1, Math.max(0, y / max)) + ')';
+      if (!reduce){
+        var vh = window.innerHeight;
+        for (var i = 0; i < pxEls.length; i++){
+          var el = pxEls[i], r = el.getBoundingClientRect(),
+              off = ((r.top + r.height / 2) - vh / 2) / vh,
+              ty = Math.max(-24, Math.min(24, -off * 34));
+          el.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0) scale(1.14)';
+        }
+      }
+      pxTicking = false;
+    });
+  }
+  window.addEventListener('scroll', pxScroll, {passive:true});
+  window.addEventListener('resize', pxScroll, {passive:true});
+  pxScroll();
+
+  window.sendQuote = function(e){
+    e.preventDefault();
+    var f = e.target;
+    var body = 'Name: ' + f.name.value + '%0D%0APhone: ' + f.phone.value +
+               '%0D%0ABuild type: ' + f.type.value + '%0D%0ADetails: ' + (f.msg.value || '');
+    window.location.href = 'mailto:hello@azurepools.com?subject=' + encodeURIComponent('Free 3D design request from ' + f.name.value) + '&body=' + body;
+    return false;
+  };
+})();
+</script>
+
+<!-- pf-chatbot:start -->
+<script>window.CHATBOT_KB={"name": "Pool installation · Azure Pools & Spas", "accent": "#1C3A5E", "mode": "business", "intro": "Hi! I'm the Azure Pools & Spas assistant. Ask about our pool styles, build types, financing, process, hours or booking, or about this site's design (colors, fonts, layout).", "suggestions": ["Pool styles", "Build types", "Financing", "Contact", "Design & type"], "qa": [{"k": ["design", "style", "aesthetic", "look", "feel", "vibe", "theme"], "a": "A warm, light editorial design (nicknamed Terracotta Resort). Palette: warm porcelain #F7F2EA and sand #EFE7DA, warm espresso ink #26201A, and a single terracotta accent #1C3A5E, with ochre #C0913F for star ratings. The whole site sits on a sunlit pool-water background: an aqua to teal gradient (#74C8CE to #1F6F9E) with a slow drifting caustic light net, and the content and photos float above it on frosted porcelain panels. Terracotta #1C3A5E stays the accent and ochre is used for stars. Type: Sora for headlines, Inter for body. Flow: Hero to Numbers to Pool styles to Reviews to 3D design to Build types to Process to Financing to Credentials to FAQ to Get a quote to Footer."}, {"k": ["color", "colour", "palette", "hex", "accent", "brand color"], "a": "The background is sunlit pool water (aqua #74C8CE to teal #1F6F9E) with drifting caustics. Floating on top are frosted porcelain panels, warm espresso ink #26201A text, a terracotta accent #1C3A5E (hover #12283F), and ochre #C0913F reserved for star ratings."}, {"k": ["button", "btn", "cta", "call to action"], "a": "Buttons are fully-rounded terracotta pills (#1C3A5E). The free 3D design is the main call to action across the page."}, {"k": ["font", "type", "typography", "typeface", "headline font"], "a": "Sora for the headlines and big numbers, and Inter for body copy, labels and buttons."}, {"k": ["layout", "section", "structure", "flow", "page", "wireframe"], "a": "Page flow: Hero to Numbers strip to Pool styles to Reviews to 3D design to Build types to Process to Financing to Credentials to FAQ to Get a free 3D design to Footer."}, {"k": ["tech", "stack", "built", "build", "framework", "made", "code", "recreate", "rebuild", "library"], "a": "Hand-written HTML, CSS and vanilla JS, single file. To recreate the feel: Sora + Inter, a warm porcelain background with a terracotta accent and no blue UI, sharp-cornered photography with thin warm borders, and rounded terracotta pill buttons."}, {"k": ["service", "services", "offer", "do you", "what do you do", "help with", "fix", "repair", "install"], "a": "We design and build custom pools: infinity, geometric, and freeform styles, in gunite concrete, fiberglass, or vinyl liner. We also add spas and hot tubs, water and fire features, decking and hardscape, and lighting and automation."}, {"k": ["style", "styles", "shape", "infinity", "geometric", "freeform"], "a": "Three starting points: Infinity (a vanishing edge for sloped lots and long views), Geometric (crisp modern rectangles with a raised spa), and Freeform (soft curves with a tanning ledge and paver deck)."}, {"k": ["area", "location", "where", "serve", "service area", "near me", "city", "local", "cover"], "a": "We serve Tampa, FL and the surrounding bay area."}, {"k": ["contact", "phone", "call", "reach", "email", "number", "get in touch"], "a": "Call (562) 431-1960 or email hello@azurepools.com. Ask for a free 3D design call."}, {"k": ["book", "appointment", "schedule", "quote", "estimate", "booking", "get started", "request", "3d", "design"], "a": "Book a free 3D design call. Call (562) 431-1960 or use the form at the bottom of the page. We render your pool in 3D and give you an honest price before you commit. You can also try the 3D design studio on this page: spin seven pool shapes in 3D (Rectangle, Infinity edge, Freeform, Kidney, Roman, Lap, and Plunge), see each one's length, width, depth, and water volume, and add features like an attached spa, tanning ledge, bubblers, fire bowls, or a sheer-descent waterfall."}, {"k": ["hour", "open", "available", "when", "slot", "schedule"], "a": "Reach out during business hours and we will schedule your free design call fast. 2026 build slots are filling, so earlier is better."}, {"k": ["price", "pricing", "cost", "how much", "rate", "fee", "afford", "financing", "finance"], "a": "Cost depends on the build type, size, and features: vinyl starts lowest, fiberglass sits in the middle, and a fully custom gunite build reaches the top. Financing is available with soft-pull pre-qualification that does not affect your score. You get a real range on the free 3D design call."}, {"k": ["about", "who", "story", "experience", "trust", "why you", "reviews", "rating", "licensed", "warranty"], "a": "Azure Pools & Spas is a Tampa custom pool builder: a PHTA member builder with GENESIS trained design, licensed and fully insured, with a written structural and surface warranty. Free 3D design and financing available."}], "fallback": "I can talk about this site's design (colors, fonts, layout, tech) and the business (pool styles, build types, financing, process, area, booking). Try a chip below."};</script>
+
+<style>
+#pfbot-root{--pfa:#1C3A5E;position:fixed;right:20px;bottom:20px;z-index:2147483000;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+#pfbot-launch{width:64px;height:64px;border:0;background:transparent;color:var(--pfa);cursor:pointer;display:grid;place-items:center;padding:0;transition:transform .18s ease-out;will-change:transform}
+.pfbot-ic{display:grid;place-items:center;animation:pfbob 3s ease-in-out infinite;will-change:transform}
+#pfbot-launch svg{width:46px;height:46px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.34));transition:transform .25s cubic-bezier(.2,1.5,.3,1)}
+#pfbot-launch:hover svg{transform:scale(1.14) rotate(-8deg)}
+#pfbot-launch:active svg{transform:scale(.92)}
+.ic-close{display:none}
+#pfbot-root[data-open="true"] .ic-chat{display:none}
+#pfbot-root[data-open="true"] .ic-close{display:block}
+@keyframes pfbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.pfbot-ic{animation:none}}
+#pfbot-panel{position:absolute;right:0;bottom:72px;width:350px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 110px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.32);display:none;flex-direction:column;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+#pfbot-root[data-open="true"] #pfbot-panel{display:flex}
+#pfbot-head{background:var(--pfa);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+#pfbot-head .t{font-weight:700;font-size:15px;line-height:1.1}
+#pfbot-head .s{font-size:11px;opacity:.85}
+#pfbot-head .av{display:grid;place-items:center;font-size:22px;color:#fff}
+#pfbot-x{margin-left:auto;background:0;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.85;line-height:1}
+#pfbot-log{flex:1;overflow-y:auto;padding:14px;background:#f6f7f9;display:flex;flex-direction:column;gap:10px}
+.pfb{max-width:84%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.pfb.bot{background:#fff;color:#1d2430;border:1px solid #e7e9ee;border-bottom-left-radius:4px;align-self:flex-start}
+.pfb.me{background:var(--pfa);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.pfb.typing{color:#8a93a3;font-style:italic}
+#pfbot-chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;background:#fff;border-top:1px solid #eef0f3}
+.pfchip{border:1px solid var(--pfa);color:var(--pfa);background:#fff;border-radius:999px;padding:6px 11px;font-size:12px;cursor:pointer;transition:.12s}
+.pfchip:hover{background:var(--pfa);color:#fff}
+#pfbot-form{display:flex;gap:8px;padding:11px;border-top:1px solid #eef0f3;background:#fff}
+#pfbot-input{flex:1;border:1px solid #d8dce3;border-radius:10px;padding:10px 12px;font-size:13.5px;outline:0}
+#pfbot-input:focus{border-color:var(--pfa)}
+#pfbot-send{border:0;background:var(--pfa);color:#fff;border-radius:10px;padding:0 15px;cursor:pointer;font-size:14px}
+@media(max-width:430px){#pfbot-panel{width:calc(100vw - 24px);right:-2px}}
+</style>
+<script>
+(function(){
+ var KB=window.CHATBOT_KB; if(!KB||document.getElementById('pfbot-root'))return;
+ var root=document.createElement('div'); root.id='pfbot-root';
+ root.innerHTML=
+  '<button id="pfbot-launch" aria-label="Open assistant"><span class="pfbot-ic"><svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.4 8.4 0 0 1-3.8-.9L3 21l2-5.3A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span></button>'+
+  '<div id="pfbot-panel" role="dialog" aria-label="Site assistant">'+
+   '<div id="pfbot-head"><div class="av">✦</div><div><div class="t"></div><div class="s">AI assistant · ask me anything</div></div><button id="pfbot-x" aria-label="Close">×</button></div>'+
+   '<div id="pfbot-log"></div><div id="pfbot-chips"></div>'+
+   '<form id="pfbot-form"><input id="pfbot-input" autocomplete="off" placeholder="Type your question…"/><button id="pfbot-send">➤</button></form>'+
+  '</div>';
+ document.body.appendChild(root);
+ root.style.setProperty('--pfa', KB.accent||'#1C3A5E');
+ root.querySelector('#pfbot-head .t').textContent=KB.name||'Assistant';
+ var log=root.querySelector('#pfbot-log'), chips=root.querySelector('#pfbot-chips'),
+     form=root.querySelector('#pfbot-form'), input=root.querySelector('#pfbot-input'),
+     launch=root.querySelector('#pfbot-launch'), greeted=false;
+ function bubble(role,txt){var d=document.createElement('div');d.className='pfb '+role;d.textContent=txt;log.appendChild(d);log.scrollTop=log.scrollHeight;return d;}
+ function botSay(txt){var tp=bubble('bot typing','typing…');setTimeout(function(){tp.remove();bubble('bot',txt);},380+Math.min(900,txt.length*7));}
+ function renderChips(){chips.innerHTML='';(KB.suggestions||[]).forEach(function(s){var b=document.createElement('button');b.className='pfchip';b.type='button';b.textContent=s;b.onclick=function(){send(s);};chips.appendChild(b);});}
+ function answer(q){
+   q=(q||'').toLowerCase().trim();
+   if(/^(hi|hey|hello|yo|sup|good (morning|evening|afternoon))\b/.test(q))return KB.intro;
+   if(/(thank|thanks|thx|cheers|appreciate)/.test(q))return "Anytime! Anything else you want to know?";
+   if(/(bye|goodbye|see ya|that's all|done)/.test(q))return "Take care, and call (562) 431-1960 whenever you want that free 3D design.";
+   var best=null,bs=0;
+   (KB.qa||[]).forEach(function(it){var s=0;it.k.forEach(function(k){if(q.indexOf(k)>=0)s+=k.length;});if(s>bs){bs=s;best=it;}});
+   return best?best.a:KB.fallback;
+ }
+ function send(txt){txt=(txt||'').trim();if(!txt)return;bubble('me',txt);input.value='';botSay(answer(txt));}
+ form.addEventListener('submit',function(e){e.preventDefault();send(input.value);});
+ launch.addEventListener('click',function(){var o=root.getAttribute('data-open')==='true';root.setAttribute('data-open',o?'false':'true');if(!o&&!greeted){greeted=true;renderChips();botSay(KB.intro);input.focus();}});
+ launch.addEventListener('mousemove',function(e){var r=launch.getBoundingClientRect(),m=14,dx=Math.max(-m,Math.min(m,(e.clientX-(r.left+r.width/2))*0.45)),dy=Math.max(-m,Math.min(m,(e.clientY-(r.top+r.height/2))*0.45));launch.style.transform='translate('+dx+'px,'+dy+'px)';});
+ launch.addEventListener('mouseleave',function(){launch.style.transform='';});
+ root.querySelector('#pfbot-x').addEventListener('click',function(){root.setAttribute('data-open','false');});
+})();
+</script>
+<!-- pf-chatbot:end -->
+</body>
+</html>
