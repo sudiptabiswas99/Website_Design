@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ClearFlow Septic | Raleigh NC Septic Pumping, Inspections &amp; 24/7 Backups</title>
+<meta name="description" content="ClearFlow Septic pumps, inspects, and repairs residential and commercial septic systems across the Raleigh NC Triangle, with a 24/7 backup line. Licensed and insured, NAWT certified, flat upfront pricing, financing, and same-day service." />
+<meta name="theme-color" content="#0F6E6B" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230F6E6B'/%3E%3Cpath d='M16 6c3.6 4 6 6.7 6 10.2A6 6 0 0 1 10 16.2C10 12.7 12.4 10 16 6z' fill='%23fff'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#F4F1EA; --cream:#F4F1EA; --sand:#ECE6DA; --surface:#FFFFFF;
+  --ink:#12312F; --deep:#0B2E2C; --body:#4A5D5A; --muted:#7E908C;
+  --line:#E4DDCE; --line2:#D8CEBB;
+  --teal:#0E6B67; --teal-d:#0A4F4C; --teal-soft:#DCEAE8; --teal-mist:#EAF4F2;
+  --coral:#E85D33; --coral-d:#CE4A24; --coral-soft:#FBE5DC;
+  --flow:#0E6B67; --alert:#E85D33; --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --grid-l:linear-gradient(rgba(18,49,47,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(18,49,47,.045) 1px,transparent 1px);
+  --grid-d:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  --star:#E7A32C;
+  --maxw:1180px;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --sans:'Outfit',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --shadow:0 18px 50px -20px rgba(18,49,47,.30);
+  --shadow-s:0 6px 20px -10px rgba(18,49,47,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--body);font-family:var(--sans);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.shead{max-width:640px;margin-bottom:52px}
+.shead.center{margin-left:auto;margin-right:auto;text-align:center}
+.shead.center .eyebrow{justify-content:center}
+.shead h2{font-size:clamp(2.1rem,4.4vw,3.1rem);margin-top:16px;font-weight:800}
+.shead p{color:var(--muted);margin-top:14px;font-size:1.07rem}
+.shead.center p{margin-left:auto;margin-right:auto;max-width:54ch}
+.sec{padding:92px 0;position:relative}
+
+/* CURVED SECTIONS - flowing, not stacked rectangles */
+.curve{border-radius:48px 48px 0 0;margin-top:-50px;position:relative;z-index:2;box-shadow:0 -30px 60px -40px rgba(18,49,47,.18)}
+.curve-b{border-radius:0 0 48px 48px}
+.bg-cream,.bg-mist,.bg-sand{background-color:var(--paper);background-image:var(--grid-l);background-size:38px 38px} .bg-white{background:var(--surface)} .bg-teal{background-color:var(--teal);background-image:var(--grid-d);background-size:38px 38px} .bg-ink{background-color:var(--deep);background-image:var(--grid-d);background-size:38px 38px}
+/* wave divider */
+.wave{display:block;width:100%;height:70px;margin-bottom:-6px}
+.wave svg{width:100%;height:100%;display:block}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:100px;font-family:var(--sans);font-weight:700;font-size:.98rem;white-space:nowrap;cursor:pointer;border:2px solid transparent;transition:transform .16s,box-shadow .2s,background .2s,color .2s}
+.btn svg{width:18px;height:18px}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 10px 24px -10px rgba(15,110,107,.7)}
+.btn-teal:hover{background:var(--teal-d);transform:translateY(-3px)}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 10px 24px -10px rgba(238,98,60,.7)}
+.btn-coral:hover{background:var(--coral-d);transform:translateY(-3px)}
+.btn-out{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn-out:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-3px)}
+.btn-ghost{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.26)}
+a:focus-visible,button:focus-visible,.btn:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+
+/* SCROLL ZOOM EFFECTS */
+.zi{opacity:0;transform:scale(.9) translateY(20px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
+.zi.in{opacity:1;transform:none}
+.zo{opacity:0;transform:scale(1.13);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform 1.05s cubic-bezier(.22,1,.36,1)}
+.zo.in{opacity:1;transform:scale(1)}
+.zt{opacity:0;transform:translateY(18px) scale(.97);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.zt.in{opacity:1;transform:none}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}.d5{transition-delay:.3s}
+@media(prefers-reduced-motion:reduce){.zi,.zo,.zt{opacity:1!important;transform:none!important;transition:none}}
+
+/* OFFER BAR */
+.offer{background:var(--ink);color:#EAF2F0}
+.offer .wrap{display:flex;align-items:center;justify-content:center;gap:14px;min-height:44px;font-size:.9rem;font-weight:500;padding:7px 26px;text-align:center;flex-wrap:wrap}
+.offer .tag{background:var(--coral);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px}
+.offer a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.offer .ox{position:absolute;right:16px;background:none;border:0;color:#8FA6A2;font-size:20px;cursor:pointer;line-height:1}
+@media(max-width:640px){.offer .ox{display:none}}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(251,246,236,.9);backdrop-filter:saturate(150%) blur(12px);transition:box-shadow .25s,background .25s}
+.hdr.scrolled{box-shadow:var(--shadow-s);background:rgba(251,246,236,.97)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:74px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .mark{width:44px;height:44px;border-radius:14px;background:var(--teal);display:grid;place-items:center;flex:none;box-shadow:0 8px 18px -8px rgba(15,110,107,.8)}
+.brand .mark svg{width:24px;height:24px;color:#fff}
+.brand .bt b{font-family:var(--disp);font-size:1.28rem;font-weight:800;color:var(--ink);display:block;line-height:1;letter-spacing:-.02em}
+.brand .bt small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:9px 14px;border-radius:100px;font-size:.92rem;font-weight:600;color:var(--body);white-space:nowrap;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--teal);background:var(--teal-soft)}
+.hdr-right{display:flex;align-items:center;gap:14px}
+.hdr-phone{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05}
+.hdr-phone small{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hdr-phone a{font-family:var(--disp);font-weight:800;font-size:1.08rem;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.hdr-phone a svg{width:15px;height:15px;color:var(--coral)}
+.navcta{padding:11px 20px;font-size:.9rem}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line2);border-radius:14px;background:var(--surface);cursor:pointer;color:var(--ink)}
+.burger svg{width:22px;height:22px;margin:auto}
+.mmenu{position:fixed;inset:0;z-index:60;background:var(--cream);display:none;flex-direction:column;padding:24px;gap:2px}
+.mmenu.open{display:flex}
+.mmenu .mhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.mmenu a.ml{font-family:var(--disp);font-size:1.36rem;font-weight:700;color:var(--ink);padding:15px 4px;border-bottom:1px solid var(--line)}
+.mmenu .mcta{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.mclose{width:46px;height:46px;border:1px solid var(--line2);border-radius:14px;background:var(--surface);cursor:pointer;color:var(--ink)}
+.mclose svg{width:22px;height:22px;margin:auto}
+
+/* HERO */
+.hero{background:var(--grid-l),radial-gradient(120% 90% at 80% -10%,var(--teal-soft),var(--cream) 55%);background-size:38px 38px,auto;padding:64px 0 120px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:6px 15px 6px 6px;font-size:.82rem;font-weight:600;color:var(--ink);box-shadow:var(--shadow-s)}
+.hero-badge .p{background:var(--coral);color:#fff;font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:100px}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.1rem);margin:20px 0 0;font-weight:800;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.hero h1 span{color:var(--teal);position:relative}
+.hero h1 span::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.12em;background:var(--coral);opacity:.35;border-radius:100px}
+.hero .lead{font-size:1.15rem;color:var(--body);margin:20px 0 0;max-width:47ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-tr{display:flex;flex-wrap:wrap;gap:9px 20px;margin-top:28px}
+.hero-tr .t{display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:600;color:var(--ink)}
+.hero-tr .t svg{width:16px;height:16px;color:var(--teal);flex:none}
+.hero-media{position:relative}
+.hero-photo{border-radius:30px 30px 30px 90px;overflow:hidden;border:6px solid var(--surface);box-shadow:var(--shadow);aspect-ratio:4/3.5}
+.hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);will-change:transform}
+.hero-float{position:absolute;left:-16px;bottom:28px;background:var(--surface);border-radius:20px;padding:14px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;max-width:230px}
+.hero-float .hf-ic{width:44px;height:44px;border-radius:14px;background:var(--coral-soft);display:grid;place-items:center;flex:none}
+.hero-float .hf-ic svg{width:22px;height:22px;color:var(--coral-d)}
+.hero-float b{display:block;font-family:var(--disp);font-size:1.02rem;color:var(--ink);font-weight:800;line-height:1.1}
+.hero-float span{font-size:.78rem;color:var(--muted)}
+@media(max-width:920px){.hero{padding-bottom:90px}.hero .wrap{grid-template-columns:1fr;gap:40px}.hero-media{max-width:520px}.hero-float{left:10px}}
+/* BLUEPRINT DIAGRAM (ported from layout.html, re-skinned to v3 teal/coral) */
+.hero-diagram{position:relative;border-radius:24px;border:6px solid var(--surface);box-shadow:var(--shadow);background-color:var(--paper);background-image:linear-gradient(rgba(14,107,103,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(14,107,103,.06) 1px,transparent 1px);background-size:30px 30px;padding:24px 22px 18px;overflow:hidden}
+.hero-diagram .dtag{position:absolute;top:15px;right:20px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);z-index:2}
+.xsec{position:relative;width:100%}
+.xsec svg{width:100%;height:auto;display:block;overflow:visible}
+.xstruct{fill:none;stroke:var(--ink);stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.xbaffle{fill:none;stroke:var(--ink);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.xpipe{fill:none;stroke:var(--teal);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.xfield{fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.xsoil{stroke:rgba(18,49,47,.15);stroke-width:1}
+.xline{fill:none;stroke:rgba(18,49,47,.22);stroke-width:1.2}
+.xwater{stroke:var(--teal);stroke-width:1.3;stroke-dasharray:6 6;opacity:.45}
+.xdot{fill:var(--teal)}
+.xgravel{fill:rgba(18,49,47,.24)}
+.xscum{fill:rgba(18,49,47,.11)}
+.xclear{fill:rgba(14,107,103,.16)}
+.xsludge{fill:rgba(18,49,47,.30)}
+.xarrow{fill:none;stroke:var(--teal);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;opacity:.5}
+.xsensor-lead{stroke:var(--coral);stroke-width:1.3;opacity:.5}
+.xriser{fill:none;stroke:var(--ink);stroke-width:1.3;stroke-dasharray:3 4;opacity:.5}
+.xtuft{fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round;opacity:.38}
+.xfilter{fill:none;stroke:var(--teal);stroke-width:1.3;opacity:.7}
+.xlabel{font-family:var(--mono);font-size:11px;letter-spacing:.06em;fill:var(--muted);text-transform:uppercase}
+.xlabel.k{fill:var(--teal)}
+.xlabel.sm{font-size:8.5px;letter-spacing:.05em;opacity:.72}
+.xdepth{font-family:var(--mono);font-size:10px;fill:var(--muted);letter-spacing:.04em}
+.xliquid-surface{stroke:var(--teal);stroke-width:2;fill:none}
+.xdraw{stroke-dasharray:1;stroke-dashoffset:1}
+.xsec.in .xdraw{stroke-dashoffset:0}
+.xd1{transition:stroke-dashoffset 1.2s ease .15s}
+.xd2{transition:stroke-dashoffset 1.1s ease .6s}
+.xd3{transition:stroke-dashoffset 1s ease 1s}
+.xsec .liquid-fill{transform:translateY(120px);transition:transform 1.4s cubic-bezier(.22,1,.36,1) .8s}
+.xsec.in .liquid-fill{transform:translateY(0)}
+.xsec .flowdash{stroke:var(--teal);stroke-width:2.6;fill:none;stroke-dasharray:2 9;stroke-linecap:round;opacity:0}
+.xsec.in .flowdash{opacity:.85;animation:flowmove 1.3s linear infinite}
+@keyframes flowmove{to{stroke-dashoffset:-22}}
+.xsensor{fill:var(--coral)}
+.xsec.in .xsensor{animation:spulse 2s ease-in-out infinite}
+@keyframes spulse{0%,100%{opacity:.35}50%{opacity:1}}
+.xperc{opacity:0}
+.xsec.in .xperc{opacity:1;transition:opacity .9s ease 1.2s}
+@media(prefers-reduced-motion:reduce){
+  .xdraw{stroke-dashoffset:0!important;transition:none}
+  .xsec .liquid-fill{transform:none!important;transition:none}
+  .flowdash{animation:none!important;opacity:.55}
+  .xsensor{animation:none!important}
+}
+
+/* TRUST */
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:56px;padding-bottom:8px}
+.trust .ti{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow-s)}
+.trust .ti svg{width:24px;height:24px;color:var(--teal);flex:none}
+.trust .ti b{display:block;font-family:var(--disp);font-size:.98rem;color:var(--ink);font-weight:800;line-height:1.1}
+.trust .ti span{font-size:.76rem;color:var(--muted)}
+@media(max-width:760px){.trust .wrap{grid-template-columns:1fr 1fr}}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why-card{background:var(--surface);border-radius:26px;padding:32px;box-shadow:var(--shadow-s);border:1px solid var(--line)}
+.why-card .wi{width:54px;height:54px;border-radius:16px;background:var(--teal-soft);display:grid;place-items:center;margin-bottom:20px}
+.why-card .wi svg{width:27px;height:27px;color:var(--teal)}
+.why-card:nth-child(2) .wi{background:var(--coral-soft)}.why-card:nth-child(2) .wi svg{color:var(--coral-d)}
+.why-card h3{font-size:1.28rem;font-weight:800}
+.why-card p{color:var(--muted);font-size:.96rem;margin-top:9px;line-height:1.55}
+@media(max-width:820px){.why-grid{grid-template-columns:1fr}}
+
+/* SERVICES - curved folder tabs */
+.ctabs{display:inline-flex;gap:6px;position:relative;z-index:3;margin-bottom:-1px}
+.ctab{border:1.5px solid var(--line);border-bottom:0;background:var(--sand);color:var(--body);font-family:var(--disp);font-weight:700;font-size:.98rem;padding:14px 30px;border-radius:22px 22px 0 0;cursor:pointer;transition:.2s;position:relative}
+.ctab.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.svc-panel{background:var(--surface);border:1.5px solid var(--line);border-radius:0 26px 26px 26px;padding:26px;box-shadow:var(--shadow-s)}
+.svc-set{display:none;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc-set.on{display:grid}
+.svc-card{background:var(--cream);border-radius:20px;padding:26px;transition:transform .2s,box-shadow .22s;display:flex;flex-direction:column;border:1px solid var(--line)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.svc-card .num{font-family:var(--disp);font-size:.82rem;font-weight:800;color:var(--teal)}
+.svc-card.urgent .num{color:var(--coral-d)}
+.svc-card h3{font-size:1.2rem;margin-top:10px;font-weight:800}
+.svc-card p{color:var(--muted);font-size:.92rem;margin-top:8px;line-height:1.5}
+.svc-card .more{margin-top:auto;padding-top:16px;font-size:.86rem;font-weight:700;color:var(--teal);display:inline-flex;align-items:center;gap:6px}
+.svc-card.urgent .more{color:var(--coral-d)}
+.svc-card .more svg{width:15px;height:15px;transition:transform .18s}
+.svc-card:hover .more svg{transform:translateX(4px)}
+@media(max-width:860px){.svc-set.on{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.svc-set.on{grid-template-columns:1fr}.ctab{padding:12px 20px;font-size:.9rem}}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.proc-step{position:relative;padding:8px 8px 0}
+.proc-step .pn{width:60px;height:60px;border-radius:20px;background:var(--surface);color:var(--teal);font-family:var(--disp);font-weight:800;font-size:1.5rem;display:grid;place-items:center;margin-bottom:18px;box-shadow:var(--shadow-s)}
+.proc-step:nth-child(2) .pn{color:var(--coral-d)}
+.proc-step h4{font-size:1.2rem;font-weight:800}
+.proc-step p{color:rgba(234,244,242,.72);font-size:.95rem;margin-top:8px}
+.bg-teal .proc-step h4{color:#fff}.bg-teal .proc-step .pn{background:rgba(255,255,255,.12);color:#fff}
+.bg-teal .eyebrow{color:#8FE0D6}.bg-teal .shead h2{color:#fff}.bg-teal .shead p{color:rgba(234,244,242,.75)}
+@media(max-width:820px){.proc-grid{grid-template-columns:1fr}}
+
+/* AREA */
+.area-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.area h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.area .lead{color:var(--muted);margin-top:14px;font-size:1.04rem;max-width:44ch}
+.area-badges{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.area-badges .ab{display:inline-flex;align-items:center;gap:7px;background:var(--teal-soft);color:var(--teal-d);font-size:.82rem;font-weight:700;padding:8px 14px;border-radius:100px}
+.area-badges .ab svg{width:14px;height:14px}
+.area-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.area-chip{background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:9px 15px;font-weight:600;font-size:.9rem;color:var(--ink);display:flex;align-items:center;gap:7px}
+.area-chip svg{width:14px;height:14px;color:var(--teal)}
+.area-map{border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:var(--surface);aspect-ratio:5/4;display:grid;place-items:center;border:6px solid var(--surface)}
+.area-map svg{width:100%;height:100%}
+@media(max-width:860px){.area-grid{grid-template-columns:1fr;gap:36px}.area-map{max-width:520px}}
+
+/* WORK gallery - zoom-out images + hover zoom */
+.work-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:16px;height:480px}
+.work-cell{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-s)}
+.work-cell:nth-child(1){grid-row:span 2}
+.work-cell img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.work-cell:hover img{transform:scale(1.07)}
+.work-cell .wc{position:absolute;left:0;bottom:0;right:0;padding:16px 18px;background:linear-gradient(0deg,rgba(18,49,47,.85),transparent);color:#fff}
+.work-cell .wc b{font-family:var(--disp);font-size:1rem;font-weight:800;display:block}
+.work-cell .wc span{font-size:.76rem;opacity:.86}
+.work-cell.stat{display:grid;place-items:center;text-align:center;padding:20px;background:var(--teal)}
+.work-cell.stat.coral{background:var(--coral)}
+.work-cell.stat b{font-family:var(--disp);font-size:2.6rem;color:#fff;font-weight:800;line-height:1}
+.work-cell.stat span{color:rgba(255,255,255,.86);font-size:.82rem;font-weight:600;margin-top:8px;display:block}
+@media(max-width:820px){.work-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto}.work-cell{aspect-ratio:4/3}.work-cell:nth-child(1){grid-row:auto;grid-column:span 2}}
+
+/* REVIEWS - fresh: overlapping angled cards row that drifts */
+.rev-agg{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:38px}
+.rev-agg .ra{background:var(--surface);border-radius:16px;padding:13px 18px;text-align:center;box-shadow:var(--shadow-s);border:1px solid var(--line)}
+.rev-agg .ra b{font-family:var(--disp);font-size:1.16rem;color:var(--ink);font-weight:800;display:flex;align-items:center;gap:6px;justify-content:center}
+.rev-agg .ra .st{color:var(--star);font-size:.74rem}
+.rev-agg .ra span{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.mq{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-track{display:flex;gap:22px;width:max-content;animation:drift 70s linear infinite;padding:14px 0}
+.mq:hover .mq-track{animation-play-state:paused}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.qcard{width:370px;flex:none;background:var(--surface);border-radius:24px;padding:28px;display:flex;flex-direction:column;box-shadow:var(--shadow-s);border:1px solid var(--line)}
+.qcard:nth-child(even){transform:rotate(-1.4deg)}
+.qcard:nth-child(odd){transform:rotate(1deg)}
+.mq:hover .qcard{transform:rotate(0)}
+.qcard{transition:transform .3s}
+.qcard .qs{color:var(--star);letter-spacing:2px;font-size:.95rem}
+.qcard p{font-size:1.02rem;line-height:1.55;color:var(--ink);margin:13px 0 18px;font-weight:500}
+.qcard .qby{display:flex;align-items:center;gap:12px;margin-top:auto}
+.qcard .qav{width:44px;height:44px;border-radius:100px;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:.9rem;flex:none}
+.qcard:nth-child(3n) .qav{background:var(--coral)}
+.qcard .qn{font-family:var(--disp);font-weight:800;color:var(--ink);font-size:.96rem;display:block;line-height:1.15}
+.qcard .qsrc{font-size:.78rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){.mq-track{animation:none}.mq{overflow-x:auto}}
+@media(max-width:600px){.qcard{width:300px}}
+
+/* OFFERS */
+.offers .eyebrow{color:#F4A98F}.offers .shead h2{color:#fff}.offers .shead p{color:rgba(234,242,240,.72)}
+.off-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.coupon{border-radius:24px;padding:30px;background:rgba(255,255,255,.05);border:1.5px dashed rgba(255,255,255,.28);display:flex;flex-direction:column}
+.coupon .cbig{font-family:var(--disp);font-size:2.6rem;font-weight:800;color:var(--coral);line-height:1}
+.coupon h3{color:#fff;font-size:1.18rem;margin-top:10px;font-weight:800}
+.coupon p{color:rgba(234,242,240,.72);font-size:.9rem;margin-top:7px;line-height:1.5}
+.coupon .cfine{font-size:.72rem;color:rgba(234,242,240,.5);margin-top:14px}
+.coupon .btn{margin-top:18px}
+.coupon.fin{background:var(--teal);border:0}
+.coupon.fin .cbig{color:#fff}
+@media(max-width:820px){.off-grid{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--surface);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-s);border:1px solid var(--line)}
+.faq-item>button{width:100%;text-align:left;background:transparent;border:0;cursor:pointer;color:var(--ink);font-family:var(--disp);font-weight:700;font-size:1.08rem;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq-item>button .fq{width:26px;height:26px;border-radius:100px;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;flex:none;transition:transform .3s}
+.faq-item>button .fq svg{width:15px;height:15px}
+.faq-item.open>button .fq{transform:rotate(135deg);background:var(--coral);color:#fff}
+.faq-item .fa{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item .fa p{padding:0 24px 22px;color:var(--muted);font-size:.96rem;line-height:1.62}
+
+/* BOOK */
+.book-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.book .eyebrow{color:#8FE0D6}.book h2{color:#fff;font-size:clamp(2rem,3.6vw,2.8rem)}
+.book .lead{color:rgba(234,244,242,.8);margin-top:14px;font-size:1.08rem;max-width:42ch}
+.book-call{display:inline-flex;align-items:center;gap:14px;margin-top:24px;background:rgba(255,255,255,.12);border-radius:100px;padding:12px 22px 12px 12px}
+.book-call .bc-ic{width:46px;height:46px;border-radius:100px;background:var(--coral);display:grid;place-items:center;flex:none}
+.book-call svg{width:24px;height:24px;color:#fff}
+.book-call small{display:block;font-size:.72rem;color:rgba(234,244,242,.7);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.book-call b{font-family:var(--disp);font-size:1.4rem;color:#fff;font-weight:800}
+.book-list{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.book-list .bl{display:flex;gap:10px;align-items:center;font-size:.96rem;color:#EAF4F2}
+.book-list svg{width:18px;height:18px;color:#8FE0D6;flex:none}
+.bform{background:var(--surface);border-radius:28px;padding:32px;box-shadow:var(--shadow);color:var(--body)}
+.bform h3{color:var(--ink);font-size:1.42rem;font-weight:800}
+.bform .sub{color:var(--muted);font-size:.9rem;margin:4px 0 20px}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:.8rem;font-weight:700;color:var(--ink);margin-bottom:5px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line2);border-radius:12px;padding:12px 14px;font-family:inherit;font-size:.96rem;color:var(--ink);background:var(--cream)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,110,107,.14);background:var(--surface)}
+.field textarea{resize:vertical;min-height:70px}
+.bform .btn{width:100%;margin-top:4px}
+.bform .fnote{font-size:.78rem;color:var(--muted);text-align:center;margin-top:11px}
+@media(max-width:860px){.book-grid{grid-template-columns:1fr;gap:36px}}
+
+/* footer */
+footer{background:var(--deep);color:#9FB6B1;padding:70px 0 28px;position:relative;overflow:hidden;isolation:isolate}
+footer>.wrap{position:relative;z-index:2}
+/* footer mouse-tracking glow field (teal, behind content) */
+.foot-fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.foot-fx .fx-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:38px 38px}
+.foot-fx .fx-glow{position:absolute;top:0;left:0;width:460px;height:460px;margin:-230px 0 0 -230px;border-radius:50%;background:radial-gradient(circle,rgba(15,110,107,.55),transparent 62%);opacity:0;transition:opacity .5s ease;will-change:transform}
+.foot-fx .fx-orb{position:absolute;top:0;left:0;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;background:radial-gradient(circle,#8fded3,var(--teal) 70%);box-shadow:0 0 30px 6px rgba(15,110,107,.6);opacity:0;transition:opacity .4s ease;will-change:transform}
+.foot-fx .fx-ring{position:absolute;top:0;left:0;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;border:1.5px solid var(--coral);opacity:0;transition:opacity .4s ease;will-change:transform}
+footer.fx-on .fx-orb{opacity:.95} footer.fx-on .fx-ring{opacity:.7} footer.fx-on .fx-glow{opacity:1}
+@media(max-width:640px){.foot-fx{display:none}}
+footer .ftop{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:32px}
+footer .fbrand{max-width:280px}
+footer .fbrand .brand .bt b{color:#fff}
+footer .fbrand p{margin-top:14px;font-size:.88rem;color:#88A29C;line-height:1.6}
+.fsoc{display:flex;gap:10px;margin-top:16px}
+.fsoc a{width:38px;height:38px;border-radius:12px;border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;color:#B0C7C2}
+.fsoc a:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.fsoc svg{width:17px;height:17px}
+.fcol h4{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#6F8983;margin-bottom:13px;font-weight:700}
+.fcol a,.fcol p{display:block;color:#AABFBA;font-size:.88rem;margin-bottom:9px;transition:color .2s}
+.fcol a:hover{color:#fff}
+.fbot{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:.8rem;color:#6F8983}
+.fbot a{color:#AABFBA}
+@media(max-width:900px){footer .ftop{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){footer .ftop{grid-template-columns:1fr}}
+
+/* sticky mobile */
+.scall{position:fixed;left:12px;right:12px;bottom:12px;z-index:55;display:none;gap:10px;padding:8px;background:var(--surface);border-radius:100px;box-shadow:var(--shadow)}
+.scall a{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:13px;border-radius:100px;font-weight:800;font-size:.94rem}
+.scall .s-book{background:var(--teal);color:#fff}
+.scall .s-call{background:var(--coral);color:#fff}
+.scall svg{width:18px;height:18px}
+
+@media(max-width:920px){
+  .nav-links,.hdr-phone,.navcta{display:none}
+  .burger{display:grid;place-items:center}
+  .scall{display:flex}
+  body{padding-bottom:82px}
+}
+@media(max-width:600px){.sec{padding:64px 0}.wrap{padding:0 18px}.curve{border-radius:34px 34px 0 0;margin-top:-36px}}
+
+/* ============ POLISH PASS, additive, tasteful (revert: layout.pre-polish.html) ============ */
+/* Anchor offset so the sticky header never covers a section heading on nav-jump */
+html{scroll-padding-top:96px}
+::selection{background:var(--teal);color:#fff}
+::-moz-selection{background:var(--teal);color:#fff}
+
+/* WHY cards, bring them to life like every other card on the page */
+.why-card{transition:transform .24s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .3s ease}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--teal-soft)}
+.why-card .wi{transition:transform .32s cubic-bezier(.22,1,.36,1)}
+.why-card:hover .wi{transform:scale(1.07) rotate(-4deg)}
+.why-card:nth-child(2):hover{border-color:var(--coral-soft)}
+
+/* Trust strip, subtle lift so it reads as interactive, matching the card system */
+.trust .ti{border:1px solid transparent;transition:transform .2s ease,box-shadow .28s ease,border-color .28s ease}
+.trust .ti:hover{transform:translateY(-4px);box-shadow:var(--shadow-s);border-color:var(--line)}
+
+/* Service cards, crisper edge to complement the existing lift */
+.svc-card{transition:transform .2s,box-shadow .22s,border-color .22s}
+.svc-card:hover{border-color:var(--teal-soft)}
+.svc-card.urgent:hover{border-color:var(--coral-soft)}
+
+/* Buttons, add elevation depth on hover for a more premium press */
+.btn-teal:hover{box-shadow:0 18px 32px -12px rgba(15,110,107,.7)}
+.btn-coral:hover{box-shadow:0 18px 32px -12px rgba(238,98,60,.72)}
+.btn-out:hover{box-shadow:0 12px 26px -14px rgba(15,110,107,.4)}
+
+/* How it works, the step badges were near-invisible on teal; give them presence + brand rhythm */
+.bg-teal .proc-step .pn{background:rgba(255,255,255,.13);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28);transition:transform .28s cubic-bezier(.22,1,.36,1)}
+.bg-teal .proc-step:nth-child(2) .pn{background:var(--coral);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.34),0 14px 26px -14px rgba(238,98,60,.75)}
+.bg-teal .proc-step:hover .pn{transform:translateY(-4px) scale(1.04)}
+.proc-step h4{transition:color .2s}
+
+/* Section headings sit a touch tighter to their body for cleaner rhythm */
+.why-card h3,.svc-card h3{letter-spacing:-.01em}
+</style>
+</head>
+<body>
+
+<!-- OFFER BAR -->
+<div class="offer" id="offer">
+  <div class="wrap">
+    <span class="tag">Limited</span>
+    <span>New customer? Get <b style="font-weight:800">$59 off</b> your first pump-out, plus a free camera inspection. <a href="#book">Claim it</a> or call <a href="tel:+15624311960">(562) 431-1960</a>.</span>
+    <button class="ox" id="offerX" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="ClearFlow Septic home">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4 5.8 6.6 5.8 9.8A5.8 5.8 0 0 1 6.2 12.8C6.2 9.6 8.5 7 12 3z"/></svg></span>
+      <span class="bt"><b>ClearFlow</b><small>Septic · Raleigh NC</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#area">Service areas</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#offers">Offers</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr-right">
+      <span class="hdr-phone"><small>24/7 backup line</small><a href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(562) 431-1960</a></span>
+      <a href="#book" class="btn btn-teal navcta">Book online</a>
+      <button class="burger" id="burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <div class="mhead">
+    <span class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4 5.8 6.6 5.8 9.8A5.8 5.8 0 0 1 6.2 12.8C6.2 9.6 8.5 7 12 3z"/></svg></span><span class="bt"><b>ClearFlow</b><small>Septic · Raleigh NC</small></span></span>
+    <button class="mclose" id="mclose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <a class="ml" href="#services">Services</a><a class="ml" href="#process">How it works</a><a class="ml" href="#area">Service areas</a><a class="ml" href="#reviews">Reviews</a><a class="ml" href="#offers">Offers</a><a class="ml" href="#faq">FAQ</a>
+  <div class="mcta">
+    <a href="#book" class="btn btn-teal">Book online</a>
+    <a href="tel:+15624311960" class="btn btn-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call 24/7</a>
+  </div>
+</div>
+
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="hero-badge zt"><span class="p">4.9 ★</span> Rated 4.9 on 180 reviews</span>
+      <h1 class="zt d1">Septic pumping and repair, <span>done right the first time.</span></h1>
+      <p class="lead zt d2">Residential and commercial septic service across Raleigh and the Triangle. Flat pricing before we start, and a real person on the 24/7 backup line when a tank can't wait.</p>
+      <div class="hero-cta zt d3">
+        <a href="#book" class="btn btn-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="4"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>Book online</a>
+        <a href="tel:+15624311960" class="btn btn-out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(562) 431-1960</a>
+      </div>
+      <div class="hero-tr zt d4">
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Same-day available</span>
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Licensed &amp; insured</span>
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Flat upfront pricing</span>
+      </div>
+    </div>
+    <div class="hero-media zt d2">
+      <div class="hero-diagram">
+        <span class="dtag">System · cutaway</span>
+        <div class="xsec" id="xsec" aria-label="Cutaway diagram of a residential septic system from the surface down to the drain field">
+          <svg viewBox="0 0 620 600" xmlns="http://www.w3.org/2000/svg" role="img">
+            <defs>
+              <clipPath id="tankClip"><rect x="178" y="252" width="196" height="146" rx="7"/></clipPath>
+            </defs>
+            <!-- underground + topsoil strata -->
+            <rect x="44" y="150" width="576" height="440" fill="rgba(18,49,47,.022)"/>
+            <rect x="52" y="150" width="556" height="14" fill="rgba(18,49,47,.05)"/>
+            <!-- surface grass tufts -->
+            <g class="xtuft"><path d="M80 150 L77 143 M80 150 L80 141 M80 150 L83 143"/><path d="M412 150 L409 143 M412 150 L412 141 M412 150 L415 143"/><path d="M560 150 L557 143 M560 150 L560 141 M560 150 L563 143"/></g>
+            <!-- depth ruler -->
+            <line class="xsoil" x1="52" y1="150" x2="52" y2="566"/>
+            <g class="xdepth">
+              <line class="xsoil" x1="48" y1="150" x2="56" y2="150"/><text x="30" y="154">0</text>
+              <line class="xsoil" x1="48" y1="254" x2="56" y2="254"/><text x="22" y="258">-2ft</text>
+              <line class="xsoil" x1="48" y1="358" x2="56" y2="358"/><text x="22" y="362">-4ft</text>
+              <line class="xsoil" x1="48" y1="462" x2="56" y2="462"/><text x="22" y="466">-6ft</text>
+              <line class="xsoil" x1="48" y1="566" x2="56" y2="566"/><text x="22" y="570">-8ft</text>
+            </g>
+            <!-- grade -->
+            <line class="xline" x1="52" y1="150" x2="608" y2="150" stroke-width="1.5"/>
+            <text class="xlabel" x="556" y="143">GRADE</text>
+            <!-- house -->
+            <g class="xstruct xdraw xd1">
+              <path pathLength="1" d="M104 150 L104 108 L156 108 L156 150"/>
+              <path pathLength="1" d="M96 108 L130 80 L164 108"/>
+              <path pathLength="1" d="M123 150 L123 122 L137 122 L137 150"/>
+              <path pathLength="1" d="M146 98 L146 84 L153 84 L153 100"/>
+            </g>
+            <text class="xlabel" x="100" y="70">HOME</text>
+            <!-- building sewer line -->
+            <path class="xpipe xdraw xd2" pathLength="1" d="M156 140 Q210 140 210 194 L210 250"/>
+            <path class="flowdash" d="M156 140 Q210 140 210 194 L210 250"/>
+            <text class="xlabel" x="200" y="120">SEWER LINE</text>
+            <!-- access risers to grade -->
+            <rect class="xstruct xdraw xd2" pathLength="1" x="237" y="143" width="16" height="9" rx="2"/>
+            <rect class="xstruct xdraw xd2" pathLength="1" x="327" y="143" width="16" height="9" rx="2"/>
+            <path class="xriser" d="M245 152 L245 250"/>
+            <path class="xriser" d="M335 152 L335 250"/>
+            <text class="xlabel sm" x="270" y="140">ACCESS RISERS</text>
+            <!-- tank shell -->
+            <rect class="xstruct xdraw xd1" pathLength="1" x="176" y="250" width="200" height="150" rx="9"/>
+            <!-- 2-compartment divider with mid transfer port -->
+            <path class="xbaffle xdraw xd2" pathLength="1" d="M300 252 L300 322"/>
+            <path class="xbaffle xdraw xd2" pathLength="1" d="M300 350 L300 398"/>
+            <!-- inlet + outlet baffle tees -->
+            <path class="xbaffle xdraw xd2" pathLength="1" d="M210 250 L210 308"/>
+            <path class="xbaffle xdraw xd2" pathLength="1" d="M352 316 L352 292"/>
+            <!-- effluent filter at outlet tee -->
+            <rect class="xfilter" x="345" y="299" width="12" height="18" rx="2"/>
+            <line class="xfilter" x1="345" y1="305" x2="357" y2="305"/>
+            <line class="xfilter" x1="345" y1="311" x2="357" y2="311"/>
+            <!-- liquid: scum / clear / sludge, rises on load -->
+            <g clip-path="url(#tankClip)"><g class="liquid-fill">
+              <rect class="xsludge" x="178" y="374" width="196" height="24"/>
+              <rect class="xclear" x="178" y="300" width="196" height="74"/>
+              <rect class="xscum" x="178" y="288" width="196" height="12"/>
+              <path class="xliquid-surface" d="M178 288 Q205 283 232 288 T286 288 T340 288 T374 288"><animate attributeName="d" dur="4.5s" repeatCount="indefinite" values="M178 288 Q205 283 232 288 T286 288 T340 288 T374 288;M178 288 Q205 293 232 288 T286 288 T340 288 T374 288;M178 288 Q205 283 232 288 T286 288 T340 288 T374 288"/></path>
+            </g></g>
+            <text class="xlabel sm" x="187" y="299">SCUM</text>
+            <text class="xlabel sm" x="187" y="391">SLUDGE</text>
+            <!-- level sensor -->
+            <line class="xsensor-lead" x1="350" y1="252" x2="350" y2="288"/>
+            <circle class="xsensor" cx="350" cy="248" r="5"/>
+            <text class="xlabel" x="360" y="245" style="fill:var(--alert)">LVL</text>
+            <!-- tank caption -->
+            <text class="xlabel k" x="276" y="424" text-anchor="middle">SEPTIC TANK</text>
+            <text class="xlabel sm" x="276" y="438" text-anchor="middle">1,000 GAL &#183; 2-COMPARTMENT</text>
+            <!-- outlet pipe to distribution box -->
+            <path class="xpipe xdraw xd3" pathLength="1" d="M352 292 L376 292 L424 292 Q432 292 432 300 L432 311 Q432 311 440 311 L452 311"/>
+            <path class="flowdash" d="M352 292 L376 292 L424 292 Q432 292 432 300 L432 311 L452 311"/>
+            <rect class="xstruct xdraw xd3" pathLength="1" x="452" y="294" width="34" height="34" rx="4"/>
+            <text class="xlabel" x="452" y="286">D-BOX</text>
+            <!-- drain field: header + perforated laterals in gravel -->
+            <path class="xfield xdraw xd3" pathLength="1" d="M486 311 L500 311"/>
+            <path class="xfield xdraw xd3" pathLength="1" d="M500 300 L500 340"/>
+            <path class="xfield xdraw xd3" pathLength="1" d="M500 306 L602 306"/>
+            <path class="xfield xdraw xd3" pathLength="1" d="M500 322 L602 322"/>
+            <path class="xfield xdraw xd3" pathLength="1" d="M500 338 L574 338"/>
+            <g class="xdot">
+              <circle cx="524" cy="312" r="1.5"/><circle cx="552" cy="312" r="1.5"/><circle cx="580" cy="312" r="1.5"/>
+              <circle cx="524" cy="328" r="1.5"/><circle cx="552" cy="328" r="1.5"/><circle cx="580" cy="328" r="1.5"/>
+              <circle cx="524" cy="344" r="1.5"/><circle cx="552" cy="344" r="1.5"/>
+            </g>
+            <!-- gravel bed stipple -->
+            <g class="xgravel"><circle cx="510" cy="352" r="1.3"/><circle cx="528" cy="356" r="1.3"/><circle cx="546" cy="352" r="1.3"/><circle cx="566" cy="357" r="1.3"/><circle cx="586" cy="353" r="1.3"/><circle cx="519" cy="360" r="1.3"/><circle cx="556" cy="361" r="1.3"/><circle cx="576" cy="360" r="1.3"/></g>
+            <!-- percolation into native soil -->
+            <g class="xperc">
+              <path class="xarrow" d="M516 356 L516 384"/><path class="xarrow" d="M510 377 L516 385 L522 377"/>
+              <path class="xarrow" d="M552 356 L552 388"/><path class="xarrow" d="M546 381 L552 389 L558 381"/>
+              <path class="xarrow" d="M588 354 L588 382"/><path class="xarrow" d="M582 375 L588 383 L594 375"/>
+            </g>
+            <text class="xlabel k" x="500" y="404">DRAIN FIELD</text>
+            <!-- strata + water table -->
+            <text class="xlabel sm" x="500" y="352">GRAVEL BED</text>
+            <text class="xlabel" x="250" y="470" opacity=".62">NATIVE SOIL</text>
+            <line class="xwater" x1="52" y1="512" x2="608" y2="512"/>
+            <text class="xlabel" x="360" y="506" style="fill:var(--flow)" opacity=".85">WATER TABLE</text>
+            <text class="xlabel sm" x="608" y="590" text-anchor="end" opacity=".5">TYPICAL SYSTEM &#183; NOT TO SCALE</text>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-float"><span class="hf-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>90-min response</b><span>Average on a backup call</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST (curved top, overlaps hero) -->
+<section class="trust curve bg-cream">
+  <div class="wrap">
+    <div class="ti zi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V6l-8-4z"/></svg><div><b>Licensed &amp; insured</b><span>State septic pro</span></div></div>
+    <div class="ti zi d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>NAWT certified</b><span>Vacuum &amp; inspection</span></div></div>
+    <div class="ti zi d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg><div><b>Financing available</b><span>Up to 36 months</span></div></div>
+    <div class="ti zi d3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><div><b>4.9 on 180 reviews</b><span>Google, FB &amp; Angi</span></div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="shead zt">
+      <span class="eyebrow">Why ClearFlow</span>
+      <h2>The septic company you call back.</h2>
+      <p>Most people meet their septic company on the worst day. We try to make it the easiest call you make.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card zi"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.83 0l-7.17-7.17A2 2 0 0 1 2.8 12V4.8a2 2 0 0 1 2-2H12a2 2 0 0 1 1.43.6l7.17 7.17a2 2 0 0 1 0 2.83Z"/><circle cx="7.6" cy="7.6" r="1.4"/></svg></span><h3>Flat price, up front</h3><p>You hear the number before any lid comes off. The price we quote is the price you pay, with no on-site surprises.</p></div>
+      <div class="why-card zi d1"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><h3>Real people, 24/7</h3><p>Backups do not wait for business hours. Call any time and you get a person and a crew, not a voicemail box.</p></div>
+      <div class="why-card zi d2"><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Licensed local crews</h3><p>NAWT-certified, licensed and insured technicians who live here. We do the work clean and leave the yard as we found it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (curved folder tabs) -->
+<section class="sec curve bg-mist" id="services">
+  <div class="wrap">
+    <div class="shead center zt">
+      <span class="eyebrow">Our services</span>
+      <h2>Everything your system needs, one crew.</h2>
+      <p>From a routine pump-out to a failed drain field or a restaurant grease trap. Pick what you need.</p>
+    </div>
+    <div style="text-align:center" class="zt">
+      <div class="ctabs" role="tablist">
+        <button class="ctab on" data-set="res" role="tab">Residential</button>
+        <button class="ctab" data-set="com" role="tab">Commercial</button>
+      </div>
+    </div>
+    <div class="svc-panel zt">
+      <div class="svc-set on" id="set-res">
+        <article class="svc-card urgent zi"><span class="num">01 · Emergency</span><h3>24/7 backup response</h3><p>Sewage backing up, a flooded yard, or a failed pump. Call any hour and we get a crew moving toward you.</p><a href="tel:+15624311960" class="more">Call the backup line <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card zi d1"><span class="num">02</span><h3>Tank pumping &amp; cleaning</h3><p>Full pump-out and tank cleaning on the EPA's three to five year schedule, or sooner if it is running slow.</p><a href="#book" class="more">Book a pump-out <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card zi d2"><span class="num">03</span><h3>Inspections &amp; point-of-sale</h3><p>Buying or selling? We inspect the tank and field and hand you a clean report you can take to closing.</p><a href="#book" class="more">Schedule an inspection <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card zi"><span class="num">04</span><h3>Drain field repair</h3><p>Soggy ground, slow drains, and odors over the field point here. We diagnose and restore the leach field.</p><a href="#book" class="more">Get it looked at <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card zi d1"><span class="num">05</span><h3>Repairs &amp; pump replacement</h3><p>Effluent pumps, lift stations, broken baffles, and risers. We fix the part that failed, not the whole system.</p><a href="#book" class="more">Request a repair <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card zi d2"><span class="num">06</span><h3>New systems &amp; installs</h3><p>New construction or a failed system. We handle perc testing, permits, and a code-ready install.</p><a href="#book" class="more">Talk to us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+      </div>
+      <div class="svc-set" id="set-com">
+        <article class="svc-card"><span class="num">01</span><h3>Grease trap cleaning</h3><p>Scheduled grease trap pump-outs for restaurants and kitchens, with manifests to keep you compliant.</p><a href="#book" class="more">Set a schedule <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card"><span class="num">02</span><h3>Lift station service</h3><p>Inspection, pump-out, and repair for commercial lift stations, with alarm checks and float testing.</p><a href="#book" class="more">Request service <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card"><span class="num">03</span><h3>High-volume pumping</h3><p>Large tanks, multi-unit sites, and holding tanks on a route that fits your operating hours.</p><a href="#book" class="more">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card"><span class="num">04</span><h3>Property management plans</h3><p>One point of contact for a whole portfolio, with tracked schedules and priced-per-door service.</p><a href="#book" class="more">Ask about plans <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card"><span class="num">05</span><h3>Commercial inspections</h3><p>Documented inspections for leases, sales, and code, turned around fast with a clear write-up.</p><a href="#book" class="more">Schedule <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+        <article class="svc-card urgent"><span class="num">06 · Priority</span><h3>Emergency dispatch</h3><p>A backup at a business costs you hours. Commercial accounts get priority routing 24/7.</p><a href="tel:+15624311960" class="more">Call now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS (teal, curved top) -->
+<section class="sec curve bg-teal" id="process">
+  <div class="wrap">
+    <div class="shead center zt">
+      <span class="eyebrow">How it works</span>
+      <h2>Your septic sorted in three steps.</h2>
+      <p>No mystery, no surprise charge. You know the price before any lid comes off.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step zi"><span class="pn">1</span><h4>Tell us what is going on</h4><p>Book online or call. For a backup, use the 24/7 line and we move on it right away.</p></div>
+      <div class="proc-step zi d1"><span class="pn">2</span><h4>Get a flat price up front</h4><p>We quote the pump-out, inspection, or repair before we start. The number we say is the number you pay.</p></div>
+      <div class="proc-step zi d2"><span class="pn">3</span><h4>We do the work clean</h4><p>We pump or repair, check the baffles and field, and email you a written report with your next due date.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA (curved top) -->
+<section class="sec area curve bg-cream" id="area">
+  <div class="wrap area-grid">
+    <div class="zt">
+      <span class="eyebrow">Service areas</span>
+      <h2>Covering Raleigh and the Triangle.</h2>
+      <p class="lead">Based in Raleigh, working septic systems across Wake County and the towns around it. Not sure if you are in range? Call and we will tell you straight.</p>
+      <div class="area-badges">
+        <span class="ab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Same-day service</span>
+        <span class="ab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>24/7 backup</span>
+      </div>
+      <div class="area-chips">
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Raleigh</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Cary</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Apex</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Wake Forest</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Garner</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Holly Springs</span>
+        <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Fuquay-Varina</span>
+        <span class="area-chip">+ Knightdale, Wendell &amp; Zebulon</span>
+      </div>
+    </div>
+    <div class="area-map zo">
+      <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="mf"><rect x="30" y="24" width="420" height="352" rx="16"/></clipPath></defs>
+        <rect x="30" y="24" width="420" height="352" rx="16" fill="var(--teal-mist)"/>
+        <g clip-path="url(#mf)" stroke="rgba(15,110,107,.14)" stroke-width="1">
+          <line x1="115" y1="24" x2="115" y2="376"/><line x1="200" y1="24" x2="200" y2="376"/><line x1="285" y1="24" x2="285" y2="376"/><line x1="370" y1="24" x2="370" y2="376"/><line x1="30" y1="112" x2="450" y2="112"/><line x1="30" y1="200" x2="450" y2="200"/><line x1="30" y1="288" x2="450" y2="288"/>
+        </g>
+        <circle cx="248" cy="206" r="140" fill="rgba(15,110,107,.06)" stroke="var(--teal)" stroke-width="1.5" stroke-dasharray="5 6" clip-path="url(#mf)"/>
+        <g fill="var(--teal)">
+          <circle cx="266" cy="96" r="4"/><circle cx="172" cy="206" r="4"/><circle cx="152" cy="252" r="4"/><circle cx="184" cy="302" r="4"/><circle cx="240" cy="342" r="4"/><circle cx="288" cy="294" r="4"/><circle cx="342" cy="198" r="4"/><circle cx="384" cy="182" r="4"/><circle cx="416" cy="164" r="4"/>
+        </g>
+        <g font-family="'Outfit',sans-serif" font-size="10.5" font-weight="600" fill="var(--body)">
+          <text x="266" y="84" text-anchor="middle">Wake Forest</text><text x="162" y="209" text-anchor="end">Cary</text><text x="142" y="255" text-anchor="end">Apex</text><text x="174" y="305" text-anchor="end">Holly Springs</text><text x="240" y="360" text-anchor="middle">Fuquay-Varina</text><text x="297" y="297" text-anchor="start">Garner</text><text x="342" y="214" text-anchor="middle">Knightdale</text><text x="384" y="172" text-anchor="middle">Wendell</text><text x="416" y="154" text-anchor="middle">Zebulon</text>
+        </g>
+        <g transform="translate(248 200)"><path d="M0 -18 C9 -18 16 -11 16 -3 C16 8 0 22 0 22 C0 22 -16 8 -16 -3 C-16 -11 -9 -18 0 -18 Z" fill="var(--coral)"/><circle cx="0" cy="-3" r="6" fill="#fff"/></g>
+        <text x="248" y="242" text-anchor="middle" font-family="'Bricolage Grotesque',sans-serif" font-size="14" font-weight="800" fill="var(--ink)">RALEIGH</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="sec curve bg-white" id="work">
+  <div class="wrap">
+    <div class="shead zt">
+      <span class="eyebrow">Recent work</span>
+      <h2>On the job across the Triangle.</h2>
+      <p>Real pump-outs, inspections, and installs from local homes and businesses.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-cell zo"><img src="assets/_img/611523201e3a.jpg" alt="Technician pumping a septic tank from the vacuum truck" /><div class="wc"><b>Emergency pump-out</b><span>Apex, NC · same day</span></div></div>
+      <div class="work-cell zo d1"><img src="assets/_img/eccead84671e.jpg" alt="New septic drain field line bedded in gravel in a trench" /><div class="wc"><b>Drain field install</b><span>Wake County, NC</span></div></div>
+      <div class="work-cell stat zi d2"><b>6,200+</b><span>tanks serviced since 2007</span></div>
+      <div class="work-cell zo d1"><img src="assets/_img/f68f4d463295.jpg" alt="Septic service work on site" /><div class="wc"><b>Point-of-sale inspection</b><span>Cary, NC · report same week</span></div></div>
+      <div class="work-cell stat coral zi d2"><b>90 min</b><span>average backup response</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec curve bg-sand" id="reviews">
+  <div class="wrap">
+    <div class="shead center zt">
+      <span class="eyebrow">Reviews</span>
+      <h2>Neighbors keep us on speed dial.</h2>
+    </div>
+    <div class="rev-agg zt">
+      <div class="ra"><b>4.9 <span class="st">★★★★★</span></b><span>Google · 128</span></div>
+      <div class="ra"><b>4.8 <span class="st">★★★★★</span></b><span>Facebook · 34</span></div>
+      <div class="ra"><b>A+</b><span>BBB accredited</span></div>
+      <div class="ra"><b>4.9 <span class="st">★★★★★</span></b><span>Angi · 18</span></div>
+    </div>
+  </div>
+  <div class="mq zt" aria-label="Customer reviews">
+    <div class="mq-track">
+      <article class="qcard"><div class="qs">★★★★★</div><p>"Tank backed up on a Sunday night and they had a truck out by morning. Told me the price on the phone and that is exactly what I paid."</p><div class="qby"><span class="qav">DR</span><span><span class="qn">Dana R.</span><span class="qsrc">Apex NC · Google</span></span></div></article>
+      <article class="qcard"><div class="qs">★★★★★</div><p>"We were selling our house and needed the inspection fast. They came out, did the pump-out, and had the report to our agent the same week."</p><div class="qby"><span class="qav">MK</span><span><span class="qn">Marcus K.</span><span class="qsrc">Cary NC · Google</span></span></div></article>
+      <article class="qcard"><div class="qs">★★★★★</div><p>"On the maintenance plan now so I never think about it. They call me, they show up, and the yard looks untouched when they leave."</p><div class="qby"><span class="qav">LT</span><span><span class="qn">Lena T.</span><span class="qsrc">Wake Forest · Google</span></span></div></article>
+      <article class="qcard"><div class="qs">★★★★★</div><p>"Our drain field stayed soggy for months. They found the cracked baffle, fixed just that part, and did not push a whole new system."</p><div class="qby"><span class="qav">PS</span><span><span class="qn">Priya S.</span><span class="qsrc">Holly Springs · Facebook</span></span></div></article>
+      <article class="qcard"><div class="qs">★★★★★</div><p>"Honest crew. They walked me through the tank on their phone camera, showed me the sludge level, and said it could wait another year."</p><div class="qby"><span class="qav">DW</span><span><span class="qn">Derek W.</span><span class="qsrc">Garner NC · Angi</span></span></div></article>
+      <article class="qcard"><div class="qs">★★★★★</div><p>"New construction perc test and install. Permits handled, inspector happy, and they cleaned up like they were never in the yard."</p><div class="qby"><span class="qav">TB</span><span><span class="qn">Tanya B.</span><span class="qsrc">Fuquay-Varina · Google</span></span></div></article>
+      <article class="qcard" aria-hidden="true"><div class="qs">★★★★★</div><p>"Tank backed up on a Sunday night and they had a truck out by morning. Told me the price on the phone and that is exactly what I paid."</p><div class="qby"><span class="qav">DR</span><span><span class="qn">Dana R.</span><span class="qsrc">Apex NC · Google</span></span></div></article>
+      <article class="qcard" aria-hidden="true"><div class="qs">★★★★★</div><p>"We were selling our house and needed the inspection fast. They came out, did the pump-out, and had the report to our agent the same week."</p><div class="qby"><span class="qav">MK</span><span><span class="qn">Marcus K.</span><span class="qsrc">Cary NC · Google</span></span></div></article>
+      <article class="qcard" aria-hidden="true"><div class="qs">★★★★★</div><p>"On the maintenance plan now so I never think about it. They call me, they show up, and the yard looks untouched when they leave."</p><div class="qby"><span class="qav">LT</span><span><span class="qn">Lena T.</span><span class="qsrc">Wake Forest · Google</span></span></div></article>
+      <article class="qcard" aria-hidden="true"><div class="qs">★★★★★</div><p>"Our drain field stayed soggy for months. They found the cracked baffle, fixed just that part, and did not push a whole new system."</p><div class="qby"><span class="qav">PS</span><span><span class="qn">Priya S.</span><span class="qsrc">Holly Springs · Facebook</span></span></div></article>
+      <article class="qcard" aria-hidden="true"><div class="qs">★★★★★</div><p>"Honest crew. They walked me through the tank on their phone camera, showed me the sludge level, and said it could wait another year."</p><div class="qby"><span class="qav">DW</span><span><span class="qn">Derek W.</span><span class="qsrc">Garner NC · Angi</span></span></div></article>
+      <article class="qcard" aria-hidden="true"><div class="qs">★★★★★</div><p>"New construction perc test and install. Permits handled, inspector happy, and they cleaned up like they were never in the yard."</p><div class="qby"><span class="qav">TB</span><span><span class="qn">Tanya B.</span><span class="qsrc">Fuquay-Varina · Google</span></span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS (dark, wave divider on top) -->
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 70 C360 0 1080 0 1440 70 L1440 70 L0 70 Z" fill="var(--ink)"/></svg></div>
+<section class="sec offers bg-ink" id="offers" style="padding-top:20px">
+  <div class="wrap">
+    <div class="shead center zt">
+      <span class="eyebrow">Offers &amp; financing</span>
+      <h2>Ways to save on your service.</h2>
+      <p>Real offers for real jobs. Mention them when you book, or ask us about financing on bigger repairs.</p>
+    </div>
+    <div class="off-grid">
+      <div class="coupon zi"><div class="cbig">$59 off</div><h3>First pump-out</h3><p>New customers save $59 on a standard tank pump-out and cleaning.</p><div class="cfine">New residential customers. One per household.</div><a href="#book" class="btn btn-coral">Claim offer</a></div>
+      <div class="coupon zi d1"><div class="cbig">Free</div><h3>Camera inspection</h3><p>Add a free camera inspection to any pump-out so you see exactly what shape your system is in.</p><div class="cfine">With any paid pump-out. Ask when you book.</div><a href="#book" class="btn btn-ghost">Add to booking</a></div>
+      <div class="coupon fin zi d2"><div class="cbig">0% intro</div><h3>Financing up to 36 months</h3><p>Spread the cost of a drain field or new system over low monthly payments. Quick approval.</p><div class="cfine">On approved credit. Ask for terms on your quote.</div><a href="#book" class="btn btn-ghost">Check financing</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec curve bg-cream" id="faq">
+  <div class="wrap">
+    <div class="shead center zt">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions homeowners ask.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item zi"><button type="button" aria-expanded="false"><span>How often should a septic tank be pumped?</span><span class="fq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="fa"><p>The EPA guideline is every three to five years for a typical household, but it depends on tank size and how many people are in the home. On a maintenance plan we track your interval and reach out when you are due.</p></div></div>
+      <div class="faq-item zi"><button type="button" aria-expanded="false"><span>How do I know my tank is full or backing up?</span><span class="fq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="fa"><p>Slow drains across the house, gurgling toilets, sewage smells, and soggy or extra-green grass over the drain field. If drains are backing up into the house, that is an emergency. Call the 24/7 line.</p></div></div>
+      <div class="faq-item zi"><button type="button" aria-expanded="false"><span>What does a pump-out cost?</span><span class="fq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="fa"><p>It depends on tank size, how easy the lid is to reach, and how full it is. We give you a flat price before we start, and that is the number you pay.</p></div></div>
+      <div class="faq-item zi"><button type="button" aria-expanded="false"><span>Do you offer financing?</span><span class="fq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="fa"><p>Yes, on larger repairs and installs. Plans run up to 36 months with quick approval and no prepayment penalty. Ask for terms when we quote your job.</p></div></div>
+      <div class="faq-item zi"><button type="button" aria-expanded="false"><span>Are you licensed and insured?</span><span class="fq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="fa"><p>Yes. ClearFlow is licensed, bonded, and insured, and our techs are NAWT certified. We are glad to show you the paperwork before any work starts.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK (teal, curved top) -->
+<section class="sec book curve bg-teal" id="book">
+  <div class="wrap book-grid">
+    <div class="zt">
+      <span class="eyebrow">Book online</span>
+      <h2>Book your service, or call us.</h2>
+      <p class="lead">Tell us what your system is doing and we will get you on the schedule. If it is a backup, do not fill out a form, call the line below.</p>
+      <a href="tel:+15624311960" class="book-call"><span class="bc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><small>24/7 backup line</small><b>(562) 431-1960</b></span></a>
+      <div class="book-list">
+        <span class="bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>We call back, usually within the hour</span>
+        <span class="bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Flat quote over the phone, no obligation</span>
+        <span class="bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Same-day slots kept open for urgent jobs</span>
+      </div>
+    </div>
+    <form class="bform zi" id="quoteForm" onsubmit="return sendQuote(event)">
+      <h3>Request service</h3>
+      <div class="sub">Tell us about your system and we will get right back to you.</div>
+      <div class="field"><label for="qn">Name</label><input id="qn" name="name" required placeholder="Your name" /></div>
+      <div class="field"><label for="qp">Phone</label><input id="qp" name="phone" type="tel" required placeholder="(919) 000-0000" /></div>
+      <div class="field"><label for="qa">Service address or town</label><input id="qa" name="addr" placeholder="e.g. Apex, NC" /></div>
+      <div class="field"><label for="qs">What do you need?</label>
+        <select id="qs" name="service"><option>Pumping &amp; cleaning</option><option>Inspection / point-of-sale</option><option>Sewage backup (urgent)</option><option>Drain field problem</option><option>Repair or pump replacement</option><option>New system / install</option><option>Commercial / grease trap</option><option>Not sure</option></select>
+      </div>
+      <div class="field"><label for="qm">Details (optional)</label><textarea id="qm" name="msg" placeholder="When was it last pumped, what are you seeing, anything we should know?"></textarea></div>
+      <button type="submit" class="btn btn-teal">Request service</button>
+      <p class="fnote">No spam. Straight to dispatch. Backing up now? Call <a href="tel:+15624311960" style="color:var(--coral-d);font-weight:700">(562) 431-1960</a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="siteFooter">
+  <div class="foot-fx"><div class="fx-glow"></div><div class="fx-grid"></div><div class="fx-ring"></div><div class="fx-orb"></div></div>
+  <div class="wrap">
+    <div class="ftop">
+      <div class="fbrand">
+        <a href="#top" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4 5.8 6.6 5.8 9.8A5.8 5.8 0 0 1 6.2 12.8C6.2 9.6 8.5 7 12 3z"/></svg></span><span class="bt"><b>ClearFlow</b><small style="color:#7FB7A8">Septic · Raleigh NC</small></span></a>
+        <p>Residential and commercial septic pumping, inspections, repairs, and 24/7 backup response across Raleigh and the Triangle.</p>
+        <div class="fsoc">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 11v2.8h4c-.2 1-1.4 3-4 3a4.8 4.8 0 0 1 0-9.6c1.4 0 2.3.6 2.8 1.1l1.9-1.9A7.8 7.8 0 1 0 12 19.8c4.5 0 7.5-3.2 7.5-7.6 0-.5 0-.9-.1-1.2z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol"><h4>Residential</h4><a href="#services">Tank pumping</a><a href="#services">Inspections</a><a href="#services">Drain field repair</a><a href="#services">Repairs</a><a href="#services">New installs</a></div>
+      <div class="fcol"><h4>Commercial</h4><a href="#services">Grease traps</a><a href="#services">Lift stations</a><a href="#services">High-volume pumping</a><a href="#services">Management plans</a></div>
+      <div class="fcol"><h4>Service areas</h4><a href="#area">Raleigh</a><a href="#area">Cary</a><a href="#area">Apex</a><a href="#area">Wake Forest</a><a href="#area">Garner</a><a href="#area">Holly Springs</a></div>
+      <div class="fcol"><h4>Get in touch</h4><a href="tel:+15624311960">(562) 431-1960</a><a href="mailto:hello@clearflowseptic.com">hello@clearflowseptic.com</a><p>Raleigh, North Carolina</p><p>Office Mon-Fri 7a-6p<br/>Backup line 24/7</p></div>
+    </div>
+    <div class="fbot"><span>© 2026 ClearFlow Septic · Licensed, bonded &amp; insured</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Accessibility</a></span></div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE -->
+<div class="scall">
+  <a class="s-book" href="#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book online</a>
+  <a class="s-call" href="tel:+15624311960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call 24/7</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hdr = document.getElementById('hdr');
+  var heroImg = document.getElementById('heroImg');
+  var _sy=0, _tick=false;
+  function _onFrame(){
+    _tick=false;
+    var y=_sy;
+    hdr.classList.toggle('scrolled', y > 8);
+    if (heroImg && !reduce){
+      var p = Math.min(y,700)/700;                 // 0..1 over first 700px
+      var sc = 1.03 + p*0.06;                       // gentle 1.03 -> 1.09 zoom
+      var ty = p * -16;                             // subtle upward drift (covered by overscan)
+      heroImg.style.transform = 'translate3d(0,'+ty.toFixed(1)+'px,0) scale('+sc.toFixed(3)+')';
+    }
+  }
+  window.addEventListener('scroll', function(){
+    _sy = window.pageYOffset;
+    if(!_tick){ _tick=true; requestAnimationFrame(_onFrame); }
+  }, {passive:true});
+
+  var offer = document.getElementById('offer'), ox = document.getElementById('offerX');
+  if (ox) ox.addEventListener('click', function(){ offer.style.display='none'; });
+
+  var burger = document.getElementById('burger'), mmenu = document.getElementById('mmenu'), mclose = document.getElementById('mclose');
+  function closeMenu(){ mmenu.classList.remove('open'); document.body.style.overflow=''; }
+  burger.addEventListener('click', function(){ mmenu.classList.add('open'); document.body.style.overflow='hidden'; });
+  mclose.addEventListener('click', closeMenu);
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  document.querySelectorAll('.ctab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      document.querySelectorAll('.ctab').forEach(function(t){ t.classList.remove('on'); });
+      document.querySelectorAll('.svc-set').forEach(function(s){ s.classList.remove('on'); });
+      tab.classList.add('on');
+      document.getElementById('set-' + tab.dataset.set).classList.add('on');
+    });
+  });
+
+  document.querySelectorAll('.faq-item > button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement, open = item.classList.contains('open'), fa = item.querySelector('.fa');
+      document.querySelectorAll('.faq-item.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.fa').style.maxHeight=null; o.querySelector('button').setAttribute('aria-expanded','false'); });
+      if (!open){ item.classList.add('open'); fa.style.maxHeight = fa.scrollHeight + 'px'; btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  if (reduce || !('IntersectionObserver' in window)){
+    document.querySelectorAll('.zi,.zo,.zt,.xsec').forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:0.14, rootMargin:'0px 0px -7% 0px'});
+    document.querySelectorAll('.zi,.zo,.zt,.xsec').forEach(function(el){ io.observe(el); });
+  }
+
+  window.sendQuote = function(e){
+    e.preventDefault();
+    var f = e.target;
+    var body = 'Name: ' + f.name.value + '%0D%0APhone: ' + f.phone.value + '%0D%0AAddress: ' + (f.addr.value||'') + '%0D%0AService: ' + f.service.value + '%0D%0ADetails: ' + (f.msg.value||'');
+    window.location.href = 'mailto:hello@clearflowseptic.com?subject=' + encodeURIComponent('Service request from ' + f.name.value) + '&body=' + body;
+    return false;
+  };
+})();
+
+// footer mouse-tracking glow: GPU transforms + single rAF loop, no per-move layout reads
+(function(){
+  var f=document.getElementById('siteFooter'); if(!f) return;
+  var fx=f.querySelector('.foot-fx'); if(!fx) return;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return; // respect reduced motion
+  var orb=fx.querySelector('.fx-orb'), ring=fx.querySelector('.fx-ring'), glow=fx.querySelector('.fx-glow');
+  var rect=null, tx=0,ty=0, ox=0,oy=0, rx=0,ry=0, gx=0,gy=0, active=false, raf=0;
+  function measure(){ rect=f.getBoundingClientRect(); }
+  function start(){ if(!raf) raf=requestAnimationFrame(loop); }
+  f.addEventListener('pointerenter',function(e){ if(e.pointerType==='touch') return; measure(); active=true; f.classList.add('fx-on'); start(); });
+  f.addEventListener('pointerleave',function(){ active=false; });
+  f.addEventListener('pointermove',function(e){ if(e.pointerType==='touch'||!rect) return; tx=e.clientX-rect.left; ty=e.clientY-rect.top; start(); }, {passive:true});
+  window.addEventListener('scroll',function(){ if(active) measure(); }, {passive:true});
+  window.addEventListener('resize',function(){ if(active) measure(); });
+  function loop(){
+    ox+=(tx-ox)*0.5;  oy+=(ty-oy)*0.5;   // orb: tight, responsive follow
+    rx+=(tx-rx)*0.18; ry+=(ty-ry)*0.18;   // ring: gentle trail
+    gx+=(tx-gx)*0.10; gy+=(ty-gy)*0.10;   // glow: soft drift
+    orb.style.transform ='translate3d('+ox.toFixed(2)+'px,'+oy.toFixed(2)+'px,0)';
+    ring.style.transform='translate3d('+rx.toFixed(2)+'px,'+ry.toFixed(2)+'px,0)';
+    glow.style.transform='translate3d('+gx.toFixed(2)+'px,'+gy.toFixed(2)+'px,0)';
+    var settled = Math.abs(tx-ox)<0.3&&Math.abs(tx-rx)<0.3&&Math.abs(tx-gx)<0.3&&Math.abs(ty-oy)<0.3&&Math.abs(ty-ry)<0.3&&Math.abs(ty-gy)<0.3;
+    if(active || !settled){ raf=requestAnimationFrame(loop); }
+    else { raf=0; f.classList.remove('fx-on'); }
+  }
+})();
+</script>
+</body>
+</html>
